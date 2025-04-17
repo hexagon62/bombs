@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp4s0w14i1a8f"]
+
+[ext_resource type="PackedScene" uid="uid://dpnbel3ltro8o" path="res://scenes/spawnable/pieces/base/piece_fl_slope_1x1_base.tscn" id="1_an06o"]
+[ext_resource type="Texture2D" uid="uid://coi3ahc85k4c2" path="res://graphics/blocks/roof_02.png" id="2_0tlc2"]
+
+[node name="PieceRoofLeft" groups=["counted_piece"] instance=ExtResource("1_an06o")]
+undisturbed_texture = ExtResource("2_0tlc2")
+
+[node name="Sprite" parent="." index="1"]
+scale = Vector2(1, 1)
+texture = ExtResource("2_0tlc2")

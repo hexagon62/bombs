@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5ytpuvt5xn68"]
+
+[ext_resource type="Script" uid="uid://dkftxsnu86p44" path="res://scripts/level_wrapper.gd" id="1_asw2c"]
+[ext_resource type="Script" uid="uid://ccrm27ibyllj5" path="res://scripts/debug/debug_bomb_raycast_visualizer.gd" id="3_asw2c"]
+[ext_resource type="PackedScene" uid="uid://btxvd4c7j5eww" path="res://scenes/ui/bomb_builder/ui_bomb_builder.tscn" id="3_vyhw2"]
+
+[node name="LevelWrapper" type="Control" groups=["level_wrapper"]]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_asw2c")
+
+[node name="DestructionLabel" type="Label" parent="."]
+z_index = 100
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -23.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
+theme_override_font_sizes/font_size = 32
+text = "Destruction: 0%"
+horizontal_alignment = 2
+
+[node name="BombBuilder" parent="." instance=ExtResource("3_vyhw2")]
+visible = false
+z_index = 150
+layout_mode = 1
+
+[node name="DebugBombRaycastVisualizer" type="Node2D" parent="." groups=["debug_bomb_raycast_visualizer"]]
+z_index = 1000
+script = ExtResource("3_asw2c")
+metadata/_custom_type_script = "uid://ccrm27ibyllj5"
+
+[connection signal="loaded" from="." to="DebugBombRaycastVisualizer" method="clear"]
+[connection signal="go_pressed" from="BombBuilder" to="." method="_on_go_pressed"]

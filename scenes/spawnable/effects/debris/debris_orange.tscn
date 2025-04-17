@@ -1,0 +1,12 @@
+[gd_scene load_steps=8 format=3 uid="uid://5wiiralnk0ol"]
+
+[ext_resource type="PackedScene" uid="uid://cjuurvaav2eaq" path="res://scenes/spawnable/effects/debris/debris_base.tscn" id="1_6bu3b"]
+[ext_resource type="Texture2D" uid="uid://b6pvefak0aen0" path="res://graphics/debris/orange_broken_piece_01.png" id="2_5lyqe"]
+[ext_resource type="Texture2D" uid="uid://dk5rkpd46bc5b" path="res://graphics/debris/orange_broken_piece_02.png" id="3_tn7a4"]
+[ext_resource type="Texture2D" uid="uid://4abf8hrivvjl" path="res://graphics/debris/orange_broken_piece_03.png" id="4_q3hmy"]
+[ext_resource type="Texture2D" uid="uid://b5jid8m1s64d7" path="res://graphics/debris/orange_broken_piece_04.png" id="5_nsacu"]
+[ext_resource type="Texture2D" uid="uid://cckxvuwgi34km" path="res://graphics/debris/orange_broken_piece_05.png" id="6_3c0qa"]
+[ext_resource type="Texture2D" uid="uid://c7kdrde028xto" path="res://graphics/debris/orange_broken_piece_06.png" id="7_3to5x"]
+
+[node name="DebrisOrange" instance=ExtResource("1_6bu3b")]
+textures = Array[Texture2D]([ExtResource("2_5lyqe"), ExtResource("3_tn7a4"), ExtResource("4_q3hmy"), ExtResource("5_nsacu"), ExtResource("6_3c0qa"), ExtResource("7_3to5x")])

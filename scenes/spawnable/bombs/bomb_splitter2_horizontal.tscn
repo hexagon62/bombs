@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://bx5t35xwgm3ao"]
+
+[ext_resource type="Script" uid="uid://caged56bh2l12" path="res://scripts/bombs/bomb_with_custom_spawns.gd" id="1_ixhro"]
+[ext_resource type="Script" uid="uid://cvspe21hpi8q0" path="res://scripts/bombs/bomb_spawn_parameters.gd" id="2_qb3vv"]
+[ext_resource type="PackedScene" uid="uid://duw766cio2ckl" path="res://scenes/spawnable/effects/explosions/explosion_small.tscn" id="3_vcs6p"]
+[ext_resource type="Texture2D" uid="uid://dcdml1im8cyu3" path="res://graphics/bombs/14.png" id="4_ixhro"]
+[ext_resource type="Texture2D" uid="uid://d07vr0nicmwel" path="res://graphics/bombs/arrow1.png" id="5_gmyov"]
+
+[sub_resource type="Resource" id="Resource_lblmn"]
+script = ExtResource("2_qb3vv")
+speed = 900.0
+angle = 0.0
+angular_velocity = 0.0
+add = true
+metadata/_custom_type_script = "uid://cvspe21hpi8q0"
+
+[sub_resource type="Resource" id="Resource_ogxf7"]
+script = ExtResource("2_qb3vv")
+speed = 900.0
+angle = -3.14159
+angular_velocity = 0.0
+add = true
+metadata/_custom_type_script = "uid://cvspe21hpi8q0"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dobut"]
+radius = 32.0
+
+[node name="BombSplitter2Horizontal" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_ixhro")
+spawns = Array[ExtResource("2_qb3vv")]([SubResource("Resource_lblmn"), SubResource("Resource_ogxf7")])
+explosion_scene = ExtResource("3_vcs6p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dobut")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_ixhro")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+top_level = true
+z_index = 1
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_gmyov")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../Arrow")
+update_rotation = false
+update_scale = false

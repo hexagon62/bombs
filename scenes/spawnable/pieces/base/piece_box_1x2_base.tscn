@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dofutwystc6o2"]
+
+[ext_resource type="PackedScene" uid="uid://esk1hywq045o" path="res://scenes/spawnable/pieces/base/piece_base.tscn" id="1_35wgk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1et7b"]
+size = Vector2(64, 32)
+
+[node name="PieceBox1x2Base" instance=ExtResource("1_35wgk")]
+max_health = 200.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_1et7b")
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2(16, 0)
+
+[node name="FireParticles" parent="." index="2"]
+position = Vector2(16, 0)
+
+[node name="RemoteTransform2D" parent="." index="3"]
+position = Vector2(16, 0)

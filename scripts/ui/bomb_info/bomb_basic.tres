@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BombInfo" load_steps=4 format=3 uid="uid://dwkk7aaqja80u"]
+
+[ext_resource type="Texture2D" uid="uid://bq73wil3baxr0" path="res://graphics/icons/icon04.png" id="1_rockq"]
+[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info.gd" id="2_boxfw"]
+[ext_resource type="PackedScene" uid="uid://b42xiiyhrw7b8" path="res://scenes/spawnable/bombs/bomb_basic.tscn" id="2_s8hyc"]
+
+[resource]
+script = ExtResource("2_boxfw")
+icon = ExtResource("1_rockq")
+name = "Basic Bomb"
+short_name = "Basic Bomb"
+flavor_name = "Eggstremely Eggciting Eggspearmint"
+description = "A simple bomb that deals more damage to buildings than other bombs."
+flavor_description = "The little creature in this egg has proven to be quite destructive.
+
+I know because last time I tried to get it to crawl out of its shell, my lab was left with a hole in the ceiling. I'll never know what the little guy looks like."
+scene = ExtResource("2_s8hyc")
+requires_next_step = false
+children_spawned = 1
+metadata/_custom_type_script = "uid://cjoklwjj6rv06"

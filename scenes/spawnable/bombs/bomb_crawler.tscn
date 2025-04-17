@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://b3q7a3q8v3hrk"]
+
+[ext_resource type="Script" uid="uid://bslgmwe3o1675" path="res://scripts/bombs/bomb_crawler.gd" id="1_v41bu"]
+[ext_resource type="Texture2D" uid="uid://bf1d3o3xvp0sv" path="res://graphics/bombs/01.png" id="1_vmpc7"]
+[ext_resource type="PackedScene" uid="uid://duw766cio2ckl" path="res://scenes/spawnable/effects/explosions/explosion_small.tscn" id="2_p25kj"]
+[ext_resource type="Texture2D" uid="uid://cmf6aktwdvv8w" path="res://graphics/bombs/hampter.png" id="3_r1qjk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v41bu"]
+radius = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqseu"]
+atlas = ExtResource("3_r1qjk")
+region = Rect2(0, 0, 310, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihckj"]
+atlas = ExtResource("3_r1qjk")
+region = Rect2(310, 0, 310, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpfjn"]
+atlas = ExtResource("3_r1qjk")
+region = Rect2(620, 0, 310, 310)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5wfl"]
+atlas = ExtResource("1_vmpc7")
+region = Rect2(0, 0, 268, 257)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ubtqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqseu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihckj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpfjn")
+}],
+"loop": true,
+"name": &"crawl",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5wfl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="BombCrawler" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 5
+custom_integrator = true
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 32
+script = ExtResource("1_v41bu")
+explosion_scene = ExtResource("2_p25kj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v41bu")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../Visuals")
+update_rotation = false
+update_scale = false
+
+[node name="Visuals" type="Node2D" parent="."]
+top_level = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_ubtqy")
+autoplay = "default"
+
+[connection signal="crawl_ended" from="." to="Visuals/AnimatedSprite2D" method="set_animation" binds= [&"default"]]
+[connection signal="crawl_left_began" from="." to="Visuals/AnimatedSprite2D" method="set_flip_v" binds= [true]]
+[connection signal="crawl_left_began" from="." to="Visuals/AnimatedSprite2D" method="set_flip_h" binds= [true]]
+[connection signal="crawl_left_began" from="." to="Visuals/AnimatedSprite2D" method="set_animation" binds= [&"crawl"]]
+[connection signal="crawl_right_began" from="." to="Visuals/AnimatedSprite2D" method="set_flip_v" binds= [false]]
+[connection signal="crawl_right_began" from="." to="Visuals/AnimatedSprite2D" method="set_flip_h" binds= [true]]
+[connection signal="crawl_right_began" from="." to="Visuals/AnimatedSprite2D" method="set_animation" binds= [&"crawl"]]

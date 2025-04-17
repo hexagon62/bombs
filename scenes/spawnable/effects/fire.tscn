@@ -1,0 +1,66 @@
+[gd_scene load_steps=14 format=3 uid="uid://bpblmr7mmrgon"]
+
+[ext_resource type="Texture2D" uid="uid://by8732nf3skqx" path="res://graphics/effects/explosion.png" id="1_t43i6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38gwk"]
+atlas = ExtResource("1_t43i6")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="Curve" id="Curve_kj7ui"]
+_data = [Vector2(0, 1), 0.0, -1.0, 0, 1, Vector2(1, 0), -1.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sj86p"]
+curve = SubResource("Curve_kj7ui")
+
+[sub_resource type="Curve" id="Curve_4apc3"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 2.0, 0, 1, Vector2(1, 1), 2.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_4c76b"]
+curve = SubResource("Curve_4apc3")
+
+[sub_resource type="Gradient" id="Gradient_rvvg8"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mrvkd"]
+gradient = SubResource("Gradient_rvvg8")
+
+[sub_resource type="Curve" id="Curve_m5ytk"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_e5vx6"]
+curve = SubResource("Curve_m5ytk")
+
+[sub_resource type="Curve" id="Curve_durcr"]
+_limits = [0.0, 0.25, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.25, 0, 1, Vector2(1, 0.25), 0.25, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_e1cs7"]
+curve = SubResource("Curve_durcr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g4b3i"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(16, 16, 1)
+angle_min = -240.0
+angle_max = 240.0
+angle_curve = SubResource("CurveTexture_4c76b")
+gravity = Vector3(0, -98, 0)
+scale_curve = SubResource("CurveTexture_e1cs7")
+color_ramp = SubResource("GradientTexture1D_mrvkd")
+alpha_curve = SubResource("CurveTexture_sj86p")
+emission_curve = SubResource("CurveTexture_e5vx6")
+
+[node name="FireParticles" type="GPUParticles2D"]
+physics_interpolation_mode = 2
+z_index = 5
+emitting = false
+amount = 64
+texture = SubResource("AtlasTexture_38gwk")
+fixed_fps = 144
+draw_order = 2
+process_material = SubResource("ParticleProcessMaterial_g4b3i")

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BombInfo" load_steps=4 format=3 uid="uid://c7kofbw04o3vf"]
+
+[ext_resource type="Texture2D" uid="uid://dy2bwerpja534" path="res://graphics/icons/icon01.png" id="1_xfsjs"]
+[ext_resource type="PackedScene" uid="uid://b2dycsnj2n4i0" path="res://scenes/spawnable/bombs/bomb_flying.tscn" id="2_ns7ne"]
+[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info.gd" id="2_tkm46"]
+
+[resource]
+script = ExtResource("2_tkm46")
+icon = ExtResource("1_xfsjs")
+name = "Flying Bomb"
+short_name = "Flying Bomb"
+flavor_name = "Bee-gg"
+description = "A bomb that flies in the direction it was pushed."
+flavor_description = "Despite its small wings, it is capable of flying towards buildings. Provided the other bombs gave it some direction to go in.
+
+Otherwise it just flies where its dumb face is facing."
+scene = ExtResource("2_ns7ne")
+requires_next_step = false
+children_spawned = 1
+metadata/_custom_type_script = "uid://cjoklwjj6rv06"

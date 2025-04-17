@@ -1,0 +1,12 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3p5fsvgojws2"]
+
+[ext_resource type="PackedScene" uid="uid://cjuurvaav2eaq" path="res://scenes/spawnable/effects/debris/debris_base.tscn" id="1_sfjfl"]
+[ext_resource type="Texture2D" uid="uid://bl4lshd73uh52" path="res://graphics/debris/red_broken_piece_01.png" id="2_yirb8"]
+[ext_resource type="Texture2D" uid="uid://bq25jdfjfhupp" path="res://graphics/debris/red_broken_piece_02.png" id="3_cp2kk"]
+[ext_resource type="Texture2D" uid="uid://bta6i6bloq3vu" path="res://graphics/debris/red_broken_piece_03.png" id="4_ra17y"]
+[ext_resource type="Texture2D" uid="uid://ctjyg2mttf2tc" path="res://graphics/debris/red_broken_piece_04.png" id="5_xt7xm"]
+[ext_resource type="Texture2D" uid="uid://cv4oa0ayeadpv" path="res://graphics/debris/red_broken_piece_05.png" id="6_8ujs3"]
+[ext_resource type="Texture2D" uid="uid://cxf2qhhn0hwex" path="res://graphics/debris/red_broken_piece_06.png" id="7_xrltd"]
+
+[node name="DebrisRed" instance=ExtResource("1_sfjfl")]
+textures = Array[Texture2D]([ExtResource("2_yirb8"), ExtResource("3_cp2kk"), ExtResource("4_ra17y"), ExtResource("5_xt7xm"), ExtResource("6_8ujs3"), ExtResource("7_xrltd")])

@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2dycsnj2n4i0"]
+
+[ext_resource type="Script" uid="uid://ctr1bb54q8egw" path="res://scripts/bombs/bomb_flying.gd" id="1_n7hh2"]
+[ext_resource type="PackedScene" uid="uid://duw766cio2ckl" path="res://scenes/spawnable/effects/explosions/explosion_small.tscn" id="2_ua3fe"]
+[ext_resource type="Texture2D" uid="uid://cnx37odbxklqb" path="res://graphics/bombs/beenimation.png" id="3_lwwbr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ptq8"]
+radius = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua3fe"]
+atlas = ExtResource("3_lwwbr")
+region = Rect2(0, 0, 294, 294)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sjav"]
+atlas = ExtResource("3_lwwbr")
+region = Rect2(294, 0, 294, 294)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u7ptv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua3fe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sjav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="BombFlying" type="RigidBody2D" groups=["bomb"]]
+collision_layer = 2
+collision_mask = 5
+gravity_scale = 0.0
+continuous_cd = 1
+linear_damp_mode = 1
+script = ExtResource("1_n7hh2")
+explosion_scene = ExtResource("2_ua3fe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4ptq8")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../Visuals")
+update_rotation = false
+update_scale = false
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Visuals"]
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_u7ptv")
+autoplay = "default"
+frame_progress = 0.19948

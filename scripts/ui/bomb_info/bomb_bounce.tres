@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BombInfo" load_steps=4 format=3 uid="uid://d0hnlpb5l53xx"]
+
+[ext_resource type="Texture2D" uid="uid://4qtdj0rbx6sk" path="res://graphics/icons/icon02.png" id="1_2j2of"]
+[ext_resource type="PackedScene" uid="uid://ddodgiyhniwxi" path="res://scenes/spawnable/bombs/bomb_bounce.tscn" id="2_j6rvl"]
+[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info.gd" id="2_y32ve"]
+
+[resource]
+script = ExtResource("2_y32ve")
+icon = ExtResource("1_2j2of")
+name = "Bouncy Bomb"
+short_name = "Bouncy Bomb"
+flavor_name = "John McBounce"
+description = "Bounces off of surfaces easily."
+flavor_description = "No, I did not just shove a bomb in a deformed tennis ball! This is an egg!
+
+I wanted to call it the \"Eggstra Low Friction Egg\", but my assistant won a game of Rock Paper Scissors against me."
+scene = ExtResource("2_j6rvl")
+requires_next_step = false
+children_spawned = 1
+metadata/_custom_type_script = "uid://cjoklwjj6rv06"

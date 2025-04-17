@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://ev3yngmn8pof"]
+
+[ext_resource type="Script" uid="uid://caged56bh2l12" path="res://scripts/bombs/bomb_with_custom_spawns.gd" id="1_mdmxl"]
+[ext_resource type="Script" uid="uid://cvspe21hpi8q0" path="res://scripts/bombs/bomb_spawn_parameters.gd" id="2_vg1kc"]
+[ext_resource type="PackedScene" uid="uid://duw766cio2ckl" path="res://scenes/spawnable/effects/explosions/explosion_small.tscn" id="3_1y5ln"]
+[ext_resource type="Texture2D" uid="uid://5d6oxmkb7kb2" path="res://graphics/bombs/11.png" id="4_mdmxl"]
+[ext_resource type="Texture2D" uid="uid://btmpn0u7vh1id" path="res://graphics/bombs/arrow2.png" id="5_v8sbk"]
+
+[sub_resource type="Resource" id="Resource_ogxf7"]
+script = ExtResource("2_vg1kc")
+speed = 900.0
+angle = 0.0
+angular_velocity = 0.0
+add = true
+metadata/_custom_type_script = "uid://cvspe21hpi8q0"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dobut"]
+radius = 32.0
+
+[node name="BombLauncherRight" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_mdmxl")
+spawns = Array[ExtResource("2_vg1kc")]([SubResource("Resource_ogxf7")])
+explosion_impulse = 1000.0
+explosion_scene = ExtResource("3_1y5ln")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dobut")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_mdmxl")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+top_level = true
+z_index = 1
+rotation = 1.5708
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_v8sbk")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../Arrow")
+update_rotation = false
+update_scale = false

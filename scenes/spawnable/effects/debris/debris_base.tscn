@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjuurvaav2eaq"]
+
+[ext_resource type="Script" uid="uid://qw28id5s5y3u" path="res://scripts/props/debris.gd" id="1_a3tic"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a3tic"]
+friction = 0.5
+bounce = 0.2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3tic"]
+size = Vector2(8, 8)
+
+[node name="DebrisBase" type="RigidBody2D"]
+z_index = -2
+collision_layer = 0
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_a3tic")
+angular_damp = 10.0
+script = ExtResource("1_a3tic")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a3tic")

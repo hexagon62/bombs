@@ -1,0 +1,489 @@
+[gd_scene load_steps=50 format=3 uid="uid://bmuhwemkhad3h"]
+
+[ext_resource type="Script" uid="uid://bm8j2a5v8n737" path="res://scripts/level.gd" id="1_0nxvq"]
+[ext_resource type="PackedScene" uid="uid://dp4s0w14i1a8f" path="res://scenes/spawnable/pieces/roof/piece_roof_left.tscn" id="1_jmx14"]
+[ext_resource type="Texture2D" uid="uid://cyatskav1cey6" path="res://graphics/backgrounds/bg03.png" id="2_1u7m5"]
+[ext_resource type="PackedScene" uid="uid://du7swqp8isopm" path="res://scenes/spawnable/pieces/roof/piece_roof.tscn" id="2_eaa0b"]
+[ext_resource type="PackedScene" uid="uid://btg21sx2dbdbq" path="res://scenes/spawnable/pieces/blue/piece_box_1x2_blue_h.tscn" id="2_hfwtw"]
+[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info.gd" id="2_jlhf4"]
+[ext_resource type="PackedScene" uid="uid://cqhbtxp1py3ft" path="res://scenes/spawnable/pieces/blue/piece_box_1x1_blue_a.tscn" id="2_v45ci"]
+[ext_resource type="PackedScene" uid="uid://da4o834uopusf" path="res://scenes/spawnable/pieces/blue/piece_box_1x2_blue_g.tscn" id="3_2mu0v"]
+[ext_resource type="PackedScene" uid="uid://x1ucxeyxstwd" path="res://scenes/spawnable/pieces/blue/piece_box_1x1_blue_b.tscn" id="3_48ne7"]
+[ext_resource type="PackedScene" uid="uid://bmbdoyp4vfmk" path="res://scenes/spawnable/pieces/roof/piece_roof_right.tscn" id="3_eaa0b"]
+[ext_resource type="Resource" uid="uid://dwkk7aaqja80u" path="res://scripts/ui/bomb_info/bomb_basic.tres" id="3_gv2o7"]
+[ext_resource type="PackedScene" uid="uid://h3m6o5m8xajk" path="res://scenes/spawnable/pieces/blue/piece_box_1x1_blue_c.tscn" id="4_6xh4u"]
+[ext_resource type="Resource" uid="uid://b7wcq7b130g1c" path="res://scripts/ui/bomb_info/bomb_splitter2_horizontal.tres" id="4_jlhf4"]
+[ext_resource type="PackedScene" uid="uid://bm0e6rdyfjauo" path="res://scenes/spawnable/pieces/blue/piece_box_1x2_blue_d.tscn" id="4_jmx14"]
+[ext_resource type="Resource" uid="uid://6qkjbty3lsi5" path="res://scripts/ui/bomb_info/bomb_launcher_down.tres" id="5_5vl2c"]
+[ext_resource type="PackedScene" uid="uid://c0okpl2afywcx" path="res://scenes/spawnable/pieces/blue/piece_box_1x2_blue_c.tscn" id="5_eaa0b"]
+[ext_resource type="Resource" uid="uid://ekrnir3mnrmv" path="res://scripts/ui/bomb_info/bomb_splitter2_vertical.tres" id="5_gv2o7"]
+[ext_resource type="Resource" uid="uid://bttnpmxgqfa64" path="res://scripts/ui/bomb_info/bomb_launcher_left.tres" id="6_6g246"]
+[ext_resource type="PackedScene" uid="uid://cv65xw4l5xo5l" path="res://scenes/spawnable/static/static_fr_slope_1x1_grass.tscn" id="6_cj4me"]
+[ext_resource type="Resource" uid="uid://g8ktbm4k7wgo" path="res://scripts/ui/bomb_info/bomb_launcher_up.tres" id="6_mrmmo"]
+[ext_resource type="PackedScene" uid="uid://c730hxb35mstx" path="res://scenes/spawnable/pieces/blue/piece_box_1x2_blue_f.tscn" id="7_a5rnb"]
+[ext_resource type="Resource" uid="uid://c3u8vtm6jhbqm" path="res://scripts/ui/bomb_info/bomb_launcher_right.tres" id="7_rnt0l"]
+[ext_resource type="PackedScene" uid="uid://bwxcuxxaiyfta" path="res://scenes/spawnable/static/static_fl_slope_1x4_grass.tscn" id="8_vptxo"]
+[ext_resource type="Resource" uid="uid://d0hnlpb5l53xx" path="res://scripts/ui/bomb_info/bomb_bounce.tres" id="10_6g246"]
+[ext_resource type="Resource" uid="uid://cujiiklh5nd6b" path="res://scripts/ui/bomb_info/bomb_suck.tres" id="11_rnt0l"]
+[ext_resource type="Resource" uid="uid://mhf8rgl70c5l" path="res://scripts/ui/bomb_info/bomb_flame.tres" id="12_ve23l"]
+[ext_resource type="PackedScene" uid="uid://52saq4c8n7se" path="res://scenes/spawnable/static/static_box_1x8_grass.tscn" id="13_a5rnb"]
+[ext_resource type="Resource" uid="uid://c7kofbw04o3vf" path="res://scripts/ui/bomb_info/bomb_flying.tres" id="13_jigj2"]
+[ext_resource type="PackedScene" uid="uid://ciarp0nujxgei" path="res://scenes/spawnable/static/static_fl_slope_1x1_grass.tscn" id="14_fqldq"]
+[ext_resource type="Resource" uid="uid://oagxqy6rpb51" path="res://scripts/ui/bomb_info/bomb_antigravity.tres" id="14_y80st"]
+[ext_resource type="PackedScene" uid="uid://c4pk25k8c44d8" path="res://scenes/spawnable/static/static_box_1x4_grass.tscn" id="15_os2yb"]
+[ext_resource type="Resource" uid="uid://dnamw7x4xrnsl" path="res://scripts/ui/bomb_info/bomb_crawler.tres" id="15_t8w0x"]
+[ext_resource type="PackedScene" uid="uid://b4hyxdxsei6fq" path="res://scenes/spawnable/static/static_box_1x2_grass.tscn" id="16_v6k17"]
+[ext_resource type="PackedScene" uid="uid://yppy5agvca1f" path="res://scenes/spawnable/static/static_box_1x1_grass.tscn" id="17_upsmr"]
+[ext_resource type="PackedScene" uid="uid://bvlkuni0xdabb" path="res://scenes/spawnable/pieces/blue/piece_box_1x2_blue_b.tscn" id="26_4g8k6"]
+[ext_resource type="PackedScene" uid="uid://m3a0c6snoiku" path="res://scenes/spawnable/static/static_fr_slope_1x4_grass.tscn" id="27_0d6o1"]
+[ext_resource type="PackedScene" uid="uid://tno8k4ml22gp" path="res://scenes/spawnable/pieces/blue/piece_box_1x2_blue_a.tscn" id="27_y80st"]
+[ext_resource type="PackedScene" uid="uid://dhx8o8y8tgj7f" path="res://scenes/spawnable/pieces/blue/piece_box_1x2_blue_e.tscn" id="30_t8w0x"]
+[ext_resource type="PackedScene" uid="uid://cvdopgruy50xn" path="res://scenes/spawnable/pieces/red/piece_box_1x1_red_b.tscn" id="37_0e4k1"]
+[ext_resource type="PackedScene" uid="uid://b5ymdc0a075kd" path="res://scenes/spawnable/pieces/red/piece_box_1x1_red_a.tscn" id="38_gsoyx"]
+[ext_resource type="PackedScene" uid="uid://utoxr1gnev1r" path="res://scenes/spawnable/pieces/red/piece_box_1x2_red_f.tscn" id="39_2orbd"]
+[ext_resource type="PackedScene" uid="uid://ciidb0ag2ba62" path="res://scenes/spawnable/pieces/red/piece_box_1x2_red_g.tscn" id="40_26rt0"]
+[ext_resource type="PackedScene" uid="uid://st750k7xf6h5" path="res://scenes/spawnable/pieces/red/piece_box_1x2_red_b.tscn" id="41_e6x8h"]
+[ext_resource type="PackedScene" uid="uid://cw28rr2pov73p" path="res://scenes/spawnable/pieces/red/piece_box_1x2_red_h.tscn" id="42_4wpc7"]
+[ext_resource type="PackedScene" uid="uid://b3kurtd1lh07n" path="res://scenes/spawnable/pieces/red/piece_box_1x1_red_c.tscn" id="43_ib3ll"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6xh4u"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cyt5c"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7x1jh"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hfwtw"]
+normal = Vector2(-1, 0)
+
+[node name="TestLevel" type="Node2D" groups=["level"]]
+script = ExtResource("1_0nxvq")
+bombs_available = Array[ExtResource("2_jlhf4")]([ExtResource("3_gv2o7"), ExtResource("12_ve23l"), ExtResource("6_mrmmo"), ExtResource("5_5vl2c"), ExtResource("6_6g246"), ExtResource("7_rnt0l"), ExtResource("5_gv2o7"), ExtResource("4_jlhf4"), ExtResource("10_6g246"), ExtResource("11_rnt0l"), ExtResource("13_jigj2"), ExtResource("14_y80st"), ExtResource("15_t8w0x"), null])
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(640, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1u7m5")
+
+[node name="Static" type="Node2D" parent="."]
+
+[node name="WorldBoundaries" type="Node2D" parent="Static"]
+
+[node name="Top" type="StaticBody2D" parent="Static/WorldBoundaries"]
+position = Vector2(640, -1000)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static/WorldBoundaries/Top"]
+shape = SubResource("WorldBoundaryShape2D_6xh4u")
+
+[node name="Bottom" type="StaticBody2D" parent="Static/WorldBoundaries"]
+position = Vector2(640, 720)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static/WorldBoundaries/Bottom"]
+shape = SubResource("WorldBoundaryShape2D_cyt5c")
+
+[node name="Left" type="StaticBody2D" parent="Static/WorldBoundaries"]
+position = Vector2(0, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static/WorldBoundaries/Left"]
+shape = SubResource("WorldBoundaryShape2D_7x1jh")
+
+[node name="Right" type="StaticBody2D" parent="Static/WorldBoundaries"]
+position = Vector2(1280, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static/WorldBoundaries/Right"]
+shape = SubResource("WorldBoundaryShape2D_hfwtw")
+
+[node name="StaticBox1x8Grass" parent="Static" instance=ExtResource("13_a5rnb")]
+position = Vector2(112, 704)
+
+[node name="StaticBox1x8Grass2" parent="Static" instance=ExtResource("13_a5rnb")]
+position = Vector2(368, 704)
+
+[node name="StaticBox1x8Grass3" parent="Static" instance=ExtResource("13_a5rnb")]
+position = Vector2(624, 704)
+
+[node name="StaticBox1x8Grass4" parent="Static" instance=ExtResource("13_a5rnb")]
+position = Vector2(880, 704)
+
+[node name="StaticBox1x8Grass5" parent="Static" instance=ExtResource("13_a5rnb")]
+position = Vector2(1136, 704)
+
+[node name="StaticFLSlope1x1Grass2" parent="Static" instance=ExtResource("14_fqldq")]
+position = Vector2(1072, 640)
+
+[node name="StaticFLSlope1x1Grass3" parent="Static" instance=ExtResource("14_fqldq")]
+position = Vector2(1104, 608)
+
+[node name="StaticFLSlope1x1Grass4" parent="Static" instance=ExtResource("14_fqldq")]
+position = Vector2(1136, 576)
+
+[node name="StaticFLSlope1x1Grass5" parent="Static" instance=ExtResource("14_fqldq")]
+position = Vector2(1168, 544)
+
+[node name="StaticFLSlope1x1Grass6" parent="Static" instance=ExtResource("14_fqldq")]
+position = Vector2(1200, 512)
+
+[node name="StaticFLSlope1x1Grass7" parent="Static" instance=ExtResource("14_fqldq")]
+position = Vector2(1232, 480)
+
+[node name="StaticBox1x4Grass" parent="Static" instance=ExtResource("15_os2yb")]
+position = Vector2(1104, 672)
+
+[node name="StaticBox1x4Grass2" parent="Static" instance=ExtResource("15_os2yb")]
+position = Vector2(1136, 640)
+
+[node name="StaticBox1x4Grass3" parent="Static" instance=ExtResource("15_os2yb")]
+position = Vector2(1168, 608)
+
+[node name="StaticBox1x4Grass4" parent="Static" instance=ExtResource("15_os2yb")]
+position = Vector2(1200, 576)
+
+[node name="StaticBox1x2Grass" parent="Static" instance=ExtResource("16_v6k17")]
+position = Vector2(1200, 544)
+
+[node name="StaticBox1x2Grass2" parent="Static" instance=ExtResource("16_v6k17")]
+position = Vector2(1232, 512)
+
+[node name="StaticBox1x1Grass" parent="Static" instance=ExtResource("17_upsmr")]
+position = Vector2(1264, 480)
+
+[node name="StaticBox1x1Grass2" parent="Static" instance=ExtResource("17_upsmr")]
+position = Vector2(1264, 544)
+
+[node name="StaticBox1x1Grass3" parent="Static" instance=ExtResource("17_upsmr")]
+position = Vector2(1264, 608)
+
+[node name="StaticBox1x1Grass4" parent="Static" instance=ExtResource("17_upsmr")]
+position = Vector2(1264, 672)
+
+[node name="StaticBox1x2Grass3" parent="Static" instance=ExtResource("16_v6k17")]
+position = Vector2(1200, 672)
+
+[node name="StaticBox1x2Grass4" parent="Static" instance=ExtResource("16_v6k17")]
+position = Vector2(1232, 640)
+
+[node name="StaticBox1x8Grass6" parent="Static" instance=ExtResource("13_a5rnb")]
+position = Vector2(720, 448)
+
+[node name="StaticBox1x4Grass5" parent="Static" instance=ExtResource("15_os2yb")]
+position = Vector2(528, 448)
+
+[node name="StaticBox1x1Grass5" parent="Static" instance=ExtResource("17_upsmr")]
+position = Vector2(880, 448)
+
+[node name="StaticBox1x2Grass5" parent="Static" instance=ExtResource("16_v6k17")]
+position = Vector2(432, 448)
+
+[node name="StaticFRSlope1x1Grass" parent="Static" instance=ExtResource("6_cj4me")]
+position = Vector2(432, 416)
+
+[node name="StaticFRSlope1x4Grass" parent="Static" instance=ExtResource("27_0d6o1")]
+position = Vector2(1264, 416)
+rotation = -1.57079
+
+[node name="StaticFLSlope1x4Grass" parent="Static" instance=ExtResource("8_vptxo")]
+position = Vector2(976, 672)
+
+[node name="Pieces" type="Node2D" parent="."]
+
+[node name="PieceBox1x2BlueF2" parent="Pieces" instance=ExtResource("7_a5rnb")]
+modulate = Color(0.855917, 0.888295, 0.964004, 1)
+position = Vector2(208, 672)
+
+[node name="PieceBox1x1BlueC" parent="Pieces" instance=ExtResource("4_6xh4u")]
+modulate = Color(0.985586, 0.907335, 0.888006, 1)
+position = Vector2(272, 672)
+
+[node name="PieceBox1x1BlueC2" parent="Pieces" instance=ExtResource("4_6xh4u")]
+modulate = Color(0.872895, 0.86413, 0.971719, 1)
+position = Vector2(304, 672)
+
+[node name="PieceBox1x1BlueB" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.997266, 0.913785, 0.881799, 1)
+position = Vector2(272, 640)
+
+[node name="PieceBox1x1BlueB2" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.859566, 0.987876, 0.915494, 1)
+position = Vector2(304, 640)
+
+[node name="PieceBox1x2BlueB" parent="Pieces" instance=ExtResource("26_4g8k6")]
+modulate = Color(0.949817, 0.997884, 0.888346, 1)
+position = Vector2(208, 640)
+
+[node name="PieceBox1x2BlueA" parent="Pieces" instance=ExtResource("27_y80st")]
+modulate = Color(0.968091, 0.925181, 0.902384, 1)
+position = Vector2(240, 608)
+
+[node name="PieceBox1x1BlueB3" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.960525, 0.92248, 0.928499, 1)
+position = Vector2(208, 608)
+
+[node name="PieceBox1x1BlueB4" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.951166, 0.899859, 0.987002, 1)
+position = Vector2(304, 608)
+
+[node name="PieceBox1x2BlueC" parent="Pieces" instance=ExtResource("5_eaa0b")]
+modulate = Color(0.935233, 0.902866, 0.958149, 1)
+position = Vector2(208, 576)
+
+[node name="PieceBox1x2BlueD" parent="Pieces" instance=ExtResource("4_jmx14")]
+modulate = Color(0.870173, 0.957345, 0.851912, 1)
+position = Vector2(272, 576)
+
+[node name="PieceBox1x2BlueE" parent="Pieces" instance=ExtResource("30_t8w0x")]
+modulate = Color(0.907173, 0.90612, 0.971774, 1)
+position = Vector2(272, 544)
+
+[node name="PieceBox1x2BlueG" parent="Pieces" instance=ExtResource("3_2mu0v")]
+modulate = Color(0.865736, 0.984321, 0.926976, 1)
+position = Vector2(208, 544)
+
+[node name="PieceBox1x2BlueH" parent="Pieces" instance=ExtResource("2_hfwtw")]
+modulate = Color(0.930603, 0.870817, 0.862871, 1)
+position = Vector2(208, 512)
+
+[node name="PieceBox1x2BlueB2" parent="Pieces" instance=ExtResource("26_4g8k6")]
+modulate = Color(0.882674, 0.890219, 0.962681, 1)
+position = Vector2(272, 512)
+
+[node name="PieceBox1x2BlueF3" parent="Pieces" instance=ExtResource("7_a5rnb")]
+modulate = Color(0.854576, 0.89013, 0.939974, 1)
+position = Vector2(208, 480)
+
+[node name="PieceBox1x2BlueF4" parent="Pieces" instance=ExtResource("7_a5rnb")]
+modulate = Color(0.957348, 0.941548, 0.871644, 1)
+position = Vector2(272, 480)
+
+[node name="PieceBox1x2BlueF5" parent="Pieces" instance=ExtResource("7_a5rnb")]
+modulate = Color(0.857863, 0.90951, 0.853892, 1)
+position = Vector2(208, 448)
+
+[node name="PieceBox1x2BlueF6" parent="Pieces" instance=ExtResource("7_a5rnb")]
+modulate = Color(0.859862, 0.931753, 0.855875, 1)
+position = Vector2(272, 448)
+
+[node name="PieceBox1x2BlueG2" parent="Pieces" instance=ExtResource("3_2mu0v")]
+modulate = Color(0.893716, 0.966733, 0.966097, 1)
+position = Vector2(208, 416)
+
+[node name="PieceBox1x2BlueC2" parent="Pieces" instance=ExtResource("5_eaa0b")]
+modulate = Color(0.952482, 0.887936, 0.894375, 1)
+position = Vector2(272, 416)
+
+[node name="PieceBox1x2BlueC3" parent="Pieces" instance=ExtResource("5_eaa0b")]
+modulate = Color(0.980043, 0.961514, 0.897504, 1)
+position = Vector2(272, 384)
+
+[node name="PieceBox1x2BlueE2" parent="Pieces" instance=ExtResource("30_t8w0x")]
+modulate = Color(0.996786, 0.933912, 0.92921, 1)
+position = Vector2(208, 384)
+
+[node name="PieceBox1x2BlueH2" parent="Pieces" instance=ExtResource("2_hfwtw")]
+modulate = Color(0.91404, 0.997751, 0.876833, 1)
+position = Vector2(272, 352)
+
+[node name="PieceBox1x2BlueH3" parent="Pieces" instance=ExtResource("2_hfwtw")]
+modulate = Color(0.892245, 0.995575, 0.865016, 1)
+position = Vector2(208, 352)
+
+[node name="PieceBox1x2BlueG3" parent="Pieces" instance=ExtResource("3_2mu0v")]
+modulate = Color(0.907646, 0.938231, 0.982635, 1)
+position = Vector2(208, 320)
+
+[node name="PieceBox1x2BlueA2" parent="Pieces" instance=ExtResource("27_y80st")]
+modulate = Color(0.943732, 0.856369, 0.958307, 1)
+position = Vector2(208, 288)
+
+[node name="PieceBox1x2BlueA3" parent="Pieces" instance=ExtResource("27_y80st")]
+modulate = Color(0.897083, 0.854643, 0.871485, 1)
+position = Vector2(272, 288)
+
+[node name="PieceBox1x2BlueB3" parent="Pieces" instance=ExtResource("26_4g8k6")]
+modulate = Color(0.985091, 0.88001, 0.92825, 1)
+position = Vector2(272, 320)
+
+[node name="PieceBox1x1BlueA" parent="Pieces" instance=ExtResource("2_v45ci")]
+modulate = Color(0.867818, 0.887162, 0.912588, 1)
+position = Vector2(208, 256)
+
+[node name="PieceBox1x1BlueA2" parent="Pieces" instance=ExtResource("2_v45ci")]
+modulate = Color(0.969326, 0.893477, 0.949251, 1)
+position = Vector2(240, 256)
+
+[node name="PieceBox1x1BlueA3" parent="Pieces" instance=ExtResource("2_v45ci")]
+modulate = Color(0.996995, 0.918129, 0.993614, 1)
+position = Vector2(272, 256)
+
+[node name="PieceBox1x1BlueA4" parent="Pieces" instance=ExtResource("2_v45ci")]
+modulate = Color(0.938865, 0.865488, 0.996941, 1)
+position = Vector2(304, 256)
+
+[node name="PieceBox1x1BlueB5" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.977024, 0.850837, 0.872834, 1)
+position = Vector2(208, 224)
+
+[node name="PieceBox1x1BlueB6" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.905915, 0.862218, 0.888399, 1)
+position = Vector2(240, 224)
+
+[node name="PieceBox1x1BlueB7" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.865623, 0.897311, 0.991027, 1)
+position = Vector2(272, 224)
+
+[node name="PieceBox1x1BlueB8" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.994788, 0.925158, 0.960114, 1)
+position = Vector2(304, 224)
+
+[node name="PieceBox1x1BlueC3" parent="Pieces" instance=ExtResource("4_6xh4u")]
+modulate = Color(0.954042, 0.94309, 0.903858, 1)
+position = Vector2(272, 192)
+
+[node name="PieceBox1x1BlueB9" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.852579, 0.889055, 0.910144, 1)
+position = Vector2(240, 192)
+
+[node name="PieceBox1x1BlueB10" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.899094, 0.957533, 0.878458, 1)
+position = Vector2(208, 192)
+
+[node name="PieceBox1x1BlueB11" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.986323, 0.99123, 0.935286, 1)
+position = Vector2(304, 192)
+
+[node name="PieceBox1x2BlueF7" parent="Pieces" instance=ExtResource("7_a5rnb")]
+modulate = Color(0.871404, 0.924733, 0.920406, 1)
+position = Vector2(208, 160)
+
+[node name="PieceBox1x2BlueB4" parent="Pieces" instance=ExtResource("26_4g8k6")]
+modulate = Color(0.923665, 0.880488, 0.92955, 1)
+position = Vector2(272, 160)
+
+[node name="PieceBox1x2BlueB5" parent="Pieces" instance=ExtResource("26_4g8k6")]
+modulate = Color(0.883487, 0.952899, 0.872654, 1)
+position = Vector2(208, 128)
+
+[node name="PieceBox1x2BlueB6" parent="Pieces" instance=ExtResource("26_4g8k6")]
+modulate = Color(0.962721, 0.921225, 0.937867, 1)
+position = Vector2(272, 128)
+
+[node name="PieceBox1x2BlueB7" parent="Pieces" instance=ExtResource("26_4g8k6")]
+modulate = Color(0.972538, 0.972895, 0.955708, 1)
+position = Vector2(208, 96)
+
+[node name="PieceBox1x1BlueB12" parent="Pieces" instance=ExtResource("3_48ne7")]
+modulate = Color(0.963852, 0.941992, 0.945227, 1)
+position = Vector2(272, 96)
+
+[node name="PieceBox1x1BlueC4" parent="Pieces" instance=ExtResource("4_6xh4u")]
+modulate = Color(0.934878, 0.95423, 0.860594, 1)
+position = Vector2(304, 96)
+
+[node name="PieceRoofLeft" parent="Pieces" instance=ExtResource("1_jmx14")]
+modulate = Color(0.902651, 0.95496, 0.988757, 1)
+position = Vector2(208, 64)
+
+[node name="PieceRoof" parent="Pieces" instance=ExtResource("2_eaa0b")]
+modulate = Color(0.980815, 0.952596, 0.911084, 1)
+position = Vector2(240, 64)
+
+[node name="PieceRoof2" parent="Pieces" instance=ExtResource("2_eaa0b")]
+modulate = Color(0.863983, 0.896752, 0.966677, 1)
+position = Vector2(272, 64)
+
+[node name="RoofRight" parent="Pieces" instance=ExtResource("3_eaa0b")]
+modulate = Color(0.95483, 0.886469, 0.965802, 1)
+position = Vector2(304, 64)
+
+[node name="PieceBox1x1RedB" parent="Pieces" instance=ExtResource("37_0e4k1")]
+modulate = Color(0.896353, 0.978808, 0.953253, 1)
+position = Vector2(496, 416)
+
+[node name="PieceBox1x1RedA" parent="Pieces" instance=ExtResource("38_gsoyx")]
+modulate = Color(0.933835, 0.935903, 0.990347, 1)
+position = Vector2(496, 384)
+
+[node name="PieceBox1x2RedF" parent="Pieces" instance=ExtResource("39_2orbd")]
+modulate = Color(0.916983, 0.876543, 0.911277, 1)
+position = Vector2(592, 416)
+
+[node name="PieceBox1x2RedG" parent="Pieces" instance=ExtResource("40_26rt0")]
+modulate = Color(0.982421, 0.991063, 0.9803, 1)
+position = Vector2(656, 416)
+
+[node name="PieceBox1x2RedB" parent="Pieces" instance=ExtResource("41_e6x8h")]
+modulate = Color(0.908813, 0.937399, 0.870809, 1)
+position = Vector2(592, 384)
+
+[node name="PieceBox1x2RedB2" parent="Pieces" instance=ExtResource("41_e6x8h")]
+modulate = Color(0.979067, 0.993826, 0.962869, 1)
+position = Vector2(656, 384)
+
+[node name="PieceBox1x2RedH" parent="Pieces" instance=ExtResource("42_4wpc7")]
+modulate = Color(0.864394, 0.946993, 0.988889, 1)
+position = Vector2(624, 352)
+
+[node name="RoofRight2" parent="Pieces" instance=ExtResource("3_eaa0b")]
+modulate = Color(0.970969, 0.917872, 0.905903, 1)
+position = Vector2(688, 352)
+
+[node name="RoofRight3" parent="Pieces" instance=ExtResource("3_eaa0b")]
+modulate = Color(0.9901, 0.923638, 0.860847, 1)
+position = Vector2(656, 320)
+
+[node name="PieceRoofLeft2" parent="Pieces" instance=ExtResource("1_jmx14")]
+modulate = Color(0.946199, 0.913602, 0.936922, 1)
+position = Vector2(592, 352)
+
+[node name="PieceRoofLeft3" parent="Pieces" instance=ExtResource("1_jmx14")]
+modulate = Color(0.967937, 0.977627, 0.988882, 1)
+position = Vector2(624, 320)
+
+[node name="PieceBox1x1RedC" parent="Pieces" instance=ExtResource("43_ib3ll")]
+modulate = Color(0.86327, 0.988229, 0.993146, 1)
+position = Vector2(784, 416)
+
+[node name="PieceBox1x1RedC2" parent="Pieces" instance=ExtResource("43_ib3ll")]
+modulate = Color(0.869945, 0.928092, 0.930046, 1)
+position = Vector2(816, 416)
+
+[node name="PieceBox1x1RedC3" parent="Pieces" instance=ExtResource("43_ib3ll")]
+modulate = Color(0.857286, 0.944497, 0.964962, 1)
+position = Vector2(784, 384)
+
+[node name="PieceBox1x1RedB2" parent="Pieces" instance=ExtResource("37_0e4k1")]
+modulate = Color(0.991392, 0.88982, 0.988781, 1)
+position = Vector2(816, 384)
+
+[node name="PieceBox1x1RedA2" parent="Pieces" instance=ExtResource("38_gsoyx")]
+modulate = Color(0.966654, 0.996986, 0.969544, 1)
+position = Vector2(816, 352)
+
+[node name="PieceRoofLeft4" parent="Pieces" instance=ExtResource("1_jmx14")]
+modulate = Color(0.938309, 0.981494, 0.992474, 1)
+position = Vector2(784, 352)
+
+[node name="BombSpawnPoint" type="Marker2D" parent="." groups=["bomb_spawn"]]
+position = Vector2(368, 480)
+
+[node name="StaticBox1x1Grass" parent="." instance=ExtResource("17_upsmr")]
+position = Vector2(880, 480)
+
+[node name="StaticBox1x1Grass2" parent="." instance=ExtResource("17_upsmr")]
+position = Vector2(880, 512)
+
+[node name="StaticBox1x1Grass3" parent="." instance=ExtResource("17_upsmr")]
+position = Vector2(880, 544)
+
+[node name="StaticBox1x1Grass4" parent="." instance=ExtResource("17_upsmr")]
+position = Vector2(880, 576)
+
+[node name="StaticBox1x1Grass5" parent="." instance=ExtResource("17_upsmr")]
+position = Vector2(880, 608)
+
+[node name="StaticBox1x1Grass6" parent="." instance=ExtResource("17_upsmr")]
+position = Vector2(880, 640)
+
+[node name="StaticBox1x1Grass7" parent="." instance=ExtResource("17_upsmr")]
+position = Vector2(880, 672)

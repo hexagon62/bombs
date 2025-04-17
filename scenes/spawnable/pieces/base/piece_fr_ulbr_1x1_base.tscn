@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci0i5om5nmtx7"]
+
+[ext_resource type="PackedScene" uid="uid://esk1hywq045o" path="res://scenes/spawnable/pieces/base/piece_base.tscn" id="1_lcr86"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_eus5x"]
+points = PackedVector2Array(-16, -16, 16, 16, -16, 16)
+
+[node name="PieceFRSlope1x1Base" instance=ExtResource("1_lcr86")]
+max_health = 50.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("ConvexPolygonShape2D_eus5x")

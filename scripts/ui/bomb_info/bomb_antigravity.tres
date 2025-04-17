@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BombInfo" load_steps=4 format=3 uid="uid://oagxqy6rpb51"]
+
+[ext_resource type="Texture2D" uid="uid://dtw44jnjsbg0" path="res://graphics/icons/icon06.png" id="1_f5v1w"]
+[ext_resource type="PackedScene" uid="uid://c6sm7bi2wv4v7" path="res://scenes/spawnable/bombs/bomb_antigravity.tscn" id="2_eitn1"]
+[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info.gd" id="3_2lnfc"]
+
+[resource]
+script = ExtResource("3_2lnfc")
+icon = ExtResource("1_f5v1w")
+name = "Antigravity Bomb"
+short_name = "Antigravity Bomb"
+flavor_name = "Anti-hampter"
+description = "A bomb that falls up instead of down."
+flavor_description = "Somehow I managed to create the exact opposite of a hampter. I'm surprised the anti-matter within it isn't annihilating what's around yet, but with a little motivation I can make that happen..."
+scene = ExtResource("2_eitn1")
+requires_next_step = false
+children_spawned = 1
+metadata/_custom_type_script = "uid://cjoklwjj6rv06"

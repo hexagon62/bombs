@@ -1,0 +1,16 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxybvu8wu7373"]
+
+[ext_resource type="PackedScene" uid="uid://dofutwystc6o2" path="res://scenes/spawnable/pieces/base/piece_box_1x2_base.tscn" id="1_frb0i"]
+[ext_resource type="Texture2D" uid="uid://j6lut7ghg88" path="res://graphics/blocks/orange_2block_07.png" id="2_l3r2k"]
+[ext_resource type="Texture2D" uid="uid://bespuqcp36put" path="res://graphics/blocks/orange_2block_02.png" id="3_oxbod"]
+[ext_resource type="Texture2D" uid="uid://drmhxqwq2obby" path="res://graphics/blocks/orange_2block_09.png" id="4_n0i6w"]
+[ext_resource type="PackedScene" uid="uid://5wiiralnk0ol" path="res://scenes/spawnable/effects/debris/debris_orange.tscn" id="5_oxbod"]
+
+[node name="PieceBox1x2OrangeG" instance=ExtResource("1_frb0i")]
+undisturbed_texture = ExtResource("2_l3r2k")
+healthy_texture = ExtResource("3_oxbod")
+damaged_texture = ExtResource("4_n0i6w")
+debris_scene = ExtResource("5_oxbod")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_l3r2k")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctcptvbaa2ejf"]
+
+[ext_resource type="PackedScene" uid="uid://esk1hywq045o" path="res://scenes/spawnable/pieces/base/piece_base.tscn" id="1_hxd4y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lc4c"]
+size = Vector2(32, 32)
+
+[node name="PieceBox1x1Base" instance=ExtResource("1_hxd4y")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_0lc4c")

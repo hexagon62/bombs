@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://du7swqp8isopm"]
+
+[ext_resource type="PackedScene" uid="uid://ctcptvbaa2ejf" path="res://scenes/spawnable/pieces/base/piece_box_1x1_base.tscn" id="1_vamqx"]
+[ext_resource type="Texture2D" uid="uid://buricbks5lsh1" path="res://graphics/blocks/roof_01.png" id="2_uc0c0"]
+
+[node name="PieceRoof" instance=ExtResource("1_vamqx")]
+max_health = 50.0
+undisturbed_texture = ExtResource("2_uc0c0")
+
+[node name="Sprite" parent="." index="1"]
+scale = Vector2(1, 1)
+texture = ExtResource("2_uc0c0")

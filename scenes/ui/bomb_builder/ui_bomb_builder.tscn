@@ -1,0 +1,221 @@
+[gd_scene load_steps=2 format=3 uid="uid://btxvd4c7j5eww"]
+
+[ext_resource type="Script" uid="uid://depn51mpxrcgy" path="res://scripts/ui/bomb_builder.gd" id="1_jvxxx"]
+
+[node name="BombBuilder" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jvxxx")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftHalf" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/LeftHalf"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.4
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/LeftHalf/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/HBoxContainer/LeftHalf/Panel/MarginContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 270)
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+
+[node name="BombPalette" type="HFlowContainer" parent="Panel/HBoxContainer/LeftHalf/Panel/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/LeftHalf"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ColorRect" type="ColorRect" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0.33, 0.33, 0.33, 0.501961)
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main character image
+goes here?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Rect" type="ColorRect" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+color = Color(1, 1, 1, 0.752941)
+
+[node name="VFlowContainer" type="VBoxContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3/Rect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3/Rect/VFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="FlavorNameLabel" type="Label" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3/Rect/VFlowContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+uppercase = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3/Rect/VFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3/Rect/VFlowContainer/MarginContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.560784, 0, 0, 1)
+uppercase = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3/Rect/VFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="DescriptionLabel" type="Label" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3/Rect/VFlowContainer/MarginContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 32)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.560784, 0, 0, 1)
+theme_override_constants/paragraph_spacing = 0
+autowrap_mode = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3/Rect/VFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="FlavorDescriptionLabel" type="Label" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3/Rect/VFlowContainer/MarginContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 32)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -4
+autowrap_mode = 3
+
+[node name="RightHalf" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/RightHalf"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BombStepsScroller" type="ScrollContainer" parent="Panel/HBoxContainer/RightHalf/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+
+[node name="BombStepsContainer" type="VBoxContainer" parent="Panel/HBoxContainer/RightHalf/Panel/BombStepsScroller"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BombCountLabel" type="Label" parent="Panel/HBoxContainer/RightHalf"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Number of bombs that will spawn: 0"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/HBoxContainer/RightHalf"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="GoButton" type="Button" parent="Panel/HBoxContainer/RightHalf/MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "GO"
+
+[connection signal="focus_entered" from="Panel/HBoxContainer/LeftHalf/Panel/MarginContainer/ScrollContainer/BombPalette" to="." method="hide_info"]
+[connection signal="mouse_entered" from="Panel/HBoxContainer/LeftHalf/Panel/MarginContainer/ScrollContainer/BombPalette" to="." method="hide_info"]
+[connection signal="pressed" from="Panel/HBoxContainer/RightHalf/MarginContainer2/GoButton" to="." method="_on_go_button_pressed"]

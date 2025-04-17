@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddodgiyhniwxi"]
+
+[ext_resource type="Script" uid="uid://jugcugfoo4sk" path="res://scripts/bombs/bomb.gd" id="1_hkl2y"]
+[ext_resource type="PackedScene" uid="uid://duw766cio2ckl" path="res://scenes/spawnable/effects/explosions/explosion_small.tscn" id="2_e3fpd"]
+[ext_resource type="Texture2D" uid="uid://b0n6ceiul0373" path="res://graphics/bombs/06.png" id="3_hkl2y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hkl2y"]
+friction = 0.0
+bounce = 8.15
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ptq8"]
+radius = 32.0
+
+[node name="BombBasic" type="RigidBody2D" groups=["bomb"]]
+collision_layer = 2
+collision_mask = 5
+physics_material_override = SubResource("PhysicsMaterial_hkl2y")
+gravity_scale = 2.0
+continuous_cd = 1
+linear_damp_mode = 1
+angular_damp_mode = 1
+script = ExtResource("1_hkl2y")
+explosion_scene = ExtResource("2_e3fpd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4ptq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_hkl2y")

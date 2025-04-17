@@ -1,0 +1,153 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtn60q7w3xsce"]
+
+[ext_resource type="Script" uid="uid://cyku5ttaat0wt" path="res://scripts/ui/bomb_step_panel.gd" id="1_cqfgm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqpod"]
+bg_color = Color(0.4, 0.4, 0.4, 0.501961)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nv1m"]
+bg_color = Color(0.1, 0.1, 0.1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqfgm"]
+bg_color = Color(0.2, 0, 0, 0.501961)
+
+[node name="BombStepPanel" type="Panel"]
+custom_minimum_size = Vector2(400, 115)
+size_flags_horizontal = 3
+script = ExtResource("1_cqfgm")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MoveButtonContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MoveButtonContainer"]
+layout_mode = 2
+
+[node name="UpButton" type="Button" parent="HBoxContainer/MoveButtonContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_oqpod")
+text = " ↑ "
+
+[node name="DownButton" type="Button" parent="HBoxContainer/MoveButtonContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_oqpod")
+text = " ↓ "
+
+[node name="MarginContainerLeft" type="MarginContainer" parent="HBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainerLeft"]
+clip_contents = true
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7nv1m")
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/MarginContainerLeft/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 88.0
+offset_bottom = 88.0
+expand_mode = 2
+
+[node name="MarginContainerRight" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainerRight"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/MarginContainerRight/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="StepNameLabel" type="Label" parent="HBoxContainer/MarginContainerRight/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "STEP #N: PLACEHOLDER"
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+uppercase = true
+
+[node name="CloseButton" type="Button" parent="HBoxContainer/MarginContainerRight/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_cqfgm")
+text = "X"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainerRight/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainerRight/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Fuse: "
+
+[node name="FuseTimeSlider" type="HSlider" parent="HBoxContainer/MarginContainerRight/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 5.0
+step = 0.05
+value = 1.0
+scrollable = false
+tick_count = 5
+ticks_on_borders = true
+
+[node name="FuseTimeLabel" type="Label" parent="HBoxContainer/MarginContainerRight/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+text = "0.00s"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="HBoxContainer/MoveButtonContainer/VBoxContainer/UpButton" to="." method="_on_move_up_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MoveButtonContainer/VBoxContainer/DownButton" to="." method="_on_move_down_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainerRight/VBoxContainer/HBoxContainer2/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="value_changed" from="HBoxContainer/MarginContainerRight/VBoxContainer/HBoxContainer/FuseTimeSlider" to="." method="_on_fuse_time_changed"]

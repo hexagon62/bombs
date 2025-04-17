@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5wta5s46ekan"]
+
+[ext_resource type="Script" uid="uid://cdp6k3hpvjlh4" path="res://scripts/ui/bomb_palette_panel.gd" id="1_eu8mw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ta1pe"]
+bg_color = Color(0.1, 0.1, 0.1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.29, 0.29, 0.29, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="BombPalettePanel" type="Button"]
+z_index = 1
+custom_minimum_size = Vector2(131, 131)
+offset_right = 131.0
+offset_bottom = 131.0
+script = ExtResource("1_eu8mw")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -65.5
+offset_right = 60.0
+offset_bottom = 65.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="Panel" type="Panel" parent="CenterContainer/VBoxContainer/MarginContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ta1pe")
+
+[node name="IconRect" type="TextureRect" parent="CenterContainer/VBoxContainer/MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+horizontal_alignment = 1
+text_overrun_behavior = 4
+uppercase = true

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="BombInfo" load_steps=4 format=3 uid="uid://cujiiklh5nd6b"]
+
+[ext_resource type="Texture2D" uid="uid://ccl0bdnhyumxx" path="res://graphics/icons/icon05.png" id="1_6jrw8"]
+[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info.gd" id="1_f02gq"]
+[ext_resource type="PackedScene" uid="uid://bnepsxy3vdq4w" path="res://scenes/spawnable/bombs/bomb_suck.tscn" id="2_ly0ar"]
+
+[resource]
+script = ExtResource("1_f02gq")
+icon = ExtResource("1_6jrw8")
+name = "Sucking Bomb"
+short_name = "Sucking Bomb"
+flavor_name = "Portable Singularity Device"
+description = "Instead of pushing objects outward, pull them inward."
+flavor_description = "This is a failed bomb. It doesn't explode, it implodes!
+
+As for how it looks... don't ask. I don't like looking at it."
+scene = ExtResource("2_ly0ar")
+requires_next_step = false
+children_spawned = 1
+metadata/_custom_type_script = "uid://cjoklwjj6rv06"

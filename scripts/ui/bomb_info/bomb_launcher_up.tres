@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="BombInfo" load_steps=4 format=3 uid="uid://g8ktbm4k7wgo"]
+
+[ext_resource type="Texture2D" uid="uid://ckfi14aa38r7x" path="res://graphics/icons/icon15.png" id="1_8a2cp"]
+[ext_resource type="PackedScene" uid="uid://epj6xl6nklgx" path="res://scenes/spawnable/bombs/bomb_launcher_up.tscn" id="2_1l4a0"]
+[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info.gd" id="2_72hlj"]
+
+[resource]
+script = ExtResource("2_72hlj")
+icon = ExtResource("1_8a2cp")
+name = "Upward Launching Bomb"
+short_name = "Up Bomb"
+flavor_name = "Sunny Side Up"
+description = "Shoots the next bomb upwards."
+flavor_description = "Science has allowed me to genetically modify the creature in this egg to not only explode, but also grow a spring that naturally points up at all times, like a compass! Neat!"
+scene = ExtResource("2_1l4a0")
+requires_next_step = true
+children_spawned = 1
+metadata/_custom_type_script = "uid://cjoklwjj6rv06"
