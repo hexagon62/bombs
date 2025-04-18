@@ -11,8 +11,14 @@ name = "Fire Bomb"
 short_name = "Fire Bomb"
 flavor_name = "Breggfast Ruined"
 description = "Other bombs can light buildings on fire, but this one is guaranteed to."
-flavor_description = "I asked my assistant to cook me breakfast. Never egg-ain."
+flavor_description = "I asked my assistant to cook me breakfast. Never egg-ain!
+
+...however, because it so potently burnt the lab down, that means this'll burn the whole city down, muahahaha!"
+doctor_expression = &"evil"
 scene = ExtResource("2_oeo0y")
 requires_next_step = false
 children_spawned = 1
+min_fuse_time = 0.0
+max_fuse_time = 5.0
+default_fuse_time = 1.0
 metadata/_custom_type_script = "uid://cjoklwjj6rv06"

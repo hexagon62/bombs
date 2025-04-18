@@ -13,8 +13,12 @@ flavor_name = "Bee-gg"
 description = "A bomb that flies in the direction it was pushed."
 flavor_description = "Despite its small wings, it is capable of flying towards buildings. Provided the other bombs gave it some direction to go in.
 
-Otherwise it just flies where its dumb face is facing."
+Otherwise it just flies where its lil dumb face is facing."
+doctor_expression = &"happy"
 scene = ExtResource("2_ns7ne")
 requires_next_step = false
 children_spawned = 1
+min_fuse_time = 0.0
+max_fuse_time = 5.0
+default_fuse_time = 1.0
 metadata/_custom_type_script = "uid://cjoklwjj6rv06"

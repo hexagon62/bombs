@@ -12,6 +12,7 @@ short_name = "Antigravity Bomb"
 flavor_name = "Levitation Device"
 description = "A bomb that falls up instead of down."
 flavor_description = "I've done it! I've figured out how to defy gravity! I'm a genius!"
+doctor_expression = &"evil"
 scene = ExtResource("2_eitn1")
 requires_next_step = false
 children_spawned = 1

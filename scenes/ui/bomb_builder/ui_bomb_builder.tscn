@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://btxvd4c7j5eww"]
+[gd_scene load_steps=4 format=3 uid="uid://btxvd4c7j5eww"]
 
 [ext_resource type="Script" uid="uid://depn51mpxrcgy" path="res://scripts/ui/bomb_builder/bomb_builder.gd" id="1_jvxxx"]
+[ext_resource type="PackedScene" uid="uid://ba7f5kca3i40" path="res://scenes/ui/character/ui_character_doctor.tscn" id="2_jvxxx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvxxx"]
+bg_color = Color(0.6, 0.132, 0.132, 1)
 
 [node name="BombBuilder" type="Control"]
 process_mode = 3
@@ -68,8 +72,16 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ProfessorSpriteContainer" type="ColorRect" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer"]
+[node name="ProfessorSpriteContainer" type="CenterContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer"]
+custom_minimum_size = Vector2(256, 0)
 layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DoctorSprite" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/ProfessorSpriteContainer" instance=ExtResource("2_jvxxx")]
+unique_name_in_owner = true
+position = Vector2(128, 155)
+scale = Vector2(0.28, 0.28)
+flip_h = true
 
 [node name="MarginContainer3" type="MarginContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer"]
 layout_mode = 2
@@ -194,6 +206,85 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "GO"
 
+[node name="TooManyBombsPopup" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 1000
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.752941)
+
+[node name="CenterContainer" type="CenterContainer" parent="TooManyBombsPopup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="TooManyBombsPopup/CenterContainer"]
+custom_minimum_size = Vector2(512, 300)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TooManyBombsPopup/CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TooManyBombsPopup/CenterContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Warning" type="Label" parent="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Warning!"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+size_flags_vertical = 1
+text = "A very large quantity of bombs will be spawned, which may cause the game to lag and freeze. Also, it might get loud.
+
+I take no responsibility for your computer exploding.
+
+Are you really sure you want to do this?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="NoButton" type="Button" parent="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_jvxxx")
+text = "No! Spare my computer!"
+
+[node name="YesButton" type="Button" parent="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Yes! I love explosions!"
+
 [connection signal="focus_entered" from="Panel/HBoxContainer/LeftHalf/Panel/MarginContainer/ScrollContainer/BombPalette" to="." method="hide_info"]
 [connection signal="mouse_entered" from="Panel/HBoxContainer/LeftHalf/Panel/MarginContainer/ScrollContainer/BombPalette" to="." method="hide_info"]
 [connection signal="pressed" from="Panel/HBoxContainer/RightHalf/MarginContainer2/GoButton" to="." method="_on_go_button_pressed"]
+[connection signal="pressed" from="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/NoButton" to="." method="_on_confirm_no_button_pressed"]
+[connection signal="pressed" from="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/YesButton" to="." method="_on_confirm_yes_button_pressed"]

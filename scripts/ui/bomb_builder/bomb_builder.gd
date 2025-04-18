@@ -3,12 +3,15 @@ extends Control
 
 
 const PALETTE_LENGTH_GRANULE := 18
+const SAFE_BOMB_LIMIT := 512
 
-## Player pressed go button
-signal go_pressed
+## Player is ready
+signal player_ready
 
 var bomb_palette_panel_scene := preload("res://scenes/ui/bomb_builder/ui_bomb_palette_panel.tscn")
 var bomb_step_panel_scene := preload("res://scenes/ui/bomb_builder/ui_bomb_step_panel.tscn")
+
+var _bomb_warning := false
 
 @onready var bomb_palette: Control = %BombPalette
 @onready var bomb_steps: VBoxContainer = %BombStepsContainer
@@ -18,6 +21,13 @@ var bomb_step_panel_scene := preload("res://scenes/ui/bomb_builder/ui_bomb_step_
 @onready var description_label: Label = %DescriptionLabel
 @onready var flavor_description_label: Label = %FlavorDescriptionLabel
 @onready var bomb_count_label: Label = %BombCountLabel
+@onready var doctor_sprite: CharacterSprite = %DoctorSprite
+@onready var go_button: Button = %GoButton
+@onready var too_many_bombs_popup: ColorRect = %TooManyBombsPopup
+
+
+func _ready() -> void:
+	_update_step_numbers()
 
 
 func set_palette(bomb_info_arr: Array[BombInfo]) -> void:
@@ -71,17 +81,6 @@ func move_step(step: BombStepPanel, offset: int) -> void:
 	_update_step_numbers()
 
 
-## Displays the bomb information
-func show_info(bomb_info: BombInfo) -> void:
-	if not bomb_info:
-		hide_info()
-		return
-	flavor_name_label.text = 'NAME: "%s"' % bomb_info.flavor_name
-	name_label.text = "TYPE: %s" % bomb_info.name
-	description_label.text = bomb_info.description
-	flavor_description_label.text = bomb_info.flavor_description
-
-
 ## Returns the array of steps the player wants taken by the bomb
 func get_steps() -> Array[BombStep]:
 	var result: Array[BombStep]
@@ -110,12 +109,27 @@ func instantiate_bomb() -> Bomb:
 	return instance
 
 
+## Displays the bomb information
+func show_info(bomb_info: BombInfo) -> void:
+	if not bomb_info:
+		hide_info()
+		return
+	flavor_name_label.text = 'NAME: "%s"' % bomb_info.flavor_name
+	name_label.text = "TYPE: %s" % bomb_info.name
+	description_label.text = bomb_info.description
+	flavor_description_label.text = bomb_info.flavor_description
+	doctor_sprite.current_expression = bomb_info.doctor_expression
+	doctor_sprite.talking = true
+
+
 ## Hides the bomb info
 func hide_info() -> void:
 	flavor_name_label.text = ""
 	name_label.text = ""
 	description_label.text = ""
 	flavor_description_label.text = ""
+	doctor_sprite.reset_expression()
+	doctor_sprite.talking = false
 
 
 ## Get how many bombs will be spawned overall
@@ -141,8 +155,34 @@ func _update_step_numbers() -> void:
 			panel.number = counter
 			panel.up_button.disabled = counter == 1
 			panel.down_button.disabled = counter == bomb_steps.get_child_count()
-	bomb_count_label.text = "Number of bombs that will spawn: %d" % get_bombs_spawned()
+	var bomb_count := get_bombs_spawned()
+	bomb_count_label.text = "Number of bombs that will spawn: %d" % bomb_count
+	if bomb_count > SAFE_BOMB_LIMIT:
+		bomb_count_label.modulate = Color.RED
+		_bomb_warning = true
+	else:
+		bomb_count_label.modulate = Color.WHITE
+		_bomb_warning = false
+		
+	if bomb_count == 0:
+		go_button.text = "PREVIEW"
+	elif bomb_count <= SAFE_BOMB_LIMIT:
+		go_button.text = "GO"
+	else:
+		go_button.text = "...go?"
 
 
 func _on_go_button_pressed() -> void:
-	go_pressed.emit()
+	if _bomb_warning:
+		too_many_bombs_popup.visible = true
+	else:
+		player_ready.emit()
+
+
+func _on_confirm_no_button_pressed() -> void:
+	too_many_bombs_popup.visible = false
+
+
+func _on_confirm_yes_button_pressed() -> void:
+	too_many_bombs_popup.visible = false
+	player_ready.emit()

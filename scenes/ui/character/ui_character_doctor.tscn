@@ -52,7 +52,7 @@ talking_and_blinking_texture = ExtResource("5_x3hlh")
 metadata/_custom_type_script = "uid://c76uxm4sqtjc1"
 
 [node name="DoctorSprite" type="Sprite2D"]
-texture = ExtResource("18_o45g8")
+texture = ExtResource("4_bceia")
 script = ExtResource("1_opdcx")
 expressions = Dictionary[StringName, ExtResource("2_lyihs")]({
 &"angry": SubResource("Resource_h5oi1"),
@@ -60,6 +60,6 @@ expressions = Dictionary[StringName, ExtResource("2_lyihs")]({
 &"happy": SubResource("Resource_x6y1c"),
 &"neutral": SubResource("Resource_7sd1t")
 })
-current_expression = &"evil"
+default_expression = &"neutral"
+current_expression = &"neutral"
 blinking = true
-talking = true

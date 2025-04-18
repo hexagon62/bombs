@@ -38,7 +38,7 @@ var raycaster: RayCast2D
 
 
 func _ready() -> void:
-	fuse_time *= randf_range(0.95, 1.0/0.95)
+	fuse_time *= randf_range(0.9, 1.0/0.9)
 	raycaster = RayCast2D.new()
 	raycaster.collision_mask = CollisionLayer.EXPLOSION_RAYCAST
 	raycaster.top_level = true

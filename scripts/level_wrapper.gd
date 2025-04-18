@@ -23,8 +23,6 @@ var _current_scene: PackedScene
 
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed(&"open_builder"):
-		bomb_builder.visible = not bomb_builder.visible
 	if not ui_pause:
 		if event.is_action_pressed(&"pause"):
 			player_pause = not player_pause
@@ -85,7 +83,7 @@ func spawn_bomb() -> void:
 				level.add_child(bomb)
 
 
-func _on_go_pressed() -> void:
+func _on_player_ready() -> void:
 	spawn_bomb()
 	bomb_builder.visible = false
 	player_pause = false

@@ -41,4 +41,4 @@ script = ExtResource("3_asw2c")
 metadata/_custom_type_script = "uid://ccrm27ibyllj5"
 
 [connection signal="loaded" from="." to="DebugBombRaycastVisualizer" method="clear"]
-[connection signal="go_pressed" from="BombBuilder" to="." method="_on_go_pressed"]
+[connection signal="player_ready" from="BombBuilder" to="." method="_on_player_ready"]

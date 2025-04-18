@@ -17,7 +17,11 @@ They hesitated because some labels on the parts said \"THIS SIDE UP\",
 not \"THIS SIDE SIDEWAYS\".
 
 *Sigh.* What do I pay these people for?"
+doctor_expression = &"angry"
 scene = ExtResource("2_qcbwq")
 requires_next_step = true
 children_spawned = 2
+min_fuse_time = 0.0
+max_fuse_time = 5.0
+default_fuse_time = 1.0
 metadata/_custom_type_script = "uid://cjoklwjj6rv06"

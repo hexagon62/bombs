@@ -14,6 +14,8 @@ extends Resource
 @export_multiline var description: String
 ## The flavor text description for the bomb
 @export_multiline var flavor_description: String
+## What expression this bomb should make the doctor have in the UI
+@export var doctor_expression := &"neutral"
 ## The scene to instantiate for this bomb
 @export var scene: PackedScene
 ## Whether or not this bomb requires a bomb after it
