@@ -19,9 +19,9 @@ func _draw() -> void:
 		draw_circle(hit, 6.0, Color.MAGENTA)
 
 
-func _process(delta: float) -> void:
-	if not get_tree().paused:
-		clear()
+#func _process(delta: float) -> void:
+	#if not get_tree().paused:
+		#clear()
 
 
 func clear() -> void:

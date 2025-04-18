@@ -62,10 +62,8 @@ open_builder={
 [physics]
 
 common/physics_ticks_per_second=120
-common/max_physics_steps_per_frame=100
-common/physics_jitter_fix=0.0
+common/max_physics_steps_per_frame=60
 2d/solver/solver_iterations=128
-2d/solver/contact_max_separation=2.0
 common/physics_interpolation=true
 
 [rendering]

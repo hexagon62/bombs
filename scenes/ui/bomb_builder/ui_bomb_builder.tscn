@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://btxvd4c7j5eww"]
 
-[ext_resource type="Script" uid="uid://depn51mpxrcgy" path="res://scripts/ui/bomb_builder.gd" id="1_jvxxx"]
+[ext_resource type="Script" uid="uid://depn51mpxrcgy" path="res://scripts/ui/bomb_builder/bomb_builder.gd" id="1_jvxxx"]
 
 [node name="BombBuilder" type="Control"]
 process_mode = 3
@@ -68,30 +68,8 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer"]
+[node name="ProfessorSpriteContainer" type="ColorRect" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="ColorRect" type="ColorRect" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-color = Color(0.33, 0.33, 0.33, 0.501961)
-
-[node name="Label" type="Label" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Main character image
-goes here?"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer"]
 layout_mode = 2

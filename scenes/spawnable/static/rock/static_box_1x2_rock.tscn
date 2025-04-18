@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbaifu5akqwyh"]
+
+[ext_resource type="Texture2D" uid="uid://b0v8jnysf8ahl" path="res://graphics/blocks/terrain_dark_rock_03.png" id="1_mwqgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipdc0"]
+size = Vector2(64, 32)
+
+[node name="StaticBox1x2Rock" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_ipdc0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_mwqgi")

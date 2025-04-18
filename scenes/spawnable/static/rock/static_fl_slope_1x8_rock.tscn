@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvy1ktvmnn7qr"]
+
+[ext_resource type="Texture2D" uid="uid://b22pps6pmox4y" path="res://graphics/blocks/terrain_dark_rock_08.png" id="1_aainb"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ofx4e"]
+points = PackedVector2Array(144, -16, 144, 16, -112, 16)
+
+[node name="StaticFLSlope1x8Rock" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_ofx4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_aainb")
+flip_h = true

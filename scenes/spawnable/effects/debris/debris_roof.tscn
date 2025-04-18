@@ -1,0 +1,12 @@
+[gd_scene load_steps=8 format=3 uid="uid://5pumnjlu8uu1"]
+
+[ext_resource type="PackedScene" uid="uid://cjuurvaav2eaq" path="res://scenes/spawnable/effects/debris/debris_base.tscn" id="1_w1mgj"]
+[ext_resource type="Texture2D" uid="uid://db84h4d176ied" path="res://graphics/debris/roof_broken_piece_01.png" id="2_ldrhk"]
+[ext_resource type="Texture2D" uid="uid://cxfqqjguikypl" path="res://graphics/debris/roof_broken_piece_02.png" id="3_p3gtr"]
+[ext_resource type="Texture2D" uid="uid://ubltc1vpfnpn" path="res://graphics/debris/roof_broken_piece_03.png" id="4_maj1n"]
+[ext_resource type="Texture2D" uid="uid://37ld6i4hbx2d" path="res://graphics/debris/roof_broken_piece_04.png" id="5_j7sxw"]
+[ext_resource type="Texture2D" uid="uid://ci500hmbcknlc" path="res://graphics/debris/roof_broken_piece_05.png" id="6_1qcuf"]
+[ext_resource type="Texture2D" uid="uid://ct5tep00f0611" path="res://graphics/debris/roof_broken_piece_06.png" id="7_4qpl3"]
+
+[node name="DebrisRoof" instance=ExtResource("1_w1mgj")]
+textures = Array[Texture2D]([ExtResource("2_ldrhk"), ExtResource("3_p3gtr"), ExtResource("4_maj1n"), ExtResource("5_j7sxw"), ExtResource("6_1qcuf"), ExtResource("7_4qpl3")])

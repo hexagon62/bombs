@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://5msfffk4sdt0"]
+
+[ext_resource type="Script" uid="uid://dik2ra1knt7qi" path="res://scripts/bombs/bomb_radial_split.gd" id="1_1p1a8"]
+[ext_resource type="Texture2D" uid="uid://dqcsobp6r2xqm" path="res://graphics/bombs/05.png" id="1_g6xnh"]
+[ext_resource type="PackedScene" uid="uid://dxr4omd1qsit4" path="res://scenes/spawnable/effects/explosions/explosion_medium.tscn" id="2_nag27"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dobut"]
+radius = 32.0
+
+[node name="BombCluster" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_1p1a8")
+copies = 16
+speed = 1600.0
+spread = 6.28319
+explosion_scene = ExtResource("2_nag27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dobut")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_g6xnh")

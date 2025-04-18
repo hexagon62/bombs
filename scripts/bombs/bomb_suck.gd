@@ -24,7 +24,7 @@ func _suck() -> void:
 	shape_parameters.transform = global_transform
 	shape_parameters.shape = CircleShape2D.new()
 	shape_parameters.shape.radius = suck_radius
-	shape_parameters.collision_mask = CollisionLayer.ALL_INFLUENCED_BY_EXPLOSIONS
+	shape_parameters.collision_mask = CollisionLayer.EXPLOSION_RAYCAST
 	
 	var intersections := direct_state.intersect_shape(shape_parameters, 512)
 	for intersection in intersections:
@@ -32,3 +32,20 @@ func _suck() -> void:
 		if body:
 			var dir := (body.global_position - global_position).normalized()
 			body.apply_central_force(-dir*suck_force)
+
+# Delete the pieces that are inside the bomb
+func _explode() -> void:
+	var space_rid := PhysicsServer2D.body_get_space(get_rid())
+	var direct_state := PhysicsServer2D.space_get_direct_state(space_rid)
+	var point_parameters := PhysicsPointQueryParameters2D.new()
+	point_parameters.collision_mask = CollisionLayer.PIECE
+	point_parameters.exclude = [self.get_rid()]
+	point_parameters.position = global_position
+	
+	var intersections := direct_state.intersect_point(point_parameters)
+	for intersection in intersections:
+		var piece := intersection.collider as Piece
+		if piece:
+			piece.health = 0.0
+	
+	super._explode()

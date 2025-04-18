@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmbdoyp4vfmk"]
+[gd_scene load_steps=4 format=3 uid="uid://bmbdoyp4vfmk"]
 
-[ext_resource type="PackedScene" uid="uid://ci0i5om5nmtx7" path="res://scenes/spawnable/pieces/base/piece_fr_ulbr_1x1_base.tscn" id="1_f01or"]
-[ext_resource type="Texture2D" uid="uid://coi3ahc85k4c2" path="res://graphics/blocks/roof_02.png" id="2_q6iej"]
+[ext_resource type="PackedScene" uid="uid://ci0i5om5nmtx7" path="res://scenes/spawnable/pieces/base/piece_fr_slope_1x1_base.tscn" id="1_f01or"]
+[ext_resource type="Texture2D" uid="uid://c3bwb7hbetjk5" path="res://graphics/blocks/roof_02.png" id="2_q6iej"]
+[ext_resource type="PackedScene" uid="uid://5pumnjlu8uu1" path="res://scenes/spawnable/effects/debris/debris_roof.tscn" id="3_q6iej"]
 
 [node name="RoofRight" groups=["counted_piece"] instance=ExtResource("1_f01or")]
+modulate = Color(0.940101, 0.92736, 0.882747, 1)
+max_contacts_reported = 32
 undisturbed_texture = ExtResource("2_q6iej")
+debris_scene = ExtResource("3_q6iej")
 
-[node name="Sprite" parent="." index="1"]
-scale = Vector2(1, 1)
+[node name="Sprite" parent="." index="0"]
 texture = ExtResource("2_q6iej")
 flip_h = true

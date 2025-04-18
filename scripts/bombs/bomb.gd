@@ -13,10 +13,10 @@ signal exploded
 
 ## How far the explosion reaches
 @export_range(0.0, 3000.0, 1.0, "or_greater", "suffix:px")
-var explosion_radius := 192.0
+var explosion_radius := 256.0
 ## The total impulse of the explosion, evenly split among all rays cast outward
-@export_range(0.0, 1000000000.0, 1.0, "or_less", "or_greater", "suffix:J")
-var explosion_impulse := 10000.0
+@export_range(0.0, 1000000.0, 1.0, "or_less", "or_greater", "suffix:J")
+var explosion_impulse := 500.0
 ## The damage of the explosion
 @export_range(0.0, 100.0, 1.0, "or_greater", "suffix:HP")
 var explosion_damage := 100.0
@@ -34,13 +34,16 @@ var ignite_damage_ratio := 0.8
 var ticks_alive := 0
 var time_alive := 0.0
 var fuse_time := INF
-static var spawn_count := 0
+var raycaster: RayCast2D
 
 
 func _ready() -> void:
-	spawn_count += 1
 	fuse_time *= randf_range(0.95, 1.0/0.95)
-	#print(spawn_count)
+	raycaster = RayCast2D.new()
+	raycaster.collision_mask = CollisionLayer.EXPLOSION_RAYCAST
+	raycaster.top_level = true
+	raycaster.enabled = false
+	add_child(raycaster)
 
 
 func _physics_process(delta: float) -> void:
@@ -65,92 +68,60 @@ func _apply_explosion_effects() -> void:
 
 # Applies effects of an explosion, pushing physics bodies and damaging pieces.
 func _create_explosion(radius: float, impulse: float, damage: float, raycast_count := EXPLOSION_RAYCAST_COUNT) -> void:
-	# Set up the physics query
 	var space_rid := PhysicsServer2D.body_get_space(get_rid())
 	var direct_state := PhysicsServer2D.space_get_direct_state(space_rid)
-	var ray_query_parameters := PhysicsRayQueryParameters2D.new()
-	ray_query_parameters.collision_mask = CollisionLayer.ALL_INFLUENCED_BY_EXPLOSIONS
-	#ray_query_parameters.hit_from_inside = true
 	
-	var visualizer := get_tree().get_first_node_in_group(&"debug_bomb_raycast_visualizer") as DebugBombRaycastVisualizer
-	if visualizer:
-		if not visualizer.visible:
-			visualizer = null
-		else:
-			visualizer.clear()
-	
-	# Project the ray in various directions, calculate damage to pieces
-	var damaged_pieces: Dictionary[Piece, float] = {}
-	for i in raycast_count:
-		var angle := float(i+0.5)*TAU/float(raycast_count)
-		var dir := Vector2.from_angle(angle)
-		var exclude: Array[RID] = [self.get_rid()]
-		ray_query_parameters.from = global_position
-		ray_query_parameters.to = global_position + dir*radius
+	#var visualizer := get_tree().get_first_node_in_group(&"debug_bomb_raycast_visualizer") as DebugBombRaycastVisualizer
+	#if visualizer:
+		#if not visualizer.visible:
+			#visualizer = null
+		#else:
+			#visualizer.clear()
 		
-		var damage_remaining := damage
-		var count := 0
-		while true:
-			ray_query_parameters.exclude = exclude
-			var intersection := direct_state.intersect_ray(ray_query_parameters)
-			if intersection.is_empty():
-				break
-			
-			var point := intersection.position as Vector2
-			
-			# Push rigid bodies
-			var body := intersection.collider as RigidBody2D
-			if not body:
-				break
-			var diff := body.global_position - point
-			body.apply_impulse(dir*impulse/raycast_count, diff)
-			
-			if visualizer:
-				visualizer.raycasts.append({
-					"from": ray_query_parameters.from, 
-					"to": point,
-					"color": Color.WHITE,
-					"hit": true
-				})
-				visualizer.hits[body.get_instance_id()] = body.global_position
-			
-			# Use the highest damage value for each piece
-			# We might've damaged it by penetrating another piece,
-			# but more direct damage should take priority
-			var piece := intersection.collider as Piece
-			if not piece:
-				break
-			piece.debris_impulse = dir*impulse*DEBRIS_IMPULSE_FACTOR
+	# Get all pieces in range and check if they're in line of sight
+	var explosion_query := PhysicsShapeQueryParameters2D.new()
+	var damaged_pieces: Dictionary[Piece, float] = {}
+	var hits := 0
+	explosion_query.transform = global_transform
+	explosion_query.shape = CircleShape2D.new()
+	explosion_query.shape.radius = radius
+	explosion_query.collision_mask = CollisionLayer.PIECE
+	raycaster.global_position = global_position
+	var explosion_intersections := direct_state.intersect_shape(explosion_query, 512)
+	for intersection in explosion_intersections:
+		var piece := intersection.collider as Piece
+		if piece:
+			var damage_factor := 1.0
+			raycaster.target_position = piece.global_position - global_position
+			raycaster.force_raycast_update()
+			#visualizer.raycasts.push_back({
+				#"from": global_position,
+				#"to": piece.global_position,
+				#"color": Color.WHITE,
+				#"hit": false
+			#})
+			var collider := raycaster.get_collider()
+			if collider:
+				#visualizer.raycasts[visualizer.raycasts.size()-1].to = raycaster.get_collision_point()
+				#visualizer.raycasts[visualizer.raycasts.size()-1].hit = true
+				if collider == piece:
+					pass
+				elif collider is Piece:
+					#visualizer.raycasts[visualizer.raycasts.size()-1].color = Color.YELLOW
+					damage_factor = 0.5
+				else:
+					#visualizer.raycasts[visualizer.raycasts.size()-1].color = Color.RED
+					damage_factor = 0.0
 			if piece not in damaged_pieces:
 				damaged_pieces[piece] = 0.0
-			var damage_dealt := minf(damage_remaining, piece.health)
-			if damage_dealt > damaged_pieces[piece]:
-				damaged_pieces[piece] = damage_dealt
-			if visualizer:
-				if damage_remaining > 0.0:
-					visualizer.raycasts[visualizer.raycasts.size()-1].color = Color.RED
-				else:
-					visualizer.raycasts[visualizer.raycasts.size()-1].color = Color.YELLOW
-			damage_remaining -= damage_dealt
-			
-			# Do not run further iterations if the bomb doesn't penetrate
-			if not penetrates:
-				break
-			
-			# Prepare next raycast
-			exclude.append(intersection.rid)
-			ray_query_parameters.from = point
-			
-			count += 1
-			if count >= 512:
-				print("SHOULD NOT HAPPEN")
-				break
+			var dealt_damage := damage_factor*damage
+			if dealt_damage > damaged_pieces[piece]:
+				damaged_pieces[piece] = dealt_damage
+			var impulse_vector := impulse*raycaster.target_position.normalized()*damage_factor
+			piece.debris_impulse = impulse_vector
+			piece.apply_central_impulse(impulse_vector)
 	
-	if visualizer:
-		visualizer.queue_redraw()
-		visualizer.visible = true
-		get_tree().get_first_node_in_group(&"level_wrapper").player_pause = true
-		get_tree().paused = true
+	#visualizer.queue_redraw()
 	
 	# Apply the damage
 	for piece in damaged_pieces:
@@ -159,19 +130,19 @@ func _create_explosion(radius: float, impulse: float, damage: float, raycast_cou
 			piece.ignited = true
 		piece.health -= damaged_pieces[piece]
 	
-	# Push debris
-	var shape_parameters := PhysicsShapeQueryParameters2D.new()
-	shape_parameters.transform = global_transform
-	shape_parameters.shape = CircleShape2D.new()
-	shape_parameters.shape.radius = radius
-	shape_parameters.collision_mask = CollisionLayer.DEBRIS
+	# Push debris & bombs
+	var push_query := PhysicsShapeQueryParameters2D.new()
+	push_query.transform = global_transform
+	push_query.shape = CircleShape2D.new()
+	push_query.shape.radius = radius
+	push_query.collision_mask = CollisionLayer.DEBRIS | CollisionLayer.BOMB
 	
-	var found_debris := direct_state.intersect_shape(shape_parameters, 512)
-	for intersection in found_debris:
-		var debris := intersection.collider as Debris
-		if debris:
-			var dir := (debris.global_position - global_position).normalized()
-			debris.apply_central_impulse(dir*impulse*DEBRIS_IMPULSE_FACTOR)
+	var other_pushables := direct_state.intersect_shape(push_query, 512)
+	for intersection in other_pushables:
+		var body := intersection.collider as RigidBody2D
+		if body:
+			var dir := (body.global_position - global_position).normalized()
+			body.apply_central_impulse(dir*impulse*DEBRIS_IMPULSE_FACTOR)
 
 
 ## Spawns an instance of the next bomb.

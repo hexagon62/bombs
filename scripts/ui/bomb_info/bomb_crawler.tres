@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://byy68b56t08so" path="res://graphics/icons/icon07.png" id="1_jc464"]
 [ext_resource type="PackedScene" uid="uid://b3q7a3q8v3hrk" path="res://scenes/spawnable/bombs/bomb_crawler.tscn" id="2_jc464"]
-[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info.gd" id="3_2mcal"]
+[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info/bomb_info.gd" id="3_2mcal"]
 
 [resource]
 script = ExtResource("3_2mcal")
@@ -17,5 +17,5 @@ requires_next_step = false
 children_spawned = 1
 min_fuse_time = 0.0
 max_fuse_time = 15.0
-default_fuse_time = 10.0
+default_fuse_time = 5.0
 metadata/_custom_type_script = "uid://cjoklwjj6rv06"

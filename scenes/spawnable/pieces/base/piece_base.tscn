@@ -7,14 +7,14 @@
 friction = 0.7
 
 [node name="PieceBase" type="RigidBody2D" groups=["piece"]]
-modulate = Color(0.875133, 0.876044, 0.919556, 1)
+modulate = Color(0.914408, 0.984675, 0.983591, 1)
 collision_layer = 4
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_0t2en")
 can_sleep = false
 continuous_cd = 1
 contact_monitor = true
-max_contacts_reported = 32
+max_contacts_reported = 256
 linear_damp_mode = 1
 script = ExtResource("1_0t2en")
 brittleness = 0.5
@@ -31,3 +31,4 @@ update_rotation = false
 update_scale = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false

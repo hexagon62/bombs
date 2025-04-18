@@ -22,11 +22,6 @@ var _current_scene: PackedScene
 @onready var bomb_builder: BombBuilder = $BombBuilder
 
 
-func _ready() -> void:
-	var test := BombStep.new()
-	print(test is RefCounted)
-
-
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"open_builder"):
 		bomb_builder.visible = not bomb_builder.visible
@@ -39,7 +34,7 @@ func _input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	if level:
-		destruction_label.text = "%s, %.0f%%" % [level.done(), level.get_destruction_ratio()*100.0]
+		destruction_label.text = "Destruction: %.0f%%" % (level.get_destruction_ratio()*100.0)
 	else:
 		destruction_label.text = ""
 	ui_pause = bomb_builder.visible

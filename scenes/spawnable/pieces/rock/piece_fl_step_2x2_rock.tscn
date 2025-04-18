@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cww6th0lchsm3"]
+
+[ext_resource type="PackedScene" uid="uid://dy3x4lli7526u" path="res://scenes/spawnable/pieces/base/piece_fl_step_2x2_base.tscn" id="1_xaohu"]
+[ext_resource type="Texture2D" uid="uid://bpmcqvina7gjx" path="res://graphics/blocks/rock_prop_2block_03.png" id="2_oru2p"]
+[ext_resource type="Texture2D" uid="uid://dwu8t7uvdorbg" path="res://graphics/blocks/rock_prop_2block_04.png" id="3_o3dxl"]
+[ext_resource type="PackedScene" uid="uid://cx5imwffykliw" path="res://scenes/spawnable/effects/debris/debris_rock.tscn" id="4_oru2p"]
+
+[node name="PieceFLStep2x2Rock" instance=ExtResource("1_xaohu")]
+modulate = Color(0.947903, 0.970373, 0.964453, 1)
+max_health = 300.0
+healthy_texture = ExtResource("2_oru2p")
+damaged_texture = ExtResource("3_o3dxl")
+debris_scene = ExtResource("4_oru2p")
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_oru2p")

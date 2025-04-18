@@ -1,19 +1,92 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnepsxy3vdq4w"]
+[gd_scene load_steps=16 format=3 uid="uid://bnepsxy3vdq4w"]
 
 [ext_resource type="Script" uid="uid://copmxh8j1cu2g" path="res://scripts/bombs/bomb_suck.gd" id="1_cl6qj"]
 [ext_resource type="PackedScene" uid="uid://duw766cio2ckl" path="res://scenes/spawnable/effects/explosions/explosion_small.tscn" id="2_wvs2d"]
 [ext_resource type="Texture2D" uid="uid://ds35pq32aqcam" path="res://graphics/bombs/03.png" id="3_pgmgm"]
+[ext_resource type="Texture2D" uid="uid://bc2vi4hhe5j6o" path="res://graphics/bombs/succ_animation_spritesheet.png" id="4_wvs2d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ptq8"]
 radius = 32.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqh18"]
+atlas = ExtResource("4_wvs2d")
+region = Rect2(0, 0, 714, 714)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kc2k"]
+atlas = ExtResource("4_wvs2d")
+region = Rect2(714, 0, 714, 714)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqs3j"]
+atlas = ExtResource("4_wvs2d")
+region = Rect2(1428, 0, 714, 714)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6nu2"]
+atlas = ExtResource("4_wvs2d")
+region = Rect2(0, 714, 714, 714)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bb61"]
+atlas = ExtResource("4_wvs2d")
+region = Rect2(714, 714, 714, 714)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax8jl"]
+atlas = ExtResource("4_wvs2d")
+region = Rect2(1428, 714, 714, 714)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grv76"]
+atlas = ExtResource("4_wvs2d")
+region = Rect2(0, 1428, 714, 714)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbc4o"]
+atlas = ExtResource("4_wvs2d")
+region = Rect2(714, 1428, 714, 714)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nejg"]
+atlas = ExtResource("4_wvs2d")
+region = Rect2(1428, 1428, 714, 714)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_54cot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqh18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kc2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqs3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6nu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bb61")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ax8jl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grv76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbc4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nejg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
 [node name="BombSuck" type="RigidBody2D" groups=["bomb"]]
+z_index = -4
 collision_layer = 0
 continuous_cd = 1
 script = ExtResource("1_cl6qj")
 suck_force = 5000.0
 suck_radius = 256.0
-explosion_radius = 256.0
+explosion_radius = 3000.0
 explosion_damage = 400.0
 explosion_scene = ExtResource("2_wvs2d")
 
@@ -23,3 +96,16 @@ shape = SubResource("CircleShape2D_4ptq8")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("3_pgmgm")
+
+[node name="Succ" type="AnimatedSprite2D" parent="."]
+top_level = true
+z_index = 1
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_54cot")
+autoplay = "default"
+frame_progress = 0.440514
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+remote_path = NodePath("../Succ")
+update_rotation = false
+update_scale = false

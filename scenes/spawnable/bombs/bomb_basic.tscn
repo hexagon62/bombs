@@ -12,7 +12,8 @@ collision_layer = 2
 collision_mask = 5
 continuous_cd = 1
 script = ExtResource("1_wf6t8")
-explosion_radius = 256.0
+explosion_radius = 384.0
+explosion_impulse = 1000.0
 explosion_damage = 200.0
 explosion_scene = ExtResource("2_d34qy")
 

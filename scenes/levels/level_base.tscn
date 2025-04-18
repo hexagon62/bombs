@@ -1,0 +1,90 @@
+[gd_scene load_steps=24 format=3 uid="uid://dfn4b5kjipo5y"]
+
+[ext_resource type="Script" uid="uid://bm8j2a5v8n737" path="res://scripts/level.gd" id="1_hkarq"]
+[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info/bomb_info.gd" id="2_egf8e"]
+[ext_resource type="Resource" uid="uid://dwkk7aaqja80u" path="res://scripts/ui/bomb_info/bomb_basic.tres" id="3_2xp2y"]
+[ext_resource type="Resource" uid="uid://mhf8rgl70c5l" path="res://scripts/ui/bomb_info/bomb_flame.tres" id="4_32xf5"]
+[ext_resource type="Resource" uid="uid://g8ktbm4k7wgo" path="res://scripts/ui/bomb_info/bomb_launcher_up.tres" id="5_pcjds"]
+[ext_resource type="Resource" uid="uid://6qkjbty3lsi5" path="res://scripts/ui/bomb_info/bomb_launcher_down.tres" id="6_kenuq"]
+[ext_resource type="Resource" uid="uid://bttnpmxgqfa64" path="res://scripts/ui/bomb_info/bomb_launcher_left.tres" id="7_jb4bd"]
+[ext_resource type="Resource" uid="uid://c3u8vtm6jhbqm" path="res://scripts/ui/bomb_info/bomb_launcher_right.tres" id="8_27xjp"]
+[ext_resource type="Resource" uid="uid://ekrnir3mnrmv" path="res://scripts/ui/bomb_info/bomb_splitter2_vertical.tres" id="9_voece"]
+[ext_resource type="Resource" uid="uid://b7wcq7b130g1c" path="res://scripts/ui/bomb_info/bomb_splitter2_horizontal.tres" id="10_dxhrm"]
+[ext_resource type="Resource" uid="uid://d0hnlpb5l53xx" path="res://scripts/ui/bomb_info/bomb_bounce.tres" id="11_axoo3"]
+[ext_resource type="Resource" uid="uid://cujiiklh5nd6b" path="res://scripts/ui/bomb_info/bomb_suck.tres" id="12_308e2"]
+[ext_resource type="Resource" uid="uid://c7kofbw04o3vf" path="res://scripts/ui/bomb_info/bomb_flying.tres" id="13_u1e1c"]
+[ext_resource type="Resource" uid="uid://oagxqy6rpb51" path="res://scripts/ui/bomb_info/bomb_antigravity.tres" id="14_peju1"]
+[ext_resource type="Resource" uid="uid://dnamw7x4xrnsl" path="res://scripts/ui/bomb_info/bomb_crawler.tres" id="15_ullmm"]
+[ext_resource type="Resource" uid="uid://gnivjaimox4l" path="res://scripts/ui/bomb_info/bomb_cluster.tres" id="16_dn7k5"]
+[ext_resource type="Texture2D" uid="uid://khb55jwhghb8" path="res://graphics/backgrounds/bg01 blue.png" id="17_1vve2"]
+[ext_resource type="PackedScene" uid="uid://1ekdjp75qg5j" path="res://scenes/spawnable/static/bomb_spawn_point.tscn" id="18_cpd74"]
+[ext_resource type="PackedScene" uid="uid://52saq4c8n7se" path="res://scenes/spawnable/static/grass/static_box_1x8_grass.tscn" id="19_vvv6j"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6xh4u"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cyt5c"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7x1jh"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hfwtw"]
+normal = Vector2(-1, 0)
+
+[node name="Level" type="Node2D" groups=["level"]]
+script = ExtResource("1_hkarq")
+bombs_available = Array[ExtResource("2_egf8e")]([ExtResource("3_2xp2y"), ExtResource("4_32xf5"), ExtResource("5_pcjds"), ExtResource("6_kenuq"), ExtResource("7_jb4bd"), ExtResource("8_27xjp"), ExtResource("9_voece"), ExtResource("10_dxhrm"), ExtResource("11_axoo3"), ExtResource("12_308e2"), ExtResource("13_u1e1c"), ExtResource("14_peju1"), ExtResource("15_ullmm"), ExtResource("16_dn7k5")])
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(640, 360)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_1vve2")
+
+[node name="BombSpawnPoint" parent="." instance=ExtResource("18_cpd74")]
+position = Vector2(528, 672)
+
+[node name="Static" type="Node2D" parent="."]
+
+[node name="WorldBoundaries" type="Node2D" parent="Static"]
+
+[node name="Top" type="StaticBody2D" parent="Static/WorldBoundaries"]
+position = Vector2(640, -1000)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static/WorldBoundaries/Top"]
+shape = SubResource("WorldBoundaryShape2D_6xh4u")
+
+[node name="Bottom" type="StaticBody2D" parent="Static/WorldBoundaries"]
+position = Vector2(640, 720)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static/WorldBoundaries/Bottom"]
+shape = SubResource("WorldBoundaryShape2D_cyt5c")
+
+[node name="Left" type="StaticBody2D" parent="Static/WorldBoundaries"]
+position = Vector2(0, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static/WorldBoundaries/Left"]
+shape = SubResource("WorldBoundaryShape2D_7x1jh")
+
+[node name="Right" type="StaticBody2D" parent="Static/WorldBoundaries"]
+position = Vector2(1280, 360)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static/WorldBoundaries/Right"]
+shape = SubResource("WorldBoundaryShape2D_hfwtw")
+
+[node name="StaticBox1x8Grass" parent="Static" instance=ExtResource("19_vvv6j")]
+position = Vector2(112, 704)
+
+[node name="StaticBox1x8Grass2" parent="Static" instance=ExtResource("19_vvv6j")]
+position = Vector2(368, 704)
+
+[node name="StaticBox1x8Grass3" parent="Static" instance=ExtResource("19_vvv6j")]
+position = Vector2(624, 704)
+
+[node name="StaticBox1x8Grass4" parent="Static" instance=ExtResource("19_vvv6j")]
+position = Vector2(880, 704)
+
+[node name="StaticBox1x8Grass5" parent="Static" instance=ExtResource("19_vvv6j")]
+position = Vector2(1136, 704)
+
+[node name="Pieces" type="Node2D" parent="."]

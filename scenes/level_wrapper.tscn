@@ -18,15 +18,12 @@ script = ExtResource("1_asw2c")
 [node name="DestructionLabel" type="Label" parent="."]
 z_index = 100
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -23.0
+offset_left = -244.0
+offset_bottom = 45.0
 grow_horizontal = 0
-grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
 theme_override_font_sizes/font_size = 32
 text = "Destruction: 0%"
@@ -38,6 +35,7 @@ z_index = 150
 layout_mode = 1
 
 [node name="DebugBombRaycastVisualizer" type="Node2D" parent="." groups=["debug_bomb_raycast_visualizer"]]
+visible = false
 z_index = 1000
 script = ExtResource("3_asw2c")
 metadata/_custom_type_script = "uid://ccrm27ibyllj5"

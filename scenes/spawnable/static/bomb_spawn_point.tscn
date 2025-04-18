@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ekdjp75qg5j"]
+
+[ext_resource type="Texture2D" uid="uid://b5mxsyoonh5g3" path="res://graphics/background_objects/arrow.png" id="1_x2vfv"]
+
+[node name="BombSpawnPoint" type="Node2D" groups=["bomb_spawn"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -6
+position = Vector2(0, -23)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_x2vfv")

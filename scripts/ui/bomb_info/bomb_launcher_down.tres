@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://p12g1r2g64yh" path="res://graphics/icons/icon14.png" id="1_ng7xm"]
 [ext_resource type="PackedScene" uid="uid://brtd3ivn235bn" path="res://scenes/spawnable/bombs/bomb_launcher_down.tscn" id="2_1ndwl"]
-[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info.gd" id="2_fli3u"]
+[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info/bomb_info.gd" id="2_fli3u"]
 
 [resource]
 script = ExtResource("2_fli3u")

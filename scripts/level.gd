@@ -23,6 +23,8 @@ func _ready() -> void:
 func get_destruction_ratio() -> float:
 	if not is_node_ready():
 		return 0.0
+	if _total_piece_health <= 0.0:
+		return 1.0
 	var pieces := get_tree().get_nodes_in_group(&"piece")
 	var remaining_health := 0.0
 	for node in pieces:

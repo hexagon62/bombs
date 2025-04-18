@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0h0d1gjqbmyl" path="res://scripts/utility/signal_joiner.gd" id="1_0q5fb"]
 [ext_resource type="Texture2D" uid="uid://by8732nf3skqx" path="res://graphics/effects/explosion.png" id="1_xdl0d"]
-[ext_resource type="AudioStream" uid="uid://b2cluoap61io4" path="res://sounds/stock_explosion.ogg" id="2_xdl0d"]
+[ext_resource type="AudioStream" uid="uid://b2cluoap61io4" path="res://sounds/explosions/stock_explosion.ogg" id="2_xdl0d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b502c"]
 atlas = ExtResource("1_xdl0d")

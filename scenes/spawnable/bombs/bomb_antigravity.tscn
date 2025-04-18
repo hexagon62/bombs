@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jugcugfoo4sk" path="res://scripts/bombs/bomb.gd" id="1_bgkyr"]
 [ext_resource type="PackedScene" uid="uid://duw766cio2ckl" path="res://scenes/spawnable/effects/explosions/explosion_small.tscn" id="2_xjujo"]
-[ext_resource type="Texture2D" uid="uid://2lx5h3h02ewr" path="res://graphics/bombs/02.png" id="3_bgkyr"]
+[ext_resource type="Texture2D" uid="uid://dse6tpd0kyknx" path="res://graphics/bombs/15.png" id="3_bgkyr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ptq8"]
 radius = 32.0
@@ -13,7 +13,6 @@ collision_mask = 5
 gravity_scale = -1.0
 continuous_cd = 1
 script = ExtResource("1_bgkyr")
-explosion_radius = 256.0
 explosion_scene = ExtResource("2_xjujo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

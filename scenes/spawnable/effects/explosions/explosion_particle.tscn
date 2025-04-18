@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://cc46d3u2o66d4"]
 
 [ext_resource type="Script" uid="uid://d0h0d1gjqbmyl" path="res://scripts/utility/signal_joiner.gd" id="1_6dcum"]
-[ext_resource type="AudioStream" uid="uid://b2cluoap61io4" path="res://sounds/stock_explosion.ogg" id="2_wqfm3"]
+[ext_resource type="AudioStream" uid="uid://b2cluoap61io4" path="res://sounds/explosions/stock_explosion.ogg" id="2_wqfm3"]
 
 [sub_resource type="Gradient" id="Gradient_p6b6h"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)

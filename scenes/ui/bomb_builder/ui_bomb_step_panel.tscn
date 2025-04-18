@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dtn60q7w3xsce"]
 
-[ext_resource type="Script" uid="uid://cyku5ttaat0wt" path="res://scripts/ui/bomb_step_panel.gd" id="1_cqfgm"]
+[ext_resource type="Script" uid="uid://cyku5ttaat0wt" path="res://scripts/ui/bomb_builder/bomb_step_panel.gd" id="1_cqfgm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqpod"]
 bg_color = Color(0.4, 0.4, 0.4, 0.501961)

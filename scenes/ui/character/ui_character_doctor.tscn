@@ -1,0 +1,65 @@
+[gd_scene load_steps=23 format=3 uid="uid://ba7f5kca3i40"]
+
+[ext_resource type="Script" uid="uid://blry6wjjwjui8" path="res://scripts/ui/character/character_sprite.gd" id="1_opdcx"]
+[ext_resource type="Script" uid="uid://c76uxm4sqtjc1" path="res://scripts/ui/character/character_expression.gd" id="2_lyihs"]
+[ext_resource type="Texture2D" uid="uid://dl45lpk14ojck" path="res://graphics/characters/doctor/02.png" id="3_7a2lp"]
+[ext_resource type="Texture2D" uid="uid://bw0ytrq8ljoj2" path="res://graphics/characters/doctor/01.png" id="4_bceia"]
+[ext_resource type="Texture2D" uid="uid://dgedesfrmodyj" path="res://graphics/characters/doctor/04.png" id="5_x3hlh"]
+[ext_resource type="Texture2D" uid="uid://bmbwjfc17ub8a" path="res://graphics/characters/doctor/03.png" id="6_c7tem"]
+[ext_resource type="Texture2D" uid="uid://bum62ufmv26fu" path="res://graphics/characters/doctor/06.png" id="7_666ip"]
+[ext_resource type="Texture2D" uid="uid://clds7cwdu7wbx" path="res://graphics/characters/doctor/05.png" id="8_k0tcq"]
+[ext_resource type="Texture2D" uid="uid://cjwh30s0lhlns" path="res://graphics/characters/doctor/08.png" id="9_o45g8"]
+[ext_resource type="Texture2D" uid="uid://wyasrunpb4rs" path="res://graphics/characters/doctor/07.png" id="10_b72ty"]
+[ext_resource type="Texture2D" uid="uid://bhj15r6h87nyw" path="res://graphics/characters/doctor/10.png" id="11_kaawo"]
+[ext_resource type="Texture2D" uid="uid://nsyv76vke6n" path="res://graphics/characters/doctor/09.png" id="12_k1qr2"]
+[ext_resource type="Texture2D" uid="uid://f661j8vvhou1" path="res://graphics/characters/doctor/12.png" id="13_s8x63"]
+[ext_resource type="Texture2D" uid="uid://coeaiy38qbuj0" path="res://graphics/characters/doctor/11.png" id="14_i1nf1"]
+[ext_resource type="Texture2D" uid="uid://d1m8fwbqcy2mg" path="res://graphics/characters/doctor/14.png" id="15_c7tem"]
+[ext_resource type="Texture2D" uid="uid://cmbfybkfp1p6d" path="res://graphics/characters/doctor/13.png" id="16_666ip"]
+[ext_resource type="Texture2D" uid="uid://cjo4hqxvlhppj" path="res://graphics/characters/doctor/16.png" id="17_k0tcq"]
+[ext_resource type="Texture2D" uid="uid://cprjgue3shjk7" path="res://graphics/characters/doctor/15.png" id="18_o45g8"]
+
+[sub_resource type="Resource" id="Resource_h5oi1"]
+script = ExtResource("2_lyihs")
+normal_texture = ExtResource("12_k1qr2")
+blinking_texture = ExtResource("11_kaawo")
+talking_texture = ExtResource("14_i1nf1")
+talking_and_blinking_texture = ExtResource("13_s8x63")
+metadata/_custom_type_script = "uid://c76uxm4sqtjc1"
+
+[sub_resource type="Resource" id="Resource_b72ty"]
+script = ExtResource("2_lyihs")
+normal_texture = ExtResource("16_666ip")
+blinking_texture = ExtResource("15_c7tem")
+talking_texture = ExtResource("18_o45g8")
+talking_and_blinking_texture = ExtResource("17_k0tcq")
+metadata/_custom_type_script = "uid://c76uxm4sqtjc1"
+
+[sub_resource type="Resource" id="Resource_x6y1c"]
+script = ExtResource("2_lyihs")
+normal_texture = ExtResource("8_k0tcq")
+blinking_texture = ExtResource("7_666ip")
+talking_texture = ExtResource("10_b72ty")
+talking_and_blinking_texture = ExtResource("9_o45g8")
+metadata/_custom_type_script = "uid://c76uxm4sqtjc1"
+
+[sub_resource type="Resource" id="Resource_7sd1t"]
+script = ExtResource("2_lyihs")
+normal_texture = ExtResource("4_bceia")
+blinking_texture = ExtResource("3_7a2lp")
+talking_texture = ExtResource("6_c7tem")
+talking_and_blinking_texture = ExtResource("5_x3hlh")
+metadata/_custom_type_script = "uid://c76uxm4sqtjc1"
+
+[node name="DoctorSprite" type="Sprite2D"]
+texture = ExtResource("18_o45g8")
+script = ExtResource("1_opdcx")
+expressions = Dictionary[StringName, ExtResource("2_lyihs")]({
+&"angry": SubResource("Resource_h5oi1"),
+&"evil": SubResource("Resource_b72ty"),
+&"happy": SubResource("Resource_x6y1c"),
+&"neutral": SubResource("Resource_7sd1t")
+})
+current_expression = &"evil"
+blinking = true
+talking = true

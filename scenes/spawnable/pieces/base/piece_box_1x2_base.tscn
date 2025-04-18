@@ -6,17 +6,18 @@
 size = Vector2(64, 32)
 
 [node name="PieceBox1x2Base" instance=ExtResource("1_35wgk")]
+modulate = Color(0.86758, 0.935102, 0.979927, 1)
 max_health = 200.0
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="Sprite" parent="." index="0"]
+position = Vector2(16, 0)
+
+[node name="FireParticles" parent="." index="1"]
+position = Vector2(16, 0)
+
+[node name="RemoteTransform2D" parent="." index="2"]
+position = Vector2(16, 0)
+
+[node name="CollisionShape2D" parent="." index="3"]
 position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_1et7b")
-
-[node name="Sprite" parent="." index="1"]
-position = Vector2(16, 0)
-
-[node name="FireParticles" parent="." index="2"]
-position = Vector2(16, 0)
-
-[node name="RemoteTransform2D" parent="." index="3"]
-position = Vector2(16, 0)

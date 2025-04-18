@@ -63,6 +63,9 @@ var debris_impulse := Vector2.ZERO
 
 
 func _ready() -> void:
+	contact_monitor = true
+	max_contacts_reported = 256
+	continuous_cd = RigidBody2D.CCD_MODE_CAST_SHAPE
 	health = max_health
 	_initial_position = global_position
 	modulate = Color(

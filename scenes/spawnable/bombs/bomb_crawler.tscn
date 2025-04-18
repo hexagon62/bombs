@@ -57,6 +57,7 @@ continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 32
 script = ExtResource("1_v41bu")
+explosion_damage = 300.0
 explosion_scene = ExtResource("2_p25kj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -76,9 +77,9 @@ sprite_frames = SubResource("SpriteFrames_ubtqy")
 autoplay = "default"
 
 [connection signal="crawl_ended" from="." to="Visuals/AnimatedSprite2D" method="set_animation" binds= [&"default"]]
-[connection signal="crawl_left_began" from="." to="Visuals/AnimatedSprite2D" method="set_flip_v" binds= [true]]
 [connection signal="crawl_left_began" from="." to="Visuals/AnimatedSprite2D" method="set_flip_h" binds= [true]]
+[connection signal="crawl_left_began" from="." to="Visuals/AnimatedSprite2D" method="set_flip_v" binds= [true]]
 [connection signal="crawl_left_began" from="." to="Visuals/AnimatedSprite2D" method="set_animation" binds= [&"crawl"]]
-[connection signal="crawl_right_began" from="." to="Visuals/AnimatedSprite2D" method="set_flip_v" binds= [false]]
 [connection signal="crawl_right_began" from="." to="Visuals/AnimatedSprite2D" method="set_flip_h" binds= [true]]
+[connection signal="crawl_right_began" from="." to="Visuals/AnimatedSprite2D" method="set_flip_v" binds= [false]]
 [connection signal="crawl_right_began" from="." to="Visuals/AnimatedSprite2D" method="set_animation" binds= [&"crawl"]]

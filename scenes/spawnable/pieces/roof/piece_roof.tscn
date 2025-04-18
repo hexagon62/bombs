@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://du7swqp8isopm"]
+[gd_scene load_steps=4 format=3 uid="uid://du7swqp8isopm"]
 
 [ext_resource type="PackedScene" uid="uid://ctcptvbaa2ejf" path="res://scenes/spawnable/pieces/base/piece_box_1x1_base.tscn" id="1_vamqx"]
-[ext_resource type="Texture2D" uid="uid://buricbks5lsh1" path="res://graphics/blocks/roof_01.png" id="2_uc0c0"]
+[ext_resource type="Texture2D" uid="uid://5ncnprmf8mi6" path="res://graphics/blocks/roof_01.png" id="2_uc0c0"]
+[ext_resource type="PackedScene" uid="uid://5pumnjlu8uu1" path="res://scenes/spawnable/effects/debris/debris_roof.tscn" id="3_d3w1i"]
 
 [node name="PieceRoof" instance=ExtResource("1_vamqx")]
+modulate = Color(0.914722, 0.856113, 0.884722, 1)
 max_health = 50.0
 undisturbed_texture = ExtResource("2_uc0c0")
+debris_scene = ExtResource("3_d3w1i")
 
-[node name="Sprite" parent="." index="1"]
-scale = Vector2(1, 1)
+[node name="Sprite" parent="." index="0"]
 texture = ExtResource("2_uc0c0")

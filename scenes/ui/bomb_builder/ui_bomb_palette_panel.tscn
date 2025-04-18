@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b5wta5s46ekan"]
 
-[ext_resource type="Script" uid="uid://cdp6k3hpvjlh4" path="res://scripts/ui/bomb_palette_panel.gd" id="1_eu8mw"]
+[ext_resource type="Script" uid="uid://cdp6k3hpvjlh4" path="res://scripts/ui/bomb_builder/bomb_palette_panel.gd" id="1_eu8mw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ta1pe"]
 bg_color = Color(0.1, 0.1, 0.1, 1)

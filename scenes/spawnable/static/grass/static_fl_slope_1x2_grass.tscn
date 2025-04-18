@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://81uvm13ny2k6"]
+
+[ext_resource type="Texture2D" uid="uid://qtktki7w3nyg" path="res://graphics/blocks/grass_06.png" id="1_n3xpj"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_4t5tn"]
+custom_solver_bias = 1.0
+points = PackedVector2Array(32.5, -16.5, 32.5, 16.5, -32.5, 16.5)
+
+[node name="StaticFLSlope1x2Grass" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 0)
+shape = SubResource("ConvexPolygonShape2D_4t5tn")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(16, -1.8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_n3xpj")
+flip_h = true

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpendsupd46hd"]
+
+[ext_resource type="Texture2D" uid="uid://cseaq0djf5348" path="res://graphics/background_objects/tree03.png" id="1_lgk6q"]
+
+[node name="TreeC" type="Node2D"]
+z_index = -6
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -43)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_lgk6q")

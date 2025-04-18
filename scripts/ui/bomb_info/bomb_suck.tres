@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="BombInfo" load_steps=4 format=3 uid="uid://cujiiklh5nd6b"]
 
 [ext_resource type="Texture2D" uid="uid://ccl0bdnhyumxx" path="res://graphics/icons/icon05.png" id="1_6jrw8"]
-[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info.gd" id="1_f02gq"]
+[ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info/bomb_info.gd" id="1_f02gq"]
 [ext_resource type="PackedScene" uid="uid://bnepsxy3vdq4w" path="res://scenes/spawnable/bombs/bomb_suck.tscn" id="2_ly0ar"]
 
 [resource]
