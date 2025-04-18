@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bfdbml2gyghur"]
+[gd_scene load_steps=57 format=3 uid="uid://bfdbml2gyghur"]
 
 [ext_resource type="Script" uid="uid://bm8j2a5v8n737" path="res://scripts/level.gd" id="1_vmg1d"]
 [ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info/bomb_info.gd" id="2_1nwmf"]
@@ -19,6 +19,39 @@
 [ext_resource type="Texture2D" uid="uid://khb55jwhghb8" path="res://graphics/backgrounds/bg01 blue.png" id="17_n7m6w"]
 [ext_resource type="PackedScene" uid="uid://1ekdjp75qg5j" path="res://scenes/spawnable/static/bomb_spawn_point.tscn" id="18_ju8vr"]
 [ext_resource type="PackedScene" uid="uid://52saq4c8n7se" path="res://scenes/spawnable/static/grass/static_box_1x8_grass.tscn" id="19_tio2m"]
+[ext_resource type="PackedScene" uid="uid://bpendsupd46hd" path="res://scenes/spawnable/static/tree/static_bg_tree_c.tscn" id="20_jql0x"]
+[ext_resource type="PackedScene" uid="uid://d20afcsfsdb6d" path="res://scenes/spawnable/static/tree/static_bg_tree_b.tscn" id="21_do6pa"]
+[ext_resource type="PackedScene" uid="uid://bclnqa6js50bd" path="res://scenes/spawnable/static/tree/static_bg_tree_a.tscn" id="22_n8qcm"]
+[ext_resource type="PackedScene" uid="uid://yppy5agvca1f" path="res://scenes/spawnable/static/grass/static_box_1x1_grass.tscn" id="23_aey3y"]
+[ext_resource type="PackedScene" uid="uid://b4hyxdxsei6fq" path="res://scenes/spawnable/static/grass/static_box_1x2_grass.tscn" id="24_k0dme"]
+[ext_resource type="PackedScene" uid="uid://c4pk25k8c44d8" path="res://scenes/spawnable/static/grass/static_box_1x4_grass.tscn" id="25_o5em7"]
+[ext_resource type="PackedScene" uid="uid://ciarp0nujxgei" path="res://scenes/spawnable/static/grass/static_fl_slope_1x1_grass.tscn" id="26_o5em7"]
+[ext_resource type="PackedScene" uid="uid://81uvm13ny2k6" path="res://scenes/spawnable/static/grass/static_fl_slope_1x2_grass.tscn" id="27_22mqa"]
+[ext_resource type="PackedScene" uid="uid://cv65xw4l5xo5l" path="res://scenes/spawnable/static/grass/static_fr_slope_1x1_grass.tscn" id="28_6c6bd"]
+[ext_resource type="PackedScene" uid="uid://xd20036yqfp0" path="res://scenes/spawnable/static/grass/static_fr_slope_1x2_grass.tscn" id="29_2qmps"]
+[ext_resource type="PackedScene" uid="uid://m3a0c6snoiku" path="res://scenes/spawnable/static/grass/static_fr_slope_1x4_grass.tscn" id="30_gtyp3"]
+[ext_resource type="PackedScene" uid="uid://cvdopgruy50xn" path="res://scenes/spawnable/pieces/red/piece_box_1x1_red_b.tscn" id="31_mqy1c"]
+[ext_resource type="PackedScene" uid="uid://b5ymdc0a075kd" path="res://scenes/spawnable/pieces/red/piece_box_1x1_red_a.tscn" id="32_1lucq"]
+[ext_resource type="PackedScene" uid="uid://cpvdh3snstvoq" path="res://scenes/spawnable/pieces/red/piece_box_1x2_red_a.tscn" id="33_0qj75"]
+[ext_resource type="PackedScene" uid="uid://0c6re8qumqop" path="res://scenes/spawnable/pieces/red/piece_box_1x2_red_c.tscn" id="34_r6hjj"]
+[ext_resource type="PackedScene" uid="uid://ctb48ugkw68qq" path="res://scenes/spawnable/pieces/orange/piece_box_1x2_orange_f.tscn" id="35_q6vlo"]
+[ext_resource type="PackedScene" uid="uid://dqo5bgyk2qp6f" path="res://scenes/spawnable/pieces/orange/piece_box_1x1_orange_a.tscn" id="36_m7ofi"]
+[ext_resource type="PackedScene" uid="uid://dt8m8s0htcoiu" path="res://scenes/spawnable/pieces/orange/piece_box_1x1_orange_c.tscn" id="37_apiyn"]
+[ext_resource type="PackedScene" uid="uid://cw28rr2pov73p" path="res://scenes/spawnable/pieces/red/piece_box_1x2_red_h.tscn" id="38_xvbt6"]
+[ext_resource type="PackedScene" uid="uid://u5x681xurmry" path="res://scenes/spawnable/pieces/orange/piece_box_1x1_orange_b.tscn" id="39_wm3e5"]
+[ext_resource type="PackedScene" uid="uid://b3kurtd1lh07n" path="res://scenes/spawnable/pieces/red/piece_box_1x1_red_c.tscn" id="40_i0mny"]
+[ext_resource type="PackedScene" uid="uid://bxybvu8wu7373" path="res://scenes/spawnable/pieces/orange/piece_box_1x2_orange_g.tscn" id="41_07vog"]
+[ext_resource type="PackedScene" uid="uid://du7swqp8isopm" path="res://scenes/spawnable/pieces/roof/piece_roof.tscn" id="42_rkjuh"]
+[ext_resource type="PackedScene" uid="uid://dp4s0w14i1a8f" path="res://scenes/spawnable/pieces/roof/piece_roof_left.tscn" id="43_60f7k"]
+[ext_resource type="PackedScene" uid="uid://bwo17b38hbuc2" path="res://scenes/spawnable/pieces/red/piece_box_1x2_red_e.tscn" id="44_urpbc"]
+[ext_resource type="PackedScene" uid="uid://st750k7xf6h5" path="res://scenes/spawnable/pieces/red/piece_box_1x2_red_b.tscn" id="45_yxhsx"]
+[ext_resource type="PackedScene" uid="uid://bmbdoyp4vfmk" path="res://scenes/spawnable/pieces/roof/piece_roof_right.tscn" id="46_k1q4s"]
+[ext_resource type="PackedScene" uid="uid://utoxr1gnev1r" path="res://scenes/spawnable/pieces/red/piece_box_1x2_red_f.tscn" id="47_n37he"]
+[ext_resource type="PackedScene" uid="uid://cn6wxao3wnogb" path="res://scenes/spawnable/pieces/orange/piece_box_1x2_orange_c.tscn" id="48_ro10o"]
+[ext_resource type="PackedScene" uid="uid://dg4oj0n37coqp" path="res://scenes/spawnable/pieces/orange/piece_box_1x2_orange_d.tscn" id="49_l1xkm"]
+[ext_resource type="PackedScene" uid="uid://c3qrvi2x6nwyx" path="res://scenes/spawnable/pieces/orange/piece_box_1x2_orange_e.tscn" id="50_au27u"]
+[ext_resource type="PackedScene" uid="uid://b6h0wmji2bxcc" path="res://scenes/spawnable/pieces/red/piece_box_1x2_red_d.tscn" id="51_fbh0l"]
+[ext_resource type="PackedScene" uid="uid://0ks7d0nj330c" path="res://scenes/spawnable/pieces/orange/piece_box_1x2_orange_b.tscn" id="52_knm1b"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6xh4u"]
 normal = Vector2(0, 1)
@@ -33,7 +66,7 @@ normal = Vector2(-1, 0)
 
 [node name="Level" type="Node2D" groups=["level"]]
 script = ExtResource("1_vmg1d")
-bombs_available = Array[ExtResource("2_1nwmf")]([ExtResource("3_5f5xw"), ExtResource("4_o3ttr"), ExtResource("5_kdsi4"), ExtResource("6_kva3v"), ExtResource("7_jql0x"), ExtResource("8_do6pa"), ExtResource("9_n8qcm"), ExtResource("10_aey3y"), ExtResource("11_k0dme"), ExtResource("12_o5em7"), ExtResource("13_22mqa"), ExtResource("14_6c6bd"), ExtResource("15_2qmps"), ExtResource("16_gtyp3")])
+bombs_available = Array[ExtResource("2_1nwmf")]([ExtResource("3_5f5xw"), ExtResource("4_o3ttr"), ExtResource("5_kdsi4"), ExtResource("6_kva3v"), ExtResource("7_jql0x"), ExtResource("8_do6pa"), ExtResource("9_n8qcm"), ExtResource("10_aey3y"), ExtResource("11_k0dme"), ExtResource("12_o5em7"), ExtResource("13_22mqa"), ExtResource("14_6c6bd"), ExtResource("15_2qmps"), ExtResource("16_gtyp3"), ExtResource("13_22mqa")])
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -100
@@ -42,7 +75,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("17_n7m6w")
 
 [node name="BombSpawnPoint" parent="." instance=ExtResource("18_ju8vr")]
-position = Vector2(528, 672)
+position = Vector2(688, 640)
 
 [node name="Static" type="Node2D" parent="."]
 
@@ -88,3 +121,664 @@ position = Vector2(880, 704)
 position = Vector2(1136, 704)
 
 [node name="Pieces" type="Node2D" parent="."]
+
+[node name="TreeC" parent="." instance=ExtResource("20_jql0x")]
+position = Vector2(592, 672)
+
+[node name="TreeB" parent="." instance=ExtResource("21_do6pa")]
+position = Vector2(784, 672)
+
+[node name="TreeA" parent="." instance=ExtResource("22_n8qcm")]
+position = Vector2(848, 672)
+
+[node name="StaticBox1x1Grass" parent="." instance=ExtResource("23_aey3y")]
+position = Vector2(624, 448)
+
+[node name="StaticBox1x2Grass" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(560, 448)
+
+[node name="StaticBox1x4Grass" parent="." instance=ExtResource("25_o5em7")]
+position = Vector2(528, 480)
+
+[node name="StaticBox1x2Grass2" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(496, 448)
+
+[node name="StaticBox1x4Grass2" parent="." instance=ExtResource("25_o5em7")]
+position = Vector2(400, 480)
+
+[node name="StaticBox1x2Grass3" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(304, 640)
+
+[node name="StaticBox1x4Grass3" parent="." instance=ExtResource("25_o5em7")]
+position = Vector2(48, 512)
+
+[node name="StaticBox1x2Grass4" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(16, 480)
+
+[node name="StaticBox1x1Grass2" parent="." instance=ExtResource("23_aey3y")]
+position = Vector2(144, 512)
+
+[node name="StaticBox1x2Grass5" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(144, 544)
+
+[node name="StaticBox1x1Grass3" parent="." instance=ExtResource("23_aey3y")]
+position = Vector2(112, 544)
+
+[node name="StaticBox1x4Grass4" parent="." instance=ExtResource("25_o5em7")]
+position = Vector2(816, 320)
+
+[node name="StaticBox1x2Grass6" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(48, 544)
+
+[node name="StaticBox1x1Grass4" parent="." instance=ExtResource("23_aey3y")]
+position = Vector2(16, 544)
+
+[node name="StaticBox1x2Grass7" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(752, 352)
+
+[node name="StaticBox1x1Grass5" parent="." instance=ExtResource("23_aey3y")]
+position = Vector2(816, 352)
+
+[node name="StaticBox1x2Grass8" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(848, 352)
+
+[node name="StaticBox1x1Grass6" parent="." instance=ExtResource("23_aey3y")]
+position = Vector2(912, 352)
+
+[node name="StaticBox1x2Grass9" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(944, 448)
+
+[node name="TreeB2" parent="." instance=ExtResource("21_do6pa")]
+position = Vector2(432, 448)
+
+[node name="TreeC2" parent="." instance=ExtResource("20_jql0x")]
+position = Vector2(880, 288)
+
+[node name="TreeA2" parent="." instance=ExtResource("22_n8qcm")]
+position = Vector2(560, 416)
+
+[node name="StaticFLSlope1x1Grass" parent="." instance=ExtResource("26_o5em7")]
+position = Vector2(752, 320)
+
+[node name="StaticFLSlope1x2Grass" parent="." instance=ExtResource("27_22mqa")]
+position = Vector2(432, 448)
+
+[node name="StaticFRSlope1x1Grass" parent="." instance=ExtResource("28_6c6bd")]
+position = Vector2(912, 320)
+
+[node name="StaticFLSlope1x2Grass2" parent="." instance=ExtResource("29_2qmps")]
+position = Vector2(80, 480)
+
+[node name="StaticFRSlope1x4Grass" parent="." instance=ExtResource("30_gtyp3")]
+position = Vector2(1136, 608)
+
+[node name="StaticFLSlope1x1Grass2" parent="." instance=ExtResource("26_o5em7")]
+position = Vector2(624, 480)
+rotation = 3.14159
+
+[node name="StaticFRSlope1x1Grass2" parent="." instance=ExtResource("28_6c6bd")]
+position = Vector2(1008, 448)
+
+[node name="StaticFLSlope1x1Grass3" parent="." instance=ExtResource("26_o5em7")]
+position = Vector2(336, 480)
+
+[node name="StaticFRSlope1x1Grass3" parent="." instance=ExtResource("28_6c6bd")]
+position = Vector2(176, 512)
+
+[node name="StaticFRSlope1x1Grass4" parent="." instance=ExtResource("28_6c6bd")]
+position = Vector2(208, 544)
+
+[node name="StaticFLSlope1x2Grass3" parent="." instance=ExtResource("27_22mqa")]
+position = Vector2(240, 640)
+
+[node name="StaticBox1x2Grass10" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(1040, 608)
+
+[node name="StaticBox1x4Grass5" parent="." instance=ExtResource("25_o5em7")]
+position = Vector2(848, 448)
+
+[node name="StaticFLSlope1x1Grass4" parent="." instance=ExtResource("26_o5em7")]
+position = Vector2(784, 448)
+
+[node name="StaticFLSlope1x2Grass4" parent="." instance=ExtResource("27_22mqa")]
+position = Vector2(976, 608)
+
+[node name="StaticBox1x2Grass11" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(16, 672)
+
+[node name="StaticFRSlope1x1Grass5" parent="." instance=ExtResource("28_6c6bd")]
+position = Vector2(80, 672)
+
+[node name="StaticBox1x2Grass12" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(1232, 672)
+
+[node name="StaticBox1x4Grass6" parent="." instance=ExtResource("25_o5em7")]
+position = Vector2(1168, 640)
+
+[node name="StaticFRSlope1x1Grass6" parent="." instance=ExtResource("28_6c6bd")]
+position = Vector2(1264, 640)
+
+[node name="StaticBox1x2Grass13" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(976, 640)
+
+[node name="StaticBox1x4Grass7" parent="." instance=ExtResource("25_o5em7")]
+position = Vector2(1008, 672)
+
+[node name="StaticBox1x2Grass14" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(1072, 640)
+
+[node name="StaticBox1x1Grass7" parent="." instance=ExtResource("23_aey3y")]
+position = Vector2(1040, 640)
+
+[node name="StaticBox1x2Grass15" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(1104, 672)
+
+[node name="StaticBox1x1Grass8" parent="." instance=ExtResource("23_aey3y")]
+position = Vector2(1168, 672)
+
+[node name="StaticBox1x1Grass9" parent="." instance=ExtResource("23_aey3y")]
+position = Vector2(1200, 672)
+
+[node name="StaticBox1x1Grass10" parent="." instance=ExtResource("23_aey3y")]
+position = Vector2(240, 672)
+
+[node name="StaticBox1x2Grass16" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(272, 672)
+
+[node name="StaticBox1x2Grass17" parent="." instance=ExtResource("24_k0dme")]
+position = Vector2(336, 672)
+
+[node name="StaticFRSlope1x1Grass7" parent="." instance=ExtResource("28_6c6bd")]
+position = Vector2(368, 640)
+
+[node name="StaticFRSlope1x1Grass8" parent="." instance=ExtResource("28_6c6bd")]
+position = Vector2(400, 672)
+
+[node name="StaticBox1x8Grass" parent="." instance=ExtResource("19_tio2m")]
+position = Vector2(880, 480)
+
+[node name="PieceBox1x1RedB" parent="." instance=ExtResource("31_mqy1c")]
+modulate = Color(0.852935, 0.850879, 0.858138, 1)
+position = Vector2(368, 448)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedA" parent="." instance=ExtResource("32_1lucq")]
+modulate = Color(0.982134, 0.885052, 0.916249, 1)
+position = Vector2(400, 448)
+continuous_cd = 2
+
+[node name="PieceBox1x2RedA" parent="." instance=ExtResource("33_0qj75")]
+modulate = Color(0.875102, 0.897412, 0.948769, 1)
+position = Vector2(368, 320)
+continuous_cd = 2
+
+[node name="PieceBox1x2RedC" parent="." instance=ExtResource("34_r6hjj")]
+modulate = Color(0.863369, 0.850213, 0.963113, 1)
+position = Vector2(368, 384)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeF" parent="." instance=ExtResource("35_q6vlo")]
+modulate = Color(0.972298, 0.863262, 0.914964, 1)
+position = Vector2(368, 352)
+continuous_cd = 2
+
+[node name="PieceBox1x1OrangeA" parent="." instance=ExtResource("36_m7ofi")]
+modulate = Color(0.929005, 0.878522, 0.918665, 1)
+position = Vector2(368, 416)
+continuous_cd = 2
+
+[node name="PieceBox1x1OrangeC" parent="." instance=ExtResource("37_apiyn")]
+modulate = Color(0.937498, 0.897709, 0.884822, 1)
+position = Vector2(400, 416)
+continuous_cd = 2
+
+[node name="PieceBox1x2RedH" parent="." instance=ExtResource("38_xvbt6")]
+modulate = Color(0.953646, 0.981642, 0.91101, 1)
+position = Vector2(368, 288)
+continuous_cd = 2
+
+[node name="PieceBox1x1OrangeB" parent="." instance=ExtResource("39_wm3e5")]
+modulate = Color(0.998102, 0.964896, 0.99909, 1)
+position = Vector2(368, 256)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedC" parent="." instance=ExtResource("40_i0mny")]
+modulate = Color(0.9707, 0.889218, 0.865952, 1)
+position = Vector2(400, 256)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeG" parent="." instance=ExtResource("41_07vog")]
+modulate = Color(0.858836, 0.876048, 0.855971, 1)
+position = Vector2(368, 224)
+continuous_cd = 2
+
+[node name="PieceRoof" parent="." instance=ExtResource("42_rkjuh")]
+modulate = Color(0.908538, 0.86105, 0.932858, 1)
+position = Vector2(400, 192)
+continuous_cd = 2
+
+[node name="PieceRoofLeft" parent="." instance=ExtResource("43_60f7k")]
+modulate = Color(0.956501, 0.94475, 0.967532, 1)
+position = Vector2(368, 192)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceBox1x2RedE" parent="." instance=ExtResource("44_urpbc")]
+modulate = Color(0.934805, 0.95005, 0.981503, 1)
+position = Vector2(16, 448)
+continuous_cd = 2
+
+[node name="PieceBox1x2RedB" parent="." instance=ExtResource("45_yxhsx")]
+modulate = Color(0.923528, 0.977995, 0.996811, 1)
+position = Vector2(16, 416)
+continuous_cd = 2
+
+[node name="PieceBox1x2RedC2" parent="." instance=ExtResource("34_r6hjj")]
+modulate = Color(0.913446, 0.957112, 0.879084, 1)
+position = Vector2(16, 384)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedB2" parent="." instance=ExtResource("31_mqy1c")]
+modulate = Color(0.870405, 0.850308, 0.885922, 1)
+position = Vector2(48, 352)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedA2" parent="." instance=ExtResource("32_1lucq")]
+modulate = Color(0.972216, 0.977587, 0.956287, 1)
+position = Vector2(48, 320)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedC2" parent="." instance=ExtResource("40_i0mny")]
+modulate = Color(0.919578, 0.955911, 0.922765, 1)
+position = Vector2(48, 288)
+continuous_cd = 2
+
+[node name="RoofRight" parent="." instance=ExtResource("46_k1q4s")]
+modulate = Color(0.883523, 0.911125, 0.893445, 1)
+position = Vector2(48, 256)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceRoofLeft2" parent="." instance=ExtResource("43_60f7k")]
+modulate = Color(0.882384, 0.971874, 0.875596, 1)
+position = Vector2(16, 352)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceBox1x1OrangeB2" parent="." instance=ExtResource("39_wm3e5")]
+modulate = Color(0.883193, 0.930415, 0.88537, 1)
+position = Vector2(144, 480)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedC3" parent="." instance=ExtResource("40_i0mny")]
+modulate = Color(0.900137, 0.930568, 0.917474, 1)
+position = Vector2(144, 448)
+continuous_cd = 2
+
+[node name="PieceRoofLeft3" parent="." instance=ExtResource("43_60f7k")]
+modulate = Color(0.984652, 0.917888, 0.935367, 1)
+position = Vector2(144, 416)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceBox1x2RedF" parent="." instance=ExtResource("47_n37he")]
+modulate = Color(0.93786, 0.875271, 0.857321, 1)
+position = Vector2(496, 416)
+continuous_cd = 2
+
+[node name="PieceBox1x2RedE2" parent="." instance=ExtResource("44_urpbc")]
+modulate = Color(0.912822, 0.852856, 0.851608, 1)
+position = Vector2(496, 384)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeC" parent="." instance=ExtResource("48_ro10o")]
+modulate = Color(0.929956, 0.956973, 0.963019, 1)
+position = Vector2(496, 352)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeG2" parent="." instance=ExtResource("41_07vog")]
+modulate = Color(0.96716, 0.855638, 0.936438, 1)
+position = Vector2(496, 320)
+continuous_cd = 2
+
+[node name="PieceBox1x2RedB2" parent="." instance=ExtResource("45_yxhsx")]
+modulate = Color(0.913203, 0.983585, 0.933159, 1)
+position = Vector2(496, 288)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedA3" parent="." instance=ExtResource("32_1lucq")]
+modulate = Color(0.970724, 0.864003, 0.896494, 1)
+position = Vector2(496, 256)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeD" parent="." instance=ExtResource("49_l1xkm")]
+modulate = Color(0.923615, 0.90751, 0.862417, 1)
+position = Vector2(496, 224)
+continuous_cd = 2
+
+[node name="PieceBox1x1OrangeC2" parent="." instance=ExtResource("37_apiyn")]
+modulate = Color(0.925405, 0.972097, 0.953582, 1)
+position = Vector2(528, 256)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeE" parent="." instance=ExtResource("50_au27u")]
+modulate = Color(0.920491, 0.857174, 0.908615, 1)
+position = Vector2(496, 192)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedB3" parent="." instance=ExtResource("31_mqy1c")]
+modulate = Color(0.864078, 0.95133, 0.920283, 1)
+position = Vector2(496, 160)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedB4" parent="." instance=ExtResource("31_mqy1c")]
+modulate = Color(0.952416, 0.914593, 0.876875, 1)
+position = Vector2(528, 160)
+continuous_cd = 2
+
+[node name="RoofRight2" parent="." instance=ExtResource("46_k1q4s")]
+modulate = Color(0.935277, 0.937338, 0.876, 1)
+position = Vector2(528, 128)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceRoofLeft4" parent="." instance=ExtResource("43_60f7k")]
+modulate = Color(0.85179, 0.900132, 0.966099, 1)
+position = Vector2(496, 128)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceBox1x2RedH2" parent="." instance=ExtResource("38_xvbt6")]
+modulate = Color(0.993771, 0.997602, 0.978893, 1)
+position = Vector2(560, 416)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeD2" parent="." instance=ExtResource("49_l1xkm")]
+modulate = Color(0.894038, 0.851326, 0.852168, 1)
+position = Vector2(560, 384)
+continuous_cd = 2
+
+[node name="PieceBox1x2RedD" parent="." instance=ExtResource("51_fbh0l")]
+modulate = Color(0.900814, 0.901987, 0.94403, 1)
+position = Vector2(560, 352)
+continuous_cd = 2
+
+[node name="PieceRoof2" parent="." instance=ExtResource("42_rkjuh")]
+modulate = Color(0.964206, 0.979459, 0.926798, 1)
+position = Vector2(560, 320)
+continuous_cd = 2
+
+[node name="RoofRight3" parent="." instance=ExtResource("46_k1q4s")]
+modulate = Color(0.864015, 0.853282, 0.989011, 1)
+position = Vector2(592, 320)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceBox1x2RedC3" parent="." instance=ExtResource("34_r6hjj")]
+modulate = Color(0.91189, 0.978234, 0.915936, 1)
+position = Vector2(944, 416)
+continuous_cd = 2
+
+[node name="PieceRoof3" parent="." instance=ExtResource("42_rkjuh")]
+modulate = Color(0.922564, 0.960321, 0.940262, 1)
+position = Vector2(976, 384)
+continuous_cd = 2
+
+[node name="PieceRoofLeft5" parent="." instance=ExtResource("43_60f7k")]
+modulate = Color(0.912726, 0.869903, 0.862072, 1)
+position = Vector2(944, 384)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceBox1x1OrangeB3" parent="." instance=ExtResource("39_wm3e5")]
+modulate = Color(0.888129, 0.92667, 0.870994, 1)
+position = Vector2(976, 352)
+continuous_cd = 2
+
+[node name="RoofRight4" parent="." instance=ExtResource("46_k1q4s")]
+modulate = Color(0.968883, 0.978111, 0.922412, 1)
+position = Vector2(976, 320)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceBox1x2RedF2" parent="." instance=ExtResource("47_n37he")]
+modulate = Color(0.881769, 0.9499, 0.851666, 1)
+position = Vector2(784, 288)
+continuous_cd = 2
+
+[node name="PieceBox1x1OrangeC3" parent="." instance=ExtResource("37_apiyn")]
+modulate = Color(0.908229, 0.92701, 0.881406, 1)
+position = Vector2(848, 288)
+continuous_cd = 2
+
+[node name="PieceBox1x1OrangeB4" parent="." instance=ExtResource("39_wm3e5")]
+modulate = Color(0.929634, 0.928614, 0.867309, 1)
+position = Vector2(784, 256)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeC2" parent="." instance=ExtResource("48_ro10o")]
+modulate = Color(0.972668, 0.87685, 0.930417, 1)
+position = Vector2(816, 256)
+continuous_cd = 2
+
+[node name="PieceBox1x2RedC4" parent="." instance=ExtResource("34_r6hjj")]
+modulate = Color(0.882326, 0.969376, 0.94603, 1)
+position = Vector2(784, 224)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedC4" parent="." instance=ExtResource("40_i0mny")]
+modulate = Color(0.898943, 0.897355, 0.865943, 1)
+position = Vector2(848, 192)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedB5" parent="." instance=ExtResource("31_mqy1c")]
+modulate = Color(0.969837, 0.930912, 0.911969, 1)
+position = Vector2(848, 224)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedC5" parent="." instance=ExtResource("40_i0mny")]
+modulate = Color(0.886792, 0.88406, 0.876567, 1)
+position = Vector2(848, 160)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedB6" parent="." instance=ExtResource("31_mqy1c")]
+modulate = Color(0.920921, 0.890072, 0.973899, 1)
+position = Vector2(816, 192)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeF2" parent="." instance=ExtResource("35_q6vlo")]
+modulate = Color(0.876087, 0.941601, 0.98989, 1)
+position = Vector2(784, 160)
+continuous_cd = 2
+
+[node name="PieceBox1x1OrangeC4" parent="." instance=ExtResource("37_apiyn")]
+modulate = Color(0.914048, 0.888637, 0.922179, 1)
+position = Vector2(784, 192)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedB7" parent="." instance=ExtResource("31_mqy1c")]
+modulate = Color(0.917853, 0.984495, 0.961355, 1)
+position = Vector2(848, 128)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedC6" parent="." instance=ExtResource("40_i0mny")]
+modulate = Color(0.902669, 0.952016, 0.982628, 1)
+position = Vector2(848, 96)
+continuous_cd = 2
+
+[node name="PieceRoof4" parent="." instance=ExtResource("42_rkjuh")]
+modulate = Color(0.965284, 0.888218, 0.936578, 1)
+position = Vector2(816, 128)
+continuous_cd = 2
+
+[node name="RoofRight5" parent="." instance=ExtResource("46_k1q4s")]
+modulate = Color(0.958167, 0.962601, 0.959505, 1)
+position = Vector2(848, 64)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceRoofLeft6" parent="." instance=ExtResource("43_60f7k")]
+modulate = Color(0.88929, 0.98438, 0.934504, 1)
+position = Vector2(784, 128)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceBox1x2RedF3" parent="." instance=ExtResource("47_n37he")]
+modulate = Color(0.928404, 0.891464, 0.939634, 1)
+position = Vector2(1040, 576)
+continuous_cd = 2
+
+[node name="PieceBox1x2RedE3" parent="." instance=ExtResource("44_urpbc")]
+modulate = Color(0.908852, 0.887653, 0.885602, 1)
+position = Vector2(1040, 544)
+continuous_cd = 2
+
+[node name="PieceBox1x1OrangeC5" parent="." instance=ExtResource("37_apiyn")]
+modulate = Color(0.951503, 0.990403, 0.934132, 1)
+position = Vector2(1072, 512)
+continuous_cd = 2
+
+[node name="PieceBox1x1OrangeB5" parent="." instance=ExtResource("39_wm3e5")]
+modulate = Color(0.866969, 0.920084, 0.900853, 1)
+position = Vector2(1072, 480)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedB8" parent="." instance=ExtResource("31_mqy1c")]
+modulate = Color(0.881778, 0.889358, 0.870271, 1)
+position = Vector2(1072, 448)
+continuous_cd = 2
+
+[node name="PieceBox1x1OrangeA2" parent="." instance=ExtResource("36_m7ofi")]
+modulate = Color(0.920303, 0.907311, 0.883855, 1)
+position = Vector2(1072, 416)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedA4" parent="." instance=ExtResource("32_1lucq")]
+modulate = Color(0.890147, 0.923143, 0.883132, 1)
+position = Vector2(1072, 384)
+continuous_cd = 2
+
+[node name="PieceBox1x1RedC7" parent="." instance=ExtResource("40_i0mny")]
+modulate = Color(0.979948, 0.886634, 0.99185, 1)
+position = Vector2(1072, 352)
+continuous_cd = 2
+
+[node name="RoofRight6" parent="." instance=ExtResource("46_k1q4s")]
+modulate = Color(0.956298, 0.984084, 0.917905, 1)
+position = Vector2(1072, 320)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceRoofLeft7" parent="." instance=ExtResource("43_60f7k")]
+modulate = Color(0.856826, 0.979963, 0.910476, 1)
+position = Vector2(1040, 512)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceBox1x2RedE4" parent="." instance=ExtResource("44_urpbc")]
+modulate = Color(0.976297, 0.967096, 0.93543, 1)
+position = Vector2(528, 672)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeE2" parent="." instance=ExtResource("50_au27u")]
+modulate = Color(0.988459, 0.88683, 0.867529, 1)
+position = Vector2(816, 640)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeF3" parent="." instance=ExtResource("35_q6vlo")]
+modulate = Color(0.956097, 0.935502, 0.968102, 1)
+position = Vector2(816, 672)
+continuous_cd = 2
+
+[node name="PieceBox1x2OrangeB" parent="." instance=ExtResource("52_knm1b")]
+modulate = Color(0.960656, 0.917879, 0.936667, 1)
+position = Vector2(528, 640)
+continuous_cd = 2
+
+[node name="RoofRight7" parent="." instance=ExtResource("46_k1q4s")]
+modulate = Color(0.868244, 0.879596, 0.900015, 1)
+position = Vector2(560, 608)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceRoofLeft8" parent="." instance=ExtResource("43_60f7k")]
+modulate = Color(0.988059, 0.927524, 0.86513, 1)
+position = Vector2(816, 608)
+continuous_cd = 2
+max_contacts_reported = 256
+
+[node name="PieceRoof5" parent="." instance=ExtResource("42_rkjuh")]
+modulate = Color(0.939473, 0.94848, 0.894074, 1)
+position = Vector2(528, 608)
+continuous_cd = 2
+
+[node name="PieceRoof6" parent="." instance=ExtResource("42_rkjuh")]
+modulate = Color(0.922366, 0.96218, 0.9647, 1)
+position = Vector2(848, 608)
+continuous_cd = 2
+
+[node name="TreeC3" parent="." instance=ExtResource("20_jql0x")]
+position = Vector2(304, 608)
+
+[node name="TreeB3" parent="." instance=ExtResource("21_do6pa")]
+position = Vector2(336, 608)
+
+[node name="TreeA3" parent="." instance=ExtResource("22_n8qcm")]
+position = Vector2(432, 672)
+
+[node name="TreeB4" parent="." instance=ExtResource("21_do6pa")]
+position = Vector2(496, 672)
+
+[node name="TreeC4" parent="." instance=ExtResource("20_jql0x")]
+position = Vector2(912, 672)
+
+[node name="TreeB5" parent="." instance=ExtResource("21_do6pa")]
+position = Vector2(1104, 608)
+
+[node name="TreeA4" parent="." instance=ExtResource("22_n8qcm")]
+position = Vector2(1168, 608)
+
+[node name="TreeC5" parent="." instance=ExtResource("20_jql0x")]
+position = Vector2(976, 608)
+
+[node name="TreeB6" parent="." instance=ExtResource("21_do6pa")]
+position = Vector2(1232, 608)
+
+[node name="TreeB7" parent="." instance=ExtResource("21_do6pa")]
+position = Vector2(784, 288)
+
+[node name="TreeC6" parent="." instance=ExtResource("20_jql0x")]
+position = Vector2(624, 416)
+
+[node name="TreeC7" parent="." instance=ExtResource("20_jql0x")]
+position = Vector2(368, 448)
+
+[node name="TreeB8" parent="." instance=ExtResource("21_do6pa")]
+position = Vector2(144, 480)
+
+[node name="TreeC8" parent="." instance=ExtResource("20_jql0x")]
+position = Vector2(48, 448)
+
+[node name="TreeA6" parent="." instance=ExtResource("22_n8qcm")]
+position = Vector2(112, 480)
+
+[node name="TreeC9" parent="." instance=ExtResource("20_jql0x")]
+position = Vector2(176, 672)
+
+[node name="TreeA7" parent="." instance=ExtResource("22_n8qcm")]
+position = Vector2(48, 640)
+
+[node name="TreeB9" parent="." instance=ExtResource("21_do6pa")]
+position = Vector2(144, 672)
+
+[node name="TreeC10" parent="." instance=ExtResource("20_jql0x")]
+position = Vector2(784, 448)
+
+[node name="TreeA8" parent="." instance=ExtResource("22_n8qcm")]
+position = Vector2(1008, 448)
+
+[node name="StaticFLSlope1x1Grass5" parent="." instance=ExtResource("26_o5em7")]
+position = Vector2(944, 672)
+
+[node name="TreeB10" parent="." instance=ExtResource("21_do6pa")]
+position = Vector2(976, 416)
