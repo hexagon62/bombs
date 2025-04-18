@@ -1,14 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxr4omd1qsit4"]
+[gd_scene load_steps=2 format=3 uid="uid://dxr4omd1qsit4"]
 
 [ext_resource type="PackedScene" uid="uid://duw766cio2ckl" path="res://scenes/spawnable/effects/explosions/explosion_small.tscn" id="1_6dcum"]
-[ext_resource type="AudioStream" uid="uid://dkkqygq4auqlt" path="res://sounds/explosions/stock_explosion2.wav" id="3_wqfm3"]
 
 [node name="ExplosionMedium" instance=ExtResource("1_6dcum")]
 
 [node name="Animation" parent="." index="0"]
 scale = Vector2(2, 2)
 speed_scale = 0.5
-
-[node name="Sound" parent="." index="1"]
-stream = ExtResource("3_wqfm3")
-volume_db = -3.0
