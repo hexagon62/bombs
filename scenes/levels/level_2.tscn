@@ -987,4 +987,4 @@ rotation = -1.5708
 position = Vector2(592, 32)
 
 [node name="TreeA6" parent="." instance=ExtResource("64_mghg3")]
-position = Vector2(1136, 224)
+position = Vector2(1168, 224)
