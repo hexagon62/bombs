@@ -11,5 +11,6 @@ points = PackedVector2Array(-16, -16, 16, 16, -16, 16)
 shape = SubResource("ConvexPolygonShape2D_ofx4e")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_fsa7i")
