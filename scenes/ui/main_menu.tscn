@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://q13dvyk3lrdk"]
+[gd_scene load_steps=17 format=3 uid="uid://q13dvyk3lrdk"]
 
 [ext_resource type="Texture2D" uid="uid://b1kiysdimsg34" path="res://graphics/logos/logo2.png" id="1_fe2o3"]
 [ext_resource type="Texture2D" uid="uid://cym6d8wxtt4km" path="res://graphics/backgrounds/main_menu_pic_01.png" id="1_sl1te"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://thbkqqg1qujq" path="res://scenes/levels/level_9.tscn" id="12_jbte4"]
 [ext_resource type="PackedScene" uid="uid://rtj0wek81jel" path="res://scenes/levels/level_10.tscn" id="13_e0hcc"]
 [ext_resource type="PackedScene" uid="uid://blkt5wffduewa" path="res://scenes/levels/level_11.tscn" id="14_qch7b"]
+[ext_resource type="PackedScene" uid="uid://dtx4s8tv464ar" path="res://scenes/levels/level_12.tscn" id="15_ayp64"]
 
 [node name="MainMenu" type="Control" groups=["main_menu"]]
 process_mode = 3
@@ -148,6 +149,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "The level that freezes the game"
 level = ExtResource("14_qch7b")
+
+[node name="ButtonLoadLevel12" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 12
+"
+level = ExtResource("15_ayp64")
 
 [node name="Footer" type="Control" parent="."]
 layout_mode = 1

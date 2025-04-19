@@ -79,7 +79,7 @@ level_name = &"2"
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -100
-position = Vector2(624, 352)
+position = Vector2(640, 352)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("17_laosj")
 
