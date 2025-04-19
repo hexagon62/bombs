@@ -7,3 +7,6 @@
 [node name="Animation" parent="." index="0"]
 scale = Vector2(2, 2)
 speed_scale = 0.5
+
+[node name="Particles" parent="." index="2"]
+emitting = true

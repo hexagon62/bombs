@@ -70,11 +70,9 @@ func _right_move_vector() -> Vector2:
 func _decide_move_direction() -> MoveDirection:
 	var left := _left_move_vector().angle_to(linear_velocity)
 	var right := _right_move_vector().angle_to(linear_velocity)
-	if left < right:
-		return MoveDirection.LEFT
-	elif right < left:
+	if right < left:
 		return MoveDirection.RIGHT
-	return [MoveDirection.LEFT, MoveDirection.RIGHT].pick_random()
+	return MoveDirection.LEFT
 
 
 func _get_move_vector(state: PhysicsDirectBodyState2D) -> Vector2:

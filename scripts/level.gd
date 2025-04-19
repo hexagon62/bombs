@@ -4,9 +4,15 @@ extends Node2D
 
 ## The bombs available for this level
 @export var bombs_available: Array[BombInfo]
+## The ratio of destruction needed to win the level
+@export_range(0.0, 1.0, 0.001) var win_ratio := 0.8
+## The internal name of the level
+@export var level_name: StringName
 
 # Total health of pieces in the level
 var _total_piece_health := 0.0
+# If the level is started
+var _started := false
 
 
 func _ready() -> void:
@@ -40,6 +46,9 @@ func done() -> bool:
 	if not is_node_ready():
 		return false
 	
+	if not _started:
+		return false
+	
 	if get_tree().get_first_node_in_group(&"bomb"):
 		return false
 	
@@ -50,3 +59,18 @@ func done() -> bool:
 			return false
 	
 	return true
+
+
+## Spawns the bombs, starting the level
+func spawn_bomb(bomb_builder: BombBuilder) -> void:
+	if not bomb_builder:
+		return
+	for node in get_tree().get_nodes_in_group(&"bomb_spawn"):
+		var node2d := node as Node2D
+		if node2d:
+			var bomb := bomb_builder.instantiate_bomb()
+			if bomb:
+				var point := node2d.global_position
+				bomb.global_position = point
+				add_child(bomb)
+	_started = true

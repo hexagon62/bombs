@@ -7,6 +7,8 @@ const SAFE_BOMB_LIMIT := 512
 
 ## Player is ready
 signal player_ready
+## Player is quitting
+signal player_quit
 
 var bomb_palette_panel_scene := preload("res://scenes/ui/bomb_builder/ui_bomb_palette_panel.tscn")
 var bomb_step_panel_scene := preload("res://scenes/ui/bomb_builder/ui_bomb_step_panel.tscn")
@@ -78,6 +80,14 @@ func move_step(step: BombStepPanel, offset: int) -> void:
 		return
 	var index := clampi(step.get_index() + offset, 0, bomb_steps.get_child_count()-1)
 	bomb_steps.move_child(step, index)
+	_update_step_numbers()
+
+
+## Removes all steps
+func clear() -> void:
+	for child in bomb_steps.get_children():
+		if child is BombStepPanel:
+			child.queue_free()
 	_update_step_numbers()
 
 
@@ -157,6 +167,13 @@ func _update_step_numbers() -> void:
 			panel.down_button.disabled = counter == bomb_steps.get_child_count()
 	var bomb_count := get_bombs_spawned()
 	bomb_count_label.text = "Number of bombs that will spawn: %d" % bomb_count
+	var level_wrapper := get_tree().get_first_node_in_group(&"level_wrapper") as LevelWrapper
+	if level_wrapper:
+		var completion := level_wrapper.get_current_level_completion_state()
+		if completion:
+			bomb_count_label.text += "\nBest: %d" % completion.best_bomb_count
+		else:
+			bomb_count_label.text += "\nBest: N/A (you haven't beat the level!)"
 	if bomb_count > SAFE_BOMB_LIMIT:
 		bomb_count_label.modulate = Color.RED
 		_bomb_warning = true
@@ -179,6 +196,10 @@ func _on_go_button_pressed() -> void:
 		player_ready.emit()
 
 
+func _on_quit_button_pressed() -> void:
+	player_quit.emit()
+
+
 func _on_confirm_no_button_pressed() -> void:
 	too_many_bombs_popup.visible = false
 
@@ -186,3 +207,9 @@ func _on_confirm_no_button_pressed() -> void:
 func _on_confirm_yes_button_pressed() -> void:
 	too_many_bombs_popup.visible = false
 	player_ready.emit()
+
+
+func _on_visibility_changed() -> void:
+	if not is_node_ready():
+		await ready
+	_update_step_numbers()

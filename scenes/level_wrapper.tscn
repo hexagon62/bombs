@@ -1,8 +1,36 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5ytpuvt5xn68"]
+[gd_scene load_steps=21 format=3 uid="uid://c5ytpuvt5xn68"]
 
 [ext_resource type="Script" uid="uid://dkftxsnu86p44" path="res://scripts/level_wrapper.gd" id="1_asw2c"]
+[ext_resource type="Texture2D" uid="uid://6xq087200rk2" path="res://graphics/icons/misc/quit.png" id="2_2s3ot"]
+[ext_resource type="PackedScene" uid="uid://d04vf67jvbuq5" path="res://scenes/ui/progress_bar_with_threshold.tscn" id="2_j0bl7"]
+[ext_resource type="Texture2D" uid="uid://cvc8vn6e2ask3" path="res://graphics/icons/misc/play.png" id="2_vyhw2"]
 [ext_resource type="Script" uid="uid://ccrm27ibyllj5" path="res://scripts/debug/debug_bomb_raycast_visualizer.gd" id="3_asw2c"]
+[ext_resource type="Texture2D" uid="uid://cdn7bl0oynoo8" path="res://graphics/icons/misc/reset.png" id="3_ib2jl"]
 [ext_resource type="PackedScene" uid="uid://btxvd4c7j5eww" path="res://scenes/ui/bomb_builder/ui_bomb_builder.tscn" id="3_vyhw2"]
+[ext_resource type="Texture2D" uid="uid://bs1w0js41qq5f" path="res://graphics/icons/misc/pause.png" id="4_2s3ot"]
+[ext_resource type="Script" uid="uid://cqfdgbppd3u38" path="res://scenes/ui/pause_button.gd" id="5_ib2jl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7lufb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2s3ot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ib2jl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hobm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f3vsg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yptke"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kuy23"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i7gwa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6kt1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jae1d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1hh3c"]
 
 [node name="LevelWrapper" type="Control" groups=["level_wrapper"]]
 process_mode = 3
@@ -12,22 +40,114 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("1_asw2c")
 
-[node name="DestructionLabel" type="Label" parent="."]
-z_index = 100
+[node name="ShowWhenUnpaused" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ShowWhenUnpaused"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ShowWhenUnpaused/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="QuitButton" type="Button" parent="ShowWhenUnpaused/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_colors/icon_disabled_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_hover_color = Color(0.8, 1, 0.8, 1)
+theme_override_colors/icon_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_focus_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_normal_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7lufb")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_2s3ot")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ib2jl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_7hobm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_f3vsg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yptke")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kuy23")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_i7gwa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v6kt1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_jae1d")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1hh3c")
+icon = ExtResource("2_2s3ot")
+expand_icon = true
+
+[node name="ResetButton" type="Button" parent="ShowWhenUnpaused/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_colors/icon_disabled_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_hover_color = Color(0.8, 1, 0.8, 1)
+theme_override_colors/icon_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_focus_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_normal_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7lufb")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_2s3ot")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ib2jl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_7hobm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_f3vsg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yptke")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kuy23")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_i7gwa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v6kt1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_jae1d")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1hh3c")
+icon = ExtResource("3_ib2jl")
+expand_icon = true
+
+[node name="PauseButton" type="Button" parent="ShowWhenUnpaused/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_colors/icon_disabled_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_hover_color = Color(0.8, 1, 0.8, 1)
+theme_override_colors/icon_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_focus_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_normal_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7lufb")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_2s3ot")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ib2jl")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_7hobm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_f3vsg")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_yptke")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_kuy23")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_i7gwa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v6kt1")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_jae1d")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1hh3c")
+icon = ExtResource("4_2s3ot")
+expand_icon = true
+script = ExtResource("5_ib2jl")
+paused_icon = ExtResource("2_vyhw2")
+unpaused_icon = ExtResource("4_2s3ot")
+
+[node name="DestructionProgressBar" parent="ShowWhenUnpaused" instance=ExtResource("2_j0bl7")]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -244.0
-offset_bottom = 45.0
+offset_left = -272.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 64.0
 grow_horizontal = 0
-theme_override_colors/font_color = Color(1, 1, 1, 0.501961)
-theme_override_font_sizes/font_size = 32
-text = "Destruction: 0%"
-horizontal_alignment = 2
+progress_ratio = 0.0
 
 [node name="BombBuilder" parent="." instance=ExtResource("3_vyhw2")]
 visible = false
@@ -41,4 +161,8 @@ script = ExtResource("3_asw2c")
 metadata/_custom_type_script = "uid://ccrm27ibyllj5"
 
 [connection signal="loaded" from="." to="DebugBombRaycastVisualizer" method="clear"]
+[connection signal="pressed" from="ShowWhenUnpaused/MarginContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ShowWhenUnpaused/MarginContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="ShowWhenUnpaused/MarginContainer/HBoxContainer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="player_quit" from="BombBuilder" to="." method="_on_quit_button_pressed"]
 [connection signal="player_ready" from="BombBuilder" to="." method="_on_player_ready"]
