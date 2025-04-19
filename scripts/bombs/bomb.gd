@@ -63,11 +63,11 @@ func _explode() -> void:
 
 # Does an explosion with parameters set in the inspector.
 func _apply_explosion_effects() -> void:
-	_create_explosion(explosion_radius, explosion_impulse, explosion_damage, EXPLOSION_RAYCAST_COUNT)
+	_create_explosion(explosion_radius, explosion_impulse, explosion_damage)
 
 
 # Applies effects of an explosion, pushing physics bodies and damaging pieces.
-func _create_explosion(radius: float, impulse: float, damage: float, raycast_count := EXPLOSION_RAYCAST_COUNT) -> void:
+func _create_explosion(radius: float, impulse: float, damage: float) -> void:
 	var space_rid := PhysicsServer2D.body_get_space(get_rid())
 	var direct_state := PhysicsServer2D.space_get_direct_state(space_rid)
 	
@@ -81,7 +81,6 @@ func _create_explosion(radius: float, impulse: float, damage: float, raycast_cou
 	# Get all pieces in range and check if they're in line of sight
 	var explosion_query := PhysicsShapeQueryParameters2D.new()
 	var damaged_pieces: Dictionary[Piece, float] = {}
-	var hits := 0
 	explosion_query.transform = global_transform
 	explosion_query.shape = CircleShape2D.new()
 	explosion_query.shape.radius = radius

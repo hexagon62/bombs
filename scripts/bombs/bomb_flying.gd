@@ -20,6 +20,6 @@ func _physics_process(delta: float) -> void:
 	super._physics_process(delta)
 
 
-func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+func _integrate_forces(_state: PhysicsDirectBodyState2D) -> void:
 	if ticks_alive >= 1:
 		linear_velocity = _desired_velocity

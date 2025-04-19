@@ -30,7 +30,7 @@ func _input(event: InputEvent) -> void:
 			reload_level()
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if level:
 		destruction_label.text = "Destruction: %.0f%%" % (level.get_destruction_ratio()*100.0)
 	else:
