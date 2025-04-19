@@ -32,6 +32,7 @@ piece="Pieces"
 bomb="Bombs"
 bomb_spawn=""
 level_wrapper="The container for the level"
+main_menu="The main menu"
 
 [input]
 
@@ -56,7 +57,7 @@ pause={
 [physics]
 
 common/physics_ticks_per_second=120
-common/max_physics_steps_per_frame=60
+common/max_physics_steps_per_frame=16
 2d/solver/solver_iterations=128
 common/physics_interpolation=true
 

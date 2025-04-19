@@ -18,9 +18,11 @@ func _ready() -> void:
 	else:
 		sprite.texture = textures.pick_random()
 	
-	#_fade_tween = get_tree().create_tween()
-	#_fade_tween.tween_interval(20.0)
-	#_fade_tween.tween_property(self, ^"freeze", true, 0.0)
+	_fade_tween = get_tree().create_tween()
+	_fade_tween.tween_interval(randf_range(8.0, 16.0))
+	_fade_tween.tween_property(self, ^"collision_layer", CollisionLayer.NONE, 0.0)
+	_fade_tween.tween_property(self, ^"modulate", Color(Color.WHITE, 0.0), 1.0)
+	_fade_tween.tween_callback(queue_free)
 	
 	collision_layer = CollisionLayer.DEBRIS
 	collision_mask = CollisionLayer.NONE

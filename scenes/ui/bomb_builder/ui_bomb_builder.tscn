@@ -1,7 +1,54 @@
-[gd_scene load_steps=4 format=3 uid="uid://btxvd4c7j5eww"]
+[gd_scene load_steps=29 format=3 uid="uid://btxvd4c7j5eww"]
 
 [ext_resource type="Script" uid="uid://depn51mpxrcgy" path="res://scripts/ui/bomb_builder/bomb_builder.gd" id="1_jvxxx"]
 [ext_resource type="PackedScene" uid="uid://ba7f5kca3i40" path="res://scenes/ui/character/ui_character_doctor.tscn" id="2_jvxxx"]
+[ext_resource type="Texture2D" uid="uid://cdn7bl0oynoo8" path="res://graphics/icons/misc/reset.png" id="3_piyda"]
+[ext_resource type="Texture2D" uid="uid://6xq087200rk2" path="res://graphics/icons/misc/quit.png" id="3_tvgme"]
+[ext_resource type="Texture2D" uid="uid://cvc8vn6e2ask3" path="res://graphics/icons/misc/play.png" id="4_tvgme"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clchr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iwxf1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wulue"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u52ef"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehaqv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ocecy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1n3wo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ftmg0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xhc3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wfef0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dx2u3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_piyda"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tvgme"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puat2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_406e8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7lcfd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_iik2r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_euclk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yw33u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7l8xt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bta1o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s28pc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvxxx"]
 bg_color = Color(0.6, 0.132, 0.132, 1)
@@ -192,7 +239,8 @@ size_flags_horizontal = 3
 [node name="BombCountLabel" type="Label" parent="Panel/HBoxContainer/RightHalf"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Number of bombs that will spawn: 0"
+text = "Number of bombs that will spawn: 0
+Your best: N/A"
 
 [node name="MarginContainer2" type="MarginContainer" parent="Panel/HBoxContainer/RightHalf"]
 layout_mode = 2
@@ -200,11 +248,74 @@ size_flags_horizontal = 3
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="GoButton" type="Button" parent="Panel/HBoxContainer/RightHalf/MarginContainer2"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/HBoxContainer/RightHalf/MarginContainer2"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+theme_override_constants/separation = 16
+
+[node name="QuitButton" type="Button" parent="Panel/HBoxContainer/RightHalf/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_colors/icon_disabled_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_hover_color = Color(0.8, 1, 0.8, 1)
+theme_override_colors/icon_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_focus_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_normal_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_clchr")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_iwxf1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_wulue")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_u52ef")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_ehaqv")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_ocecy")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1n3wo")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_ftmg0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7xhc3")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_wfef0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_dx2u3")
+icon = ExtResource("3_tvgme")
+expand_icon = true
+
+[node name="ClearButton" type="Button" parent="Panel/HBoxContainer/RightHalf/MarginContainer2/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/icon_disabled_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_hover_color = Color(0.8, 1, 0.8, 1)
+theme_override_colors/icon_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_focus_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_normal_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_piyda")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_tvgme")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_puat2")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_406e8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_7lcfd")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_iik2r")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_euclk")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_yw33u")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7l8xt")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_bta1o")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_s28pc")
+icon = ExtResource("3_piyda")
+expand_icon = true
+
+[node name="GoButton" type="Button" parent="Panel/HBoxContainer/RightHalf/MarginContainer2/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/icon_disabled_color = Color(0.5, 0.5, 0.5, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_hover_color = Color(0.8, 1, 0.8, 1)
+theme_override_colors/icon_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_focus_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_colors/icon_normal_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 32
 text = "GO"
+icon = ExtResource("4_tvgme")
+alignment = 0
+expand_icon = true
 
 [node name="TooManyBombsPopup" type="ColorRect" parent="."]
 unique_name_in_owner = true
@@ -281,10 +392,14 @@ text = "No! Spare my computer!"
 [node name="YesButton" type="Button" parent="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Yes! I love explosions!"
+size_flags_stretch_ratio = 0.0
+text = "I love explosions!"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="focus_entered" from="Panel/HBoxContainer/LeftHalf/Panel/MarginContainer/ScrollContainer/BombPalette" to="." method="hide_info"]
 [connection signal="mouse_entered" from="Panel/HBoxContainer/LeftHalf/Panel/MarginContainer/ScrollContainer/BombPalette" to="." method="hide_info"]
-[connection signal="pressed" from="Panel/HBoxContainer/RightHalf/MarginContainer2/GoButton" to="." method="_on_go_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/RightHalf/MarginContainer2/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/RightHalf/MarginContainer2/HBoxContainer/ClearButton" to="." method="clear"]
+[connection signal="pressed" from="Panel/HBoxContainer/RightHalf/MarginContainer2/HBoxContainer/GoButton" to="." method="_on_go_button_pressed"]
 [connection signal="pressed" from="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/NoButton" to="." method="_on_confirm_no_button_pressed"]
 [connection signal="pressed" from="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/YesButton" to="." method="_on_confirm_yes_button_pressed"]

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BombInfo" load_steps=4 format=3 uid="uid://oagxqy6rpb51"]
 
-[ext_resource type="Texture2D" uid="uid://bfbvdeitu5o30" path="res://graphics/icons/icon18.png" id="1_f5v1w"]
+[ext_resource type="Texture2D" uid="uid://bfbvdeitu5o30" path="res://graphics/icons/bombs/icon18.png" id="1_f5v1w"]
 [ext_resource type="PackedScene" uid="uid://c6sm7bi2wv4v7" path="res://scenes/spawnable/bombs/bomb_antigravity.tscn" id="2_eitn1"]
 [ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info/bomb_info.gd" id="3_2lnfc"]
 
