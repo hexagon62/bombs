@@ -1,20 +1,14 @@
-[gd_scene load_steps=71 format=3 uid="uid://vxvrgrhxvcnt"]
+[gd_scene load_steps=65 format=3 uid="uid://vxvrgrhxvcnt"]
 
 [ext_resource type="Script" uid="uid://bm8j2a5v8n737" path="res://scripts/level.gd" id="1_p4se4"]
 [ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info/bomb_info.gd" id="2_sibr7"]
 [ext_resource type="Resource" uid="uid://dwkk7aaqja80u" path="res://scripts/ui/bomb_info/bomb_basic.tres" id="3_lkn2k"]
-[ext_resource type="Resource" uid="uid://mhf8rgl70c5l" path="res://scripts/ui/bomb_info/bomb_flame.tres" id="4_sbygb"]
 [ext_resource type="Resource" uid="uid://g8ktbm4k7wgo" path="res://scripts/ui/bomb_info/bomb_launcher_up.tres" id="5_5niy6"]
 [ext_resource type="Resource" uid="uid://6qkjbty3lsi5" path="res://scripts/ui/bomb_info/bomb_launcher_down.tres" id="6_wikm6"]
 [ext_resource type="Resource" uid="uid://bttnpmxgqfa64" path="res://scripts/ui/bomb_info/bomb_launcher_left.tres" id="7_1c1qw"]
 [ext_resource type="Resource" uid="uid://c3u8vtm6jhbqm" path="res://scripts/ui/bomb_info/bomb_launcher_right.tres" id="8_1a10c"]
 [ext_resource type="Resource" uid="uid://ekrnir3mnrmv" path="res://scripts/ui/bomb_info/bomb_splitter2_vertical.tres" id="9_mx6s3"]
 [ext_resource type="Resource" uid="uid://b7wcq7b130g1c" path="res://scripts/ui/bomb_info/bomb_splitter2_horizontal.tres" id="10_7d3nu"]
-[ext_resource type="Resource" uid="uid://d0hnlpb5l53xx" path="res://scripts/ui/bomb_info/bomb_bounce.tres" id="11_r6ket"]
-[ext_resource type="Resource" uid="uid://cujiiklh5nd6b" path="res://scripts/ui/bomb_info/bomb_suck.tres" id="12_xworo"]
-[ext_resource type="Resource" uid="uid://c7kofbw04o3vf" path="res://scripts/ui/bomb_info/bomb_flying.tres" id="13_wwjag"]
-[ext_resource type="Resource" uid="uid://oagxqy6rpb51" path="res://scripts/ui/bomb_info/bomb_antigravity.tres" id="14_rvwo1"]
-[ext_resource type="Resource" uid="uid://dnamw7x4xrnsl" path="res://scripts/ui/bomb_info/bomb_crawler.tres" id="15_yxkvy"]
 [ext_resource type="Resource" uid="uid://gnivjaimox4l" path="res://scripts/ui/bomb_info/bomb_cluster.tres" id="16_joiyc"]
 [ext_resource type="Texture2D" uid="uid://ixikcimdxoua" path="res://graphics/backgrounds/bg04_blue.png" id="17_laosj"]
 [ext_resource type="PackedScene" uid="uid://1ekdjp75qg5j" path="res://scenes/spawnable/static/bomb_spawn_point.tscn" id="18_oftal"]
@@ -80,7 +74,7 @@ normal = Vector2(-1, 0)
 
 [node name="Level" type="Node2D" groups=["level"]]
 script = ExtResource("1_p4se4")
-bombs_available = Array[ExtResource("2_sibr7")]([ExtResource("3_lkn2k"), ExtResource("4_sbygb"), ExtResource("5_5niy6"), ExtResource("6_wikm6"), ExtResource("7_1c1qw"), ExtResource("8_1a10c"), ExtResource("9_mx6s3"), ExtResource("10_7d3nu"), ExtResource("11_r6ket"), ExtResource("12_xworo"), ExtResource("13_wwjag"), ExtResource("14_rvwo1"), ExtResource("15_yxkvy"), ExtResource("16_joiyc")])
+bombs_available = Array[ExtResource("2_sibr7")]([ExtResource("3_lkn2k"), ExtResource("5_5niy6"), ExtResource("6_wikm6"), ExtResource("7_1c1qw"), ExtResource("8_1a10c"), ExtResource("9_mx6s3"), ExtResource("10_7d3nu"), ExtResource("16_joiyc")])
 level_name = &"2"
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -176,21 +170,26 @@ position = Vector2(1264, 576)
 position = Vector2(784, 512)
 
 [node name="StaticBox1x8Grass" parent="Static" instance=ExtResource("19_fqy8p")]
+z_index = 1
 position = Vector2(720, 480)
 
 [node name="StaticFLSlope1x2Grass" parent="Static" instance=ExtResource("26_xjpyo")]
+z_index = 1
 position = Vector2(880, 480)
 
 [node name="StaticBox1x4Rock5" parent="Static" instance=ExtResource("22_kt0v5")]
 position = Vector2(592, 512)
 
 [node name="StaticBox1x2Grass" parent="Static" instance=ExtResource("27_lhwnp")]
+z_index = 1
 position = Vector2(560, 480)
 
 [node name="StaticFRSlope1x4Grass" parent="Static" instance=ExtResource("28_852cy")]
+z_index = 1
 position = Vector2(592, 448)
 
 [node name="StaticFRSlope1x4Grass2" parent="Static" instance=ExtResource("28_852cy")]
+z_index = 1
 position = Vector2(496, 480)
 rotation = -3.14159
 
@@ -199,15 +198,19 @@ position = Vector2(496, 512)
 rotation = 3.14159
 
 [node name="StaticBox1x4Grass" parent="Static" instance=ExtResource("29_x63fv")]
+z_index = 1
 position = Vector2(464, 448)
 
 [node name="StaticBox1x8Grass2" parent="Static" instance=ExtResource("19_fqy8p")]
+z_index = 1
 position = Vector2(272, 448)
 
 [node name="StaticBox1x4Grass2" parent="Static" instance=ExtResource("29_x63fv")]
+z_index = 1
 position = Vector2(80, 448)
 
 [node name="StaticBox1x1Grass" parent="Static" instance=ExtResource("30_bnt33")]
+z_index = 1
 position = Vector2(16, 448)
 
 [node name="StaticBox1x8Rock8" parent="Static" instance=ExtResource("19_p4se4")]
@@ -298,24 +301,31 @@ position = Vector2(880, 64)
 rotation = -1.5708
 
 [node name="StaticFLSlope1x8Grass" parent="Static" instance=ExtResource("35_nsjcl")]
+z_index = 1
 position = Vector2(880, 672)
 
 [node name="StaticBox1x2Grass2" parent="Static" instance=ExtResource("27_lhwnp")]
+z_index = 1
 position = Vector2(1168, 544)
 
 [node name="StaticBox1x1Grass2" parent="Static" instance=ExtResource("30_bnt33")]
+z_index = 1
 position = Vector2(1232, 544)
 
 [node name="StaticBox1x2Grass3" parent="Static" instance=ExtResource("27_lhwnp")]
+z_index = 1
 position = Vector2(1072, 544)
 
 [node name="StaticBox1x1Grass3" parent="Static" instance=ExtResource("30_bnt33")]
+z_index = 1
 position = Vector2(1136, 544)
 
 [node name="StaticBox1x8Grass3" parent="Static" instance=ExtResource("19_fqy8p")]
+z_index = 1
 position = Vector2(1136, 672)
 
 [node name="StaticBox1x1Grass4" parent="Static" instance=ExtResource("30_bnt33")]
+z_index = 1
 position = Vector2(1264, 544)
 
 [node name="StaticFRSlope1x4Rock3" parent="Static" instance=ExtResource("21_u5lg2")]
