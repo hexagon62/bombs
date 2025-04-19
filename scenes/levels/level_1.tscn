@@ -89,18 +89,23 @@ position = Vector2(1280, 360)
 shape = SubResource("WorldBoundaryShape2D_hfwtw")
 
 [node name="StaticBox1x8Grass" parent="Static" instance=ExtResource("18_kr1sg")]
+z_index = 1
 position = Vector2(112, 704)
 
 [node name="StaticBox1x8Grass2" parent="Static" instance=ExtResource("18_kr1sg")]
+z_index = 1
 position = Vector2(368, 704)
 
 [node name="StaticBox1x8Grass3" parent="Static" instance=ExtResource("18_kr1sg")]
+z_index = 1
 position = Vector2(624, 704)
 
 [node name="StaticBox1x8Grass4" parent="Static" instance=ExtResource("18_kr1sg")]
+z_index = 1
 position = Vector2(880, 704)
 
 [node name="StaticBox1x8Grass5" parent="Static" instance=ExtResource("18_kr1sg")]
+z_index = 1
 position = Vector2(1136, 704)
 
 [node name="Pieces" type="Node2D" parent="."]

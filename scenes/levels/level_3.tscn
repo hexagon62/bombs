@@ -1,20 +1,15 @@
-[gd_scene load_steps=57 format=3 uid="uid://bfdbml2gyghur"]
+[gd_scene load_steps=52 format=3 uid="uid://bfdbml2gyghur"]
 
 [ext_resource type="Script" uid="uid://bm8j2a5v8n737" path="res://scripts/level.gd" id="1_vmg1d"]
 [ext_resource type="Script" uid="uid://cjoklwjj6rv06" path="res://scripts/ui/bomb_info/bomb_info.gd" id="2_1nwmf"]
 [ext_resource type="Resource" uid="uid://dwkk7aaqja80u" path="res://scripts/ui/bomb_info/bomb_basic.tres" id="3_5f5xw"]
-[ext_resource type="Resource" uid="uid://mhf8rgl70c5l" path="res://scripts/ui/bomb_info/bomb_flame.tres" id="4_o3ttr"]
 [ext_resource type="Resource" uid="uid://g8ktbm4k7wgo" path="res://scripts/ui/bomb_info/bomb_launcher_up.tres" id="5_kdsi4"]
 [ext_resource type="Resource" uid="uid://6qkjbty3lsi5" path="res://scripts/ui/bomb_info/bomb_launcher_down.tres" id="6_kva3v"]
 [ext_resource type="Resource" uid="uid://bttnpmxgqfa64" path="res://scripts/ui/bomb_info/bomb_launcher_left.tres" id="7_jql0x"]
 [ext_resource type="Resource" uid="uid://c3u8vtm6jhbqm" path="res://scripts/ui/bomb_info/bomb_launcher_right.tres" id="8_do6pa"]
 [ext_resource type="Resource" uid="uid://ekrnir3mnrmv" path="res://scripts/ui/bomb_info/bomb_splitter2_vertical.tres" id="9_n8qcm"]
 [ext_resource type="Resource" uid="uid://b7wcq7b130g1c" path="res://scripts/ui/bomb_info/bomb_splitter2_horizontal.tres" id="10_aey3y"]
-[ext_resource type="Resource" uid="uid://d0hnlpb5l53xx" path="res://scripts/ui/bomb_info/bomb_bounce.tres" id="11_k0dme"]
 [ext_resource type="Resource" uid="uid://cujiiklh5nd6b" path="res://scripts/ui/bomb_info/bomb_suck.tres" id="12_o5em7"]
-[ext_resource type="Resource" uid="uid://c7kofbw04o3vf" path="res://scripts/ui/bomb_info/bomb_flying.tres" id="13_22mqa"]
-[ext_resource type="Resource" uid="uid://oagxqy6rpb51" path="res://scripts/ui/bomb_info/bomb_antigravity.tres" id="14_6c6bd"]
-[ext_resource type="Resource" uid="uid://dnamw7x4xrnsl" path="res://scripts/ui/bomb_info/bomb_crawler.tres" id="15_2qmps"]
 [ext_resource type="Resource" uid="uid://gnivjaimox4l" path="res://scripts/ui/bomb_info/bomb_cluster.tres" id="16_gtyp3"]
 [ext_resource type="Texture2D" uid="uid://khb55jwhghb8" path="res://graphics/backgrounds/bg01 blue.png" id="17_n7m6w"]
 [ext_resource type="PackedScene" uid="uid://1ekdjp75qg5j" path="res://scenes/spawnable/static/bomb_spawn_point.tscn" id="18_ju8vr"]
@@ -66,7 +61,7 @@ normal = Vector2(-1, 0)
 
 [node name="Level" type="Node2D" groups=["level"]]
 script = ExtResource("1_vmg1d")
-bombs_available = Array[ExtResource("2_1nwmf")]([ExtResource("3_5f5xw"), ExtResource("4_o3ttr"), ExtResource("5_kdsi4"), ExtResource("6_kva3v"), ExtResource("7_jql0x"), ExtResource("8_do6pa"), ExtResource("9_n8qcm"), ExtResource("10_aey3y"), ExtResource("11_k0dme"), ExtResource("12_o5em7"), ExtResource("13_22mqa"), ExtResource("14_6c6bd"), ExtResource("15_2qmps"), ExtResource("16_gtyp3"), ExtResource("13_22mqa")])
+bombs_available = Array[ExtResource("2_1nwmf")]([ExtResource("3_5f5xw"), ExtResource("5_kdsi4"), ExtResource("6_kva3v"), ExtResource("7_jql0x"), ExtResource("8_do6pa"), ExtResource("9_n8qcm"), ExtResource("10_aey3y"), ExtResource("12_o5em7"), ExtResource("16_gtyp3")])
 level_name = &"3"
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -107,18 +102,23 @@ position = Vector2(1280, 360)
 shape = SubResource("WorldBoundaryShape2D_hfwtw")
 
 [node name="StaticBox1x8Grass" parent="Static" instance=ExtResource("19_tio2m")]
+z_index = 1
 position = Vector2(112, 704)
 
 [node name="StaticBox1x8Grass2" parent="Static" instance=ExtResource("19_tio2m")]
+z_index = 1
 position = Vector2(368, 704)
 
 [node name="StaticBox1x8Grass3" parent="Static" instance=ExtResource("19_tio2m")]
+z_index = 1
 position = Vector2(624, 704)
 
 [node name="StaticBox1x8Grass4" parent="Static" instance=ExtResource("19_tio2m")]
+z_index = 1
 position = Vector2(880, 704)
 
 [node name="StaticBox1x8Grass5" parent="Static" instance=ExtResource("19_tio2m")]
+z_index = 1
 position = Vector2(1136, 704)
 
 [node name="Pieces" type="Node2D" parent="."]
@@ -134,60 +134,79 @@ position = Vector2(784, 672)
 position = Vector2(848, 672)
 
 [node name="StaticBox1x1Grass" parent="." instance=ExtResource("23_aey3y")]
+z_index = 1
 position = Vector2(624, 448)
 
 [node name="StaticBox1x2Grass" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(560, 448)
 
 [node name="StaticBox1x4Grass" parent="." instance=ExtResource("25_o5em7")]
+z_index = 1
 position = Vector2(528, 480)
 
 [node name="StaticBox1x2Grass2" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(496, 448)
 
 [node name="StaticBox1x4Grass2" parent="." instance=ExtResource("25_o5em7")]
+z_index = 1
 position = Vector2(400, 480)
 
 [node name="StaticBox1x2Grass3" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(304, 640)
 
 [node name="StaticBox1x4Grass3" parent="." instance=ExtResource("25_o5em7")]
+z_index = 1
 position = Vector2(48, 512)
 
 [node name="StaticBox1x2Grass4" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(16, 480)
 
 [node name="StaticBox1x1Grass2" parent="." instance=ExtResource("23_aey3y")]
+z_index = 1
 position = Vector2(144, 512)
 
 [node name="StaticBox1x2Grass5" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(144, 544)
 
 [node name="StaticBox1x1Grass3" parent="." instance=ExtResource("23_aey3y")]
+z_index = 1
 position = Vector2(112, 544)
 
 [node name="StaticBox1x4Grass4" parent="." instance=ExtResource("25_o5em7")]
+z_index = 1
 position = Vector2(816, 320)
 
 [node name="StaticBox1x2Grass6" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(48, 544)
 
 [node name="StaticBox1x1Grass4" parent="." instance=ExtResource("23_aey3y")]
+z_index = 1
 position = Vector2(16, 544)
 
 [node name="StaticBox1x2Grass7" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(752, 352)
 
 [node name="StaticBox1x1Grass5" parent="." instance=ExtResource("23_aey3y")]
+z_index = 1
 position = Vector2(816, 352)
 
 [node name="StaticBox1x2Grass8" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(848, 352)
 
 [node name="StaticBox1x1Grass6" parent="." instance=ExtResource("23_aey3y")]
+z_index = 1
 position = Vector2(912, 352)
 
 [node name="StaticBox1x2Grass9" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(944, 448)
 
 [node name="TreeB2" parent="." instance=ExtResource("21_do6pa")]
@@ -201,103 +220,136 @@ position = Vector2(880, 288)
 position = Vector2(560, 416)
 
 [node name="StaticFLSlope1x1Grass" parent="." instance=ExtResource("26_o5em7")]
+z_index = 1
 position = Vector2(752, 320)
 
 [node name="StaticFLSlope1x2Grass" parent="." instance=ExtResource("27_22mqa")]
+z_index = 1
 position = Vector2(432, 448)
 
 [node name="StaticFRSlope1x1Grass" parent="." instance=ExtResource("28_6c6bd")]
+z_index = 1
 position = Vector2(912, 320)
 
 [node name="StaticFLSlope1x2Grass2" parent="." instance=ExtResource("29_2qmps")]
+z_index = 1
 position = Vector2(80, 480)
 
 [node name="StaticFRSlope1x4Grass" parent="." instance=ExtResource("30_gtyp3")]
+z_index = 1
 position = Vector2(1136, 608)
 
 [node name="StaticFLSlope1x1Grass2" parent="." instance=ExtResource("26_o5em7")]
+z_index = 1
 position = Vector2(624, 480)
 rotation = 3.14159
 
 [node name="StaticFRSlope1x1Grass2" parent="." instance=ExtResource("28_6c6bd")]
+z_index = 1
 position = Vector2(1008, 448)
 
 [node name="StaticFLSlope1x1Grass3" parent="." instance=ExtResource("26_o5em7")]
+z_index = 1
 position = Vector2(336, 480)
 
 [node name="StaticFRSlope1x1Grass3" parent="." instance=ExtResource("28_6c6bd")]
+z_index = 1
 position = Vector2(176, 512)
 
 [node name="StaticFRSlope1x1Grass4" parent="." instance=ExtResource("28_6c6bd")]
+z_index = 1
 position = Vector2(208, 544)
 
 [node name="StaticFLSlope1x2Grass3" parent="." instance=ExtResource("27_22mqa")]
+z_index = 1
 position = Vector2(240, 640)
 
 [node name="StaticBox1x2Grass10" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(1040, 608)
 
 [node name="StaticBox1x4Grass5" parent="." instance=ExtResource("25_o5em7")]
+z_index = 1
 position = Vector2(848, 448)
 
 [node name="StaticFLSlope1x1Grass4" parent="." instance=ExtResource("26_o5em7")]
+z_index = 1
 position = Vector2(784, 448)
 
 [node name="StaticFLSlope1x2Grass4" parent="." instance=ExtResource("27_22mqa")]
+z_index = 1
 position = Vector2(976, 608)
 
 [node name="StaticBox1x2Grass11" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(16, 672)
 
 [node name="StaticFRSlope1x1Grass5" parent="." instance=ExtResource("28_6c6bd")]
+z_index = 1
 position = Vector2(80, 672)
 
 [node name="StaticBox1x2Grass12" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(1232, 672)
 
 [node name="StaticBox1x4Grass6" parent="." instance=ExtResource("25_o5em7")]
+z_index = 1
 position = Vector2(1168, 640)
 
 [node name="StaticFRSlope1x1Grass6" parent="." instance=ExtResource("28_6c6bd")]
+z_index = 1
 position = Vector2(1264, 640)
 
 [node name="StaticBox1x2Grass13" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(976, 640)
 
 [node name="StaticBox1x4Grass7" parent="." instance=ExtResource("25_o5em7")]
+z_index = 1
 position = Vector2(1008, 672)
 
 [node name="StaticBox1x2Grass14" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(1072, 640)
 
 [node name="StaticBox1x1Grass7" parent="." instance=ExtResource("23_aey3y")]
+z_index = 1
 position = Vector2(1040, 640)
 
 [node name="StaticBox1x2Grass15" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(1104, 672)
 
 [node name="StaticBox1x1Grass8" parent="." instance=ExtResource("23_aey3y")]
+z_index = 1
 position = Vector2(1168, 672)
 
 [node name="StaticBox1x1Grass9" parent="." instance=ExtResource("23_aey3y")]
+z_index = 1
 position = Vector2(1200, 672)
 
 [node name="StaticBox1x1Grass10" parent="." instance=ExtResource("23_aey3y")]
+z_index = 1
 position = Vector2(240, 672)
 
 [node name="StaticBox1x2Grass16" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(272, 672)
 
 [node name="StaticBox1x2Grass17" parent="." instance=ExtResource("24_k0dme")]
+z_index = 1
 position = Vector2(336, 672)
 
 [node name="StaticFRSlope1x1Grass7" parent="." instance=ExtResource("28_6c6bd")]
+z_index = 1
 position = Vector2(368, 640)
 
 [node name="StaticFRSlope1x1Grass8" parent="." instance=ExtResource("28_6c6bd")]
+z_index = 1
 position = Vector2(400, 672)
 
 [node name="StaticBox1x8Grass" parent="." instance=ExtResource("19_tio2m")]
+z_index = 1
 position = Vector2(880, 480)
 
 [node name="PieceBox1x1RedB" parent="." instance=ExtResource("31_mqy1c")]
@@ -789,6 +841,7 @@ position = Vector2(784, 448)
 position = Vector2(1008, 448)
 
 [node name="StaticFLSlope1x1Grass5" parent="." instance=ExtResource("26_o5em7")]
+z_index = 1
 position = Vector2(944, 672)
 
 [node name="TreeB10" parent="." instance=ExtResource("21_do6pa")]
