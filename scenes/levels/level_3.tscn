@@ -301,422 +301,422 @@ position = Vector2(400, 672)
 position = Vector2(880, 480)
 
 [node name="PieceBox1x1RedB" parent="." instance=ExtResource("31_mqy1c")]
-modulate = Color(0.915434, 0.939485, 0.974887, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(368, 448)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedA" parent="." instance=ExtResource("32_1lucq")]
-modulate = Color(0.858967, 0.88713, 0.931088, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(400, 448)
 continuous_cd = 2
 
 [node name="PieceBox1x2RedA" parent="." instance=ExtResource("33_0qj75")]
-modulate = Color(0.96628, 0.87333, 0.889791, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(368, 320)
 continuous_cd = 2
 
 [node name="PieceBox1x2RedC" parent="." instance=ExtResource("34_r6hjj")]
-modulate = Color(0.957842, 0.97332, 0.905661, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(368, 384)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeF" parent="." instance=ExtResource("35_q6vlo")]
-modulate = Color(0.898618, 0.924917, 0.912542, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(368, 352)
 continuous_cd = 2
 
 [node name="PieceBox1x1OrangeA" parent="." instance=ExtResource("36_m7ofi")]
-modulate = Color(0.958675, 0.874602, 0.965582, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(368, 416)
 continuous_cd = 2
 
 [node name="PieceBox1x1OrangeC" parent="." instance=ExtResource("37_apiyn")]
-modulate = Color(0.975533, 0.954726, 0.945168, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(400, 416)
 continuous_cd = 2
 
 [node name="PieceBox1x2RedH" parent="." instance=ExtResource("38_xvbt6")]
-modulate = Color(0.893174, 0.933802, 0.977785, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(368, 288)
 continuous_cd = 2
 
 [node name="PieceBox1x1OrangeB" parent="." instance=ExtResource("39_wm3e5")]
-modulate = Color(0.890453, 0.985325, 0.959916, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(368, 256)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedC" parent="." instance=ExtResource("40_i0mny")]
-modulate = Color(0.918734, 0.896764, 0.92934, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(400, 256)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeG" parent="." instance=ExtResource("41_07vog")]
-modulate = Color(0.866921, 0.962899, 0.966637, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(368, 224)
 continuous_cd = 2
 
 [node name="PieceRoof" parent="." instance=ExtResource("42_rkjuh")]
-modulate = Color(0.870964, 0.866667, 0.955307, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(400, 192)
 continuous_cd = 2
 
 [node name="PieceRoofLeft" parent="." instance=ExtResource("43_60f7k")]
-modulate = Color(0.902421, 0.857983, 0.942839, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(368, 192)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceBox1x2RedE" parent="." instance=ExtResource("44_urpbc")]
-modulate = Color(0.862155, 0.943568, 0.929835, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(16, 448)
 continuous_cd = 2
 
 [node name="PieceBox1x2RedB" parent="." instance=ExtResource("45_yxhsx")]
-modulate = Color(0.931116, 0.851256, 0.937443, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(16, 416)
 continuous_cd = 2
 
 [node name="PieceBox1x2RedC2" parent="." instance=ExtResource("34_r6hjj")]
-modulate = Color(0.893725, 0.886086, 0.863643, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(16, 384)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedB2" parent="." instance=ExtResource("31_mqy1c")]
-modulate = Color(0.961077, 0.854138, 0.917832, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(48, 352)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedA2" parent="." instance=ExtResource("32_1lucq")]
-modulate = Color(0.907653, 0.928608, 0.895445, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(48, 320)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedC2" parent="." instance=ExtResource("40_i0mny")]
-modulate = Color(0.955458, 0.899651, 0.942348, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(48, 288)
 continuous_cd = 2
 
 [node name="RoofRight" parent="." instance=ExtResource("46_k1q4s")]
-modulate = Color(0.892858, 0.890091, 0.870899, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(48, 256)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceRoofLeft2" parent="." instance=ExtResource("43_60f7k")]
-modulate = Color(0.886492, 0.920857, 0.953259, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(16, 352)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceBox1x1OrangeB2" parent="." instance=ExtResource("39_wm3e5")]
-modulate = Color(0.942125, 0.882722, 0.974479, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(144, 480)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedC3" parent="." instance=ExtResource("40_i0mny")]
-modulate = Color(0.945186, 0.996481, 0.853517, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(144, 448)
 continuous_cd = 2
 
 [node name="PieceRoofLeft3" parent="." instance=ExtResource("43_60f7k")]
-modulate = Color(0.973361, 0.973895, 0.953809, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(144, 416)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceBox1x2RedF" parent="." instance=ExtResource("47_n37he")]
-modulate = Color(0.880348, 0.974876, 0.986238, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(496, 416)
 continuous_cd = 2
 
 [node name="PieceBox1x2RedE2" parent="." instance=ExtResource("44_urpbc")]
-modulate = Color(0.978017, 0.946376, 0.97092, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(496, 384)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeC" parent="." instance=ExtResource("48_ro10o")]
-modulate = Color(0.918544, 0.943971, 0.943757, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(496, 352)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeG2" parent="." instance=ExtResource("41_07vog")]
-modulate = Color(0.925447, 0.859407, 0.952434, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(496, 320)
 continuous_cd = 2
 
 [node name="PieceBox1x2RedB2" parent="." instance=ExtResource("45_yxhsx")]
-modulate = Color(0.885283, 0.860541, 0.861519, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(496, 288)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedA3" parent="." instance=ExtResource("32_1lucq")]
-modulate = Color(0.953512, 0.878365, 0.899234, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(496, 256)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeD" parent="." instance=ExtResource("49_l1xkm")]
-modulate = Color(0.917307, 0.944996, 0.961434, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(496, 224)
 continuous_cd = 2
 
 [node name="PieceBox1x1OrangeC2" parent="." instance=ExtResource("37_apiyn")]
-modulate = Color(0.94265, 0.857484, 0.877075, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(528, 256)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeE" parent="." instance=ExtResource("50_au27u")]
-modulate = Color(0.914097, 0.953598, 0.907094, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(496, 192)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedB3" parent="." instance=ExtResource("31_mqy1c")]
-modulate = Color(0.965304, 0.9021, 0.877837, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(496, 160)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedB4" parent="." instance=ExtResource("31_mqy1c")]
-modulate = Color(0.979385, 0.936866, 0.988273, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(528, 160)
 continuous_cd = 2
 
 [node name="RoofRight2" parent="." instance=ExtResource("46_k1q4s")]
-modulate = Color(0.877943, 0.981035, 0.853139, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(528, 128)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceRoofLeft4" parent="." instance=ExtResource("43_60f7k")]
-modulate = Color(0.899687, 0.89307, 0.872916, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(496, 128)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceBox1x2RedH2" parent="." instance=ExtResource("38_xvbt6")]
-modulate = Color(0.872661, 0.952427, 0.94114, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(560, 416)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeD2" parent="." instance=ExtResource("49_l1xkm")]
-modulate = Color(0.853459, 0.87847, 0.950115, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(560, 384)
 continuous_cd = 2
 
 [node name="PieceBox1x2RedD" parent="." instance=ExtResource("51_fbh0l")]
-modulate = Color(0.925332, 0.930835, 0.965206, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(560, 352)
 continuous_cd = 2
 
 [node name="PieceRoof2" parent="." instance=ExtResource("42_rkjuh")]
-modulate = Color(0.918979, 0.916542, 0.926142, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(560, 320)
 continuous_cd = 2
 
 [node name="RoofRight3" parent="." instance=ExtResource("46_k1q4s")]
-modulate = Color(0.996468, 0.984026, 0.888436, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(592, 320)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceBox1x2RedC3" parent="." instance=ExtResource("34_r6hjj")]
-modulate = Color(0.902034, 0.877125, 0.860541, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(944, 416)
 continuous_cd = 2
 
 [node name="PieceRoof3" parent="." instance=ExtResource("42_rkjuh")]
-modulate = Color(0.975252, 0.992439, 0.915819, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(976, 384)
 continuous_cd = 2
 
 [node name="PieceRoofLeft5" parent="." instance=ExtResource("43_60f7k")]
-modulate = Color(0.915378, 0.929615, 0.87798, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(944, 384)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceBox1x1OrangeB3" parent="." instance=ExtResource("39_wm3e5")]
-modulate = Color(0.932305, 0.901433, 0.86636, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(976, 352)
 continuous_cd = 2
 
 [node name="RoofRight4" parent="." instance=ExtResource("46_k1q4s")]
-modulate = Color(0.897418, 0.882881, 0.960567, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(976, 320)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceBox1x2RedF2" parent="." instance=ExtResource("47_n37he")]
-modulate = Color(0.962651, 0.94215, 0.915334, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(784, 288)
 continuous_cd = 2
 
 [node name="PieceBox1x1OrangeC3" parent="." instance=ExtResource("37_apiyn")]
-modulate = Color(0.9516, 0.889921, 0.884769, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(848, 288)
 continuous_cd = 2
 
 [node name="PieceBox1x1OrangeB4" parent="." instance=ExtResource("39_wm3e5")]
-modulate = Color(0.901519, 0.878933, 0.8585, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(784, 256)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeC2" parent="." instance=ExtResource("48_ro10o")]
-modulate = Color(0.868195, 0.868562, 0.993792, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(816, 256)
 continuous_cd = 2
 
 [node name="PieceBox1x2RedC4" parent="." instance=ExtResource("34_r6hjj")]
-modulate = Color(0.910306, 0.906439, 0.860423, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(784, 224)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedC4" parent="." instance=ExtResource("40_i0mny")]
-modulate = Color(0.962551, 0.994275, 0.943891, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(848, 192)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedB5" parent="." instance=ExtResource("31_mqy1c")]
-modulate = Color(0.895309, 0.982623, 0.926364, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(848, 224)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedC5" parent="." instance=ExtResource("40_i0mny")]
-modulate = Color(0.908157, 0.979713, 0.975476, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(848, 160)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedB6" parent="." instance=ExtResource("31_mqy1c")]
-modulate = Color(0.867989, 0.950669, 0.890013, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(816, 192)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeF2" parent="." instance=ExtResource("35_q6vlo")]
-modulate = Color(0.905676, 0.858958, 0.9964, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(784, 160)
 continuous_cd = 2
 
 [node name="PieceBox1x1OrangeC4" parent="." instance=ExtResource("37_apiyn")]
-modulate = Color(0.910926, 0.97157, 0.874304, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(784, 192)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedB7" parent="." instance=ExtResource("31_mqy1c")]
-modulate = Color(0.911736, 0.910796, 0.922881, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(848, 128)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedC6" parent="." instance=ExtResource("40_i0mny")]
-modulate = Color(0.854477, 0.978076, 0.905191, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(848, 96)
 continuous_cd = 2
 
 [node name="PieceRoof4" parent="." instance=ExtResource("42_rkjuh")]
-modulate = Color(0.896219, 0.92212, 0.949045, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(816, 128)
 continuous_cd = 2
 
 [node name="RoofRight5" parent="." instance=ExtResource("46_k1q4s")]
-modulate = Color(0.931556, 0.976034, 0.914408, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(848, 64)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceRoofLeft6" parent="." instance=ExtResource("43_60f7k")]
-modulate = Color(0.860638, 0.921372, 0.94529, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(784, 128)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceBox1x2RedF3" parent="." instance=ExtResource("47_n37he")]
-modulate = Color(0.886664, 0.943538, 0.937068, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(1040, 576)
 continuous_cd = 2
 
 [node name="PieceBox1x2RedE3" parent="." instance=ExtResource("44_urpbc")]
-modulate = Color(0.891433, 0.852132, 0.926083, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(1040, 544)
 continuous_cd = 2
 
 [node name="PieceBox1x1OrangeC5" parent="." instance=ExtResource("37_apiyn")]
-modulate = Color(0.964059, 0.995426, 0.972488, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(1072, 512)
 continuous_cd = 2
 
 [node name="PieceBox1x1OrangeB5" parent="." instance=ExtResource("39_wm3e5")]
-modulate = Color(0.851534, 0.852121, 0.87088, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(1072, 480)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedB8" parent="." instance=ExtResource("31_mqy1c")]
-modulate = Color(0.974498, 0.970748, 0.924848, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(1072, 448)
 continuous_cd = 2
 
 [node name="PieceBox1x1OrangeA2" parent="." instance=ExtResource("36_m7ofi")]
-modulate = Color(0.963055, 0.906478, 0.963927, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(1072, 416)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedA4" parent="." instance=ExtResource("32_1lucq")]
-modulate = Color(0.908232, 0.89057, 0.924713, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(1072, 384)
 continuous_cd = 2
 
 [node name="PieceBox1x1RedC7" parent="." instance=ExtResource("40_i0mny")]
-modulate = Color(0.956644, 0.979195, 0.936663, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(1072, 352)
 continuous_cd = 2
 
 [node name="RoofRight6" parent="." instance=ExtResource("46_k1q4s")]
-modulate = Color(0.995061, 0.918081, 0.896881, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(1072, 320)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceRoofLeft7" parent="." instance=ExtResource("43_60f7k")]
-modulate = Color(0.924102, 0.981402, 0.859952, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(1040, 512)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceBox1x2RedE4" parent="." instance=ExtResource("44_urpbc")]
-modulate = Color(0.926562, 0.920105, 0.886636, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(528, 672)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeE2" parent="." instance=ExtResource("50_au27u")]
-modulate = Color(0.915819, 0.906136, 0.895765, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(816, 640)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeF3" parent="." instance=ExtResource("35_q6vlo")]
-modulate = Color(0.917058, 0.943559, 0.92181, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(816, 672)
 continuous_cd = 2
 
 [node name="PieceBox1x2OrangeB" parent="." instance=ExtResource("52_knm1b")]
-modulate = Color(0.877043, 0.942199, 0.852276, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(528, 640)
 continuous_cd = 2
 
 [node name="RoofRight7" parent="." instance=ExtResource("46_k1q4s")]
-modulate = Color(0.876741, 0.933484, 0.948648, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(560, 608)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceRoofLeft8" parent="." instance=ExtResource("43_60f7k")]
-modulate = Color(0.930242, 0.969724, 0.913538, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(816, 608)
 continuous_cd = 2
 max_contacts_reported = 256
 
 [node name="PieceRoof5" parent="." instance=ExtResource("42_rkjuh")]
-modulate = Color(0.932636, 0.976498, 0.946702, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(528, 608)
 continuous_cd = 2
 
 [node name="PieceRoof6" parent="." instance=ExtResource("42_rkjuh")]
-modulate = Color(0.984287, 0.927981, 0.850788, 1)
+modulate = Color(1, 1, 1, 1)
 position = Vector2(848, 608)
 continuous_cd = 2
 

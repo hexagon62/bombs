@@ -63,6 +63,10 @@ var debris_impulse := Vector2.ZERO
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		modulate = Color.WHITE
+		return
+	
 	contact_monitor = true
 	max_contacts_reported = 256
 	continuous_cd = RigidBody2D.CCD_MODE_CAST_SHAPE

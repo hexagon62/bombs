@@ -14,6 +14,8 @@ extends Sprite2D
 @export var blinking := false
 ## Whether or not the character is talking
 @export var talking := false
+## Whether or not to preview in the editor
+@export var editor_preview := false
 
 
 var _blinking := false
@@ -22,6 +24,9 @@ var _time := 0.0
 
 
 func _process(delta: float) -> void:
+	if Engine.is_editor_hint() and not editor_preview:
+		return
+	
 	_time += delta*randf_range(0.9, 1.1)
 	if blinking:
 		_blinking = fmod(_time, 4.0) >= 3.75
