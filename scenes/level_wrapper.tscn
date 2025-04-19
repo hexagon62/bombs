@@ -44,6 +44,8 @@ mouse_filter = 2
 script = ExtResource("1_asw2c")
 
 [node name="ShowWhenUnpaused" type="Control" parent="."]
+visible = false
+z_index = 149
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -156,7 +158,7 @@ layout_mode = 1
 
 [node name="DebugBombRaycastVisualizer" type="Node2D" parent="." groups=["debug_bomb_raycast_visualizer"]]
 visible = false
-z_index = 1000
+z_index = 148
 script = ExtResource("3_asw2c")
 metadata/_custom_type_script = "uid://ccrm27ibyllj5"
 
