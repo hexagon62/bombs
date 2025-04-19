@@ -86,7 +86,6 @@ continuous_cd = 1
 script = ExtResource("1_cl6qj")
 suck_force = 5000.0
 suck_radius = 256.0
-explosion_radius = 3000.0
 explosion_damage = 400.0
 explosion_scene = ExtResource("2_wvs2d")
 
