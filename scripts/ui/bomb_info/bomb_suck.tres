@@ -10,11 +10,15 @@ icon = ExtResource("1_6jrw8")
 name = "Sucking Bomb"
 short_name = "Sucking Bomb"
 flavor_name = "Portable Singularity Device"
-description = "Instead of pushing objects outward, pull them inward."
-flavor_description = "This is a failed bomb. It doesn't explode, it implodes!
+description = "Pulls objects inward, then explodes."
+flavor_description = "At first, everybody thought bombs could only explode, not implode.
 
-As for how it looks... don't ask. I don't like looking at it."
+Not anymore. My colleagues fear me now."
+doctor_expression = &"evil"
 scene = ExtResource("2_ly0ar")
 requires_next_step = false
 children_spawned = 1
+min_fuse_time = 0.0
+max_fuse_time = 5.0
+default_fuse_time = 1.0
 metadata/_custom_type_script = "uid://cjoklwjj6rv06"

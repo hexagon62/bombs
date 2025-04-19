@@ -11,8 +11,14 @@ name = "Downward Launcher Bomb"
 short_name = "Down Bomb"
 flavor_name = "Butter Side Down"
 description = "Shoots the next bomb downwards."
-flavor_description = " I tried to make Sunny Side Up into Sunny Side Down, but the egg turned into butter when I inverted the polarity."
+flavor_description = "People joked about it, but in my studies I've found if you put butter on something, it will in fact land with the butter on the bottom!
+
+Okay, but out in the field, this bomb won't land on its bottom. It at least launches other bombs downward though..."
+doctor_expression = &"neutral"
 scene = ExtResource("2_1ndwl")
 requires_next_step = true
 children_spawned = 1
+min_fuse_time = 0.0
+max_fuse_time = 5.0
+default_fuse_time = 1.0
 metadata/_custom_type_script = "uid://cjoklwjj6rv06"

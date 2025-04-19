@@ -11,13 +11,8 @@ name = "Horizontal Splitter Bomb"
 short_name = "H. Split Bomb"
 flavor_name = "Double Eggjector"
 description = "Shoots out two copies of the next step; one will go up, the other down."
-flavor_description = "I asked my assistant to make a horizontal version of the Double Eggjector.
-
-They hesitated because some labels on the parts said \"THIS SIDE UP\",
-not \"THIS SIDE SIDEWAYS\".
-
-*Sigh.* What do I pay these people for?"
-doctor_expression = &"angry"
+flavor_description = "This thing can bifurcate itself repeatedly. The ensuing explosion would be very difficult to control. Use it at your own risk!"
+doctor_expression = &"evil"
 scene = ExtResource("2_qcbwq")
 requires_next_step = true
 children_spawned = 2
