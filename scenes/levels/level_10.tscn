@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://oagxqy6rpb51" path="res://scripts/ui/bomb_info/bomb_antigravity.tres" id="14_hmqkb"]
 [ext_resource type="Resource" uid="uid://dnamw7x4xrnsl" path="res://scripts/ui/bomb_info/bomb_crawler.tres" id="15_l6fdw"]
 [ext_resource type="Resource" uid="uid://gnivjaimox4l" path="res://scripts/ui/bomb_info/bomb_cluster.tres" id="16_55him"]
-[ext_resource type="Texture2D" uid="uid://khb55jwhghb8" path="res://graphics/backgrounds/bg01 blue.png" id="17_2xxxy"]
+[ext_resource type="Texture2D" uid="uid://q6qx4o3poecc" path="res://graphics/backgrounds/bg02 blue.png" id="17_7a2gn"]
 [ext_resource type="PackedScene" uid="uid://1ekdjp75qg5j" path="res://scenes/spawnable/static/bomb_spawn_point.tscn" id="18_kn1qc"]
 [ext_resource type="PackedScene" uid="uid://52saq4c8n7se" path="res://scenes/spawnable/static/grass/static_box_1x8_grass.tscn" id="19_ljl3p"]
 [ext_resource type="PackedScene" uid="uid://c4pk25k8c44d8" path="res://scenes/spawnable/static/grass/static_box_1x4_grass.tscn" id="20_odo46"]
@@ -83,7 +83,7 @@ bombs_available = Array[ExtResource("2_hl75t")]([ExtResource("3_omffp"), ExtReso
 z_index = -100
 position = Vector2(640, 360)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_2xxxy")
+texture = ExtResource("17_7a2gn")
 
 [node name="BombSpawnPoint" parent="." instance=ExtResource("18_kn1qc")]
 position = Vector2(656, 320)
@@ -117,23 +117,29 @@ position = Vector2(1280, 360)
 shape = SubResource("WorldBoundaryShape2D_hfwtw")
 
 [node name="StaticBox1x8Grass" parent="Static" instance=ExtResource("19_ljl3p")]
+z_index = 1
 position = Vector2(112, 704)
 
 [node name="StaticBox1x8Grass2" parent="Static" instance=ExtResource("19_ljl3p")]
+z_index = 1
 position = Vector2(368, 704)
 
 [node name="StaticBox1x8Grass4" parent="Static" instance=ExtResource("19_ljl3p")]
+z_index = 1
 position = Vector2(880, 704)
 
 [node name="StaticBox1x8Grass5" parent="Static" instance=ExtResource("19_ljl3p")]
+z_index = 1
 position = Vector2(1136, 704)
 
 [node name="Pieces" type="Node2D" parent="."]
 
 [node name="StaticBox1x4Grass" parent="." instance=ExtResource("20_odo46")]
+z_index = 1
 position = Vector2(656, 384)
 
 [node name="StaticBox1x1Grass" parent="." instance=ExtResource("21_nk72f")]
+z_index = 1
 position = Vector2(592, 384)
 
 [node name="StaticBox1x4Rock" parent="." instance=ExtResource("22_vxf3i")]
@@ -152,9 +158,11 @@ position = Vector2(592, 448)
 position = Vector2(656, 448)
 
 [node name="StaticBox1x1Grass2" parent="." instance=ExtResource("21_nk72f")]
+z_index = 1
 position = Vector2(752, 704)
 
 [node name="StaticBox1x2Grass" parent="." instance=ExtResource("25_cmr01")]
+z_index = 1
 position = Vector2(528, 704)
 
 [node name="PieceBox1x1RedA" parent="." instance=ExtResource("26_4n6ax")]
@@ -1613,9 +1621,11 @@ position = Vector2(1104, 480)
 continuous_cd = 2
 
 [node name="StaticBox1x4Grass2" parent="." instance=ExtResource("20_odo46")]
+z_index = 1
 position = Vector2(624, 704)
 
 [node name="StaticBox1x1Grass3" parent="." instance=ExtResource("21_nk72f")]
+z_index = 1
 position = Vector2(720, 704)
 
 [node name="PieceBox1x2RedB7" parent="." instance=ExtResource("36_xi0f4")]
