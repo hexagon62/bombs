@@ -11,11 +11,14 @@ name = "Vertical Splitter Bomb"
 short_name = "V. Split Bomb"
 flavor_name = "Double Eggjector"
 description = "Shoots out two copies of the next step; one will go up, the other down."
-flavor_description = "My assistant tried to tell me otherwise, but this is just an array of
-two ejector seats from an aircraft taped together and facing opposite directions.
+flavor_description = "I once strapped a cat and a piece of buttered toast together. Since cats always land on their feet, I figured it would cancel out the toast landing butter side down.
 
-I probably shouldn't use too many of these in my bomb. That might end the entire world, rather than part of it."
+The experiment began to spin so fast, it floated in the air. Then the cat exploded."
+doctor_expression = &"neutral"
 scene = ExtResource("2_jwt48")
 requires_next_step = true
 children_spawned = 2
+min_fuse_time = 0.0
+max_fuse_time = 5.0
+default_fuse_time = 1.0
 metadata/_custom_type_script = "uid://cjoklwjj6rv06"
