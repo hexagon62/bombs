@@ -24,6 +24,7 @@ func _ready() -> void:
 	_fade_tween.tween_property(self, ^"modulate", Color(Color.WHITE, 0.0), 1.0)
 	_fade_tween.tween_callback(queue_free)
 	
+	can_sleep = true
 	collision_layer = CollisionLayer.DEBRIS
 	collision_mask = CollisionLayer.NONE
 	_prev_pos = global_position

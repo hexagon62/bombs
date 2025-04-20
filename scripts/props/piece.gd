@@ -64,7 +64,6 @@ var debris_impulse := Vector2.ZERO
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
-		modulate = Color.WHITE
 		return
 	
 	contact_monitor = true
@@ -72,6 +71,7 @@ func _ready() -> void:
 	continuous_cd = RigidBody2D.CCD_MODE_CAST_SHAPE
 	health = max_health
 	_initial_position = global_position
+	can_sleep = true
 	modulate = Color(
 			randf_range(0.85, 1.0),
 			randf_range(0.85, 1.0),

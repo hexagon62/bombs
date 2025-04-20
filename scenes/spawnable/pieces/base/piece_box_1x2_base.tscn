@@ -6,7 +6,7 @@
 size = Vector2(64, 32)
 
 [node name="PieceBox1x2Base" instance=ExtResource("1_35wgk")]
-modulate = Color(0.86758, 0.935102, 0.979927, 1)
+modulate = Color(1, 1, 1, 1)
 max_health = 200.0
 
 [node name="Sprite" parent="." index="0"]
