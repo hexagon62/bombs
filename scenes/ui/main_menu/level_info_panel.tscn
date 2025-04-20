@@ -27,6 +27,7 @@ star_empty_texture = ExtResource("3_bx1vx")
 star_full_texture = ExtResource("3_5kryn")
 
 [node name="Contents" type="MarginContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
