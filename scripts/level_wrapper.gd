@@ -177,7 +177,6 @@ func load_progression() -> void:
 	if save_file:
 		var raw := save_file.get_as_text()
 		var json_result: Variant = JSON.parse_string(raw)
-		print(json_result)
 		if typeof(json_result) == TYPE_DICTIONARY:
 			for k in json_result:
 				var key := StringName(k)
