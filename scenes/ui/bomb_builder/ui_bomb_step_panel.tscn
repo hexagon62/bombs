@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dtn60q7w3xsce"]
+[gd_scene load_steps=8 format=3 uid="uid://dtn60q7w3xsce"]
 
 [ext_resource type="Script" uid="uid://cyku5ttaat0wt" path="res://scripts/ui/bomb_builder/bomb_step_panel.gd" id="1_cqfgm"]
+[ext_resource type="Texture2D" uid="uid://m0bykgrxp6g5" path="res://graphics/icons/misc/arrow up.png" id="2_4kuny"]
+[ext_resource type="Texture2D" uid="uid://yn4up54n1kpn" path="res://graphics/icons/misc/arrow down.png" id="3_odtg2"]
+[ext_resource type="Texture2D" uid="uid://bfg8padfassd1" path="res://graphics/icons/misc/x.png" id="4_vi288"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqpod"]
 bg_color = Color(0.4, 0.4, 0.4, 0.501961)
@@ -52,7 +55,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_oqpod")
-text = " ↑ "
+icon = ExtResource("2_4kuny")
+expand_icon = true
 
 [node name="DownButton" type="Button" parent="HBoxContainer/MoveButtonContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -61,7 +65,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_oqpod")
-text = " ↓ "
+icon = ExtResource("3_odtg2")
+expand_icon = true
 
 [node name="MarginContainerLeft" type="MarginContainer" parent="HBoxContainer"]
 clip_contents = true
@@ -118,7 +123,8 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_cqfgm")
-text = "X"
+icon = ExtResource("4_vi288")
+expand_icon = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MarginContainerRight/VBoxContainer"]
 layout_mode = 2
