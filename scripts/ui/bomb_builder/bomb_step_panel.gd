@@ -49,7 +49,7 @@ signal move_down_requested
 func _update_appearance() -> void:
 	if bomb_info:
 		icon.texture = bomb_info.icon
-		step_name_label.text = "STEP #%d: %s" % [number, bomb_info.name]
+		step_name_label.text = "STEP #%d: %s" % [number, bomb_info.short_name]
 	else:
 		icon.texture = null
 		step_name_label.text = "STEP #%d: NONE" % number

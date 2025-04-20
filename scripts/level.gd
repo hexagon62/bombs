@@ -13,6 +13,8 @@ extends Node2D
 var _total_piece_health := 0.0
 # If the level is started
 var _started := false
+# How many ticks have been without bombs
+var _bombless_ticks := 0
 
 
 func _ready() -> void:
@@ -22,6 +24,13 @@ func _ready() -> void:
 		var piece := node as Piece
 		if piece:
 			_total_piece_health += piece.max_health
+
+
+func _physics_process(_delta: float) -> void:
+	if get_tree().get_first_node_in_group(&"bomb"):
+		_bombless_ticks = 0
+	else:
+		_bombless_ticks += 1
 
 
 ## How much of the level is destroyed,
@@ -49,7 +58,7 @@ func done() -> bool:
 	if not _started:
 		return false
 	
-	if get_tree().get_first_node_in_group(&"bomb"):
+	if _bombless_ticks < Engine.physics_ticks_per_second:
 		return false
 	
 	var pieces := get_tree().get_nodes_in_group(&"piece")

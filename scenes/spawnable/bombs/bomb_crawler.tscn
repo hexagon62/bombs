@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://duw766cio2ckl" path="res://scenes/spawnable/effects/explosions/explosion_small.tscn" id="2_p25kj"]
 [ext_resource type="Texture2D" uid="uid://cmf6aktwdvv8w" path="res://graphics/bombs/hampter.png" id="3_r1qjk"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_v41bu"]
-radius = 32.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_r1qjk"]
+radius = 28.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pqseu"]
 atlas = ExtResource("3_r1qjk")
@@ -49,7 +49,7 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="BombCrawler" type="RigidBody2D"]
+[node name="BombCrawler" type="RigidBody2D" groups=["bomb"]]
 collision_layer = 2
 collision_mask = 5
 custom_integrator = true
@@ -61,7 +61,7 @@ explosion_damage = 300.0
 explosion_scene = ExtResource("2_p25kj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_v41bu")
+shape = SubResource("CircleShape2D_r1qjk")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 remote_path = NodePath("../Visuals")

@@ -1,0 +1,452 @@
+[gd_scene load_steps=41 format=3 uid="uid://q13dvyk3lrdk"]
+
+[ext_resource type="Texture2D" uid="uid://b1kiysdimsg34" path="res://graphics/logos/logo2.png" id="1_fe2o3"]
+[ext_resource type="Texture2D" uid="uid://cym6d8wxtt4km" path="res://graphics/backgrounds/main_menu_pic_01.png" id="1_sl1te"]
+[ext_resource type="Texture2D" uid="uid://bhyjll2kdatbo" path="res://graphics/logos/GWJ-Half-Logo-Orange.svg" id="3_1g8jr"]
+[ext_resource type="PackedScene" uid="uid://digubitj4lug8" path="res://scenes/ui/main_menu/button_load_level.tscn" id="3_m1kxf"]
+[ext_resource type="PackedScene" uid="uid://b8oggp1er11i4" path="res://scenes/levels/level_1.tscn" id="4_uhagc"]
+[ext_resource type="PackedScene" uid="uid://vxvrgrhxvcnt" path="res://scenes/levels/level_2.tscn" id="5_877pj"]
+[ext_resource type="Texture2D" uid="uid://cei7usfrl37tf" path="res://graphics/previews/1.png" id="5_y2j7i"]
+[ext_resource type="PackedScene" uid="uid://bfdbml2gyghur" path="res://scenes/levels/level_3.tscn" id="6_ayp64"]
+[ext_resource type="Texture2D" uid="uid://b3y70pw2c24nt" path="res://graphics/previews/2.png" id="7_y1h5l"]
+[ext_resource type="PackedScene" uid="uid://cgx72c4xjtldw" path="res://scenes/levels/level_4.tscn" id="7_y2j7i"]
+[ext_resource type="PackedScene" uid="uid://bn6ojrggb8cjk" path="res://scenes/levels/level_5.tscn" id="8_y1h5l"]
+[ext_resource type="Texture2D" uid="uid://y3rxhn2trb0y" path="res://graphics/previews/3.png" id="9_5dct7"]
+[ext_resource type="PackedScene" uid="uid://binaebuov10lf" path="res://scenes/levels/level_6.tscn" id="9_pw24t"]
+[ext_resource type="PackedScene" uid="uid://bvolmuwfgnou3" path="res://scenes/levels/level_7.tscn" id="10_5dct7"]
+[ext_resource type="Texture2D" uid="uid://bx4300hspnryw" path="res://graphics/previews/4.png" id="11_5dct7"]
+[ext_resource type="PackedScene" uid="uid://i323qxxylv66" path="res://scenes/levels/level_8.tscn" id="11_qilvv"]
+[ext_resource type="PackedScene" uid="uid://thbkqqg1qujq" path="res://scenes/levels/level_9.tscn" id="12_jbte4"]
+[ext_resource type="PackedScene" uid="uid://rtj0wek81jel" path="res://scenes/levels/level_12.tscn" id="13_e0hcc"]
+[ext_resource type="Texture2D" uid="uid://dehbxiinlpw75" path="res://graphics/previews/5.png" id="13_qilvv"]
+[ext_resource type="PackedScene" uid="uid://blkt5wffduewa" path="res://scenes/levels/level_11.tscn" id="14_qch7b"]
+[ext_resource type="PackedScene" uid="uid://dtx4s8tv464ar" path="res://scenes/levels/level_10.tscn" id="15_ayp64"]
+[ext_resource type="Texture2D" uid="uid://ce0ywtorh7nvn" path="res://graphics/previews/6.png" id="15_jbte4"]
+[ext_resource type="Texture2D" uid="uid://bgq82c10ctp6e" path="res://graphics/previews/7.png" id="17_e0hcc"]
+[ext_resource type="Texture2D" uid="uid://cyi31b84eotbp" path="res://graphics/previews/8.png" id="19_qch7b"]
+[ext_resource type="Texture2D" uid="uid://cc0pw4kvgwvcs" path="res://graphics/previews/9.png" id="21_4ovp2"]
+[ext_resource type="Texture2D" uid="uid://cfb53qvhdvekt" path="res://graphics/previews/10.png" id="23_1mexh"]
+[ext_resource type="Texture2D" uid="uid://bg8eo2uacv3wv" path="res://graphics/previews/11.png" id="25_6ud2m"]
+[ext_resource type="Texture2D" uid="uid://c0kkdc2cjkaaf" path="res://graphics/previews/12.png" id="27_qqxfm"]
+[ext_resource type="PackedScene" uid="uid://cn61j2wml7lfs" path="res://scenes/ui/main_menu/level_info_panel.tscn" id="28_45qkm"]
+[ext_resource type="Texture2D" uid="uid://bfg8padfassd1" path="res://graphics/icons/misc/x.png" id="29_ef12m"]
+[ext_resource type="Texture2D" uid="uid://mcyyxumov1tl" path="res://graphics/icons/misc/check square.png" id="29_shj5x"]
+[ext_resource type="Script" uid="uid://cvu1c8jf4uceo" path="res://scripts/ui/main_menu/reset_progress_button.gd" id="31_e64ma"]
+[ext_resource type="AudioStream" uid="uid://b2cluoap61io4" path="res://sounds/explosions/stock_explosion.ogg" id="31_gya4d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1kxf"]
+bg_color = Color(0.32, 0.32, 0.32, 0.878431)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.752667, 0.47, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x2yvf"]
+bg_color = Color(0.16, 0.16, 0.16, 0.439216)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 0.501961)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhagc"]
+bg_color = Color(0.24, 0.24, 0.24, 0.878431)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.752667, 0.47, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btxxm"]
+bg_color = Color(0.32, 0.32, 0.32, 0.878431)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.752667, 0.47, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb0q5"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.752667, 0.47, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1g8jr"]
+bg_color = Color(0.16, 0.16, 0.16, 0.878431)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.752667, 0.47, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45qkm"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.6, 0.132, 0.132, 1)
+
+[node name="MainMenu" type="Control" groups=["main_menu"]]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_sl1te")
+centered = false
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(16, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_fe2o3")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 252.0
+offset_right = 580.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.865, 0.55, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 32
+text = "Game jam edition!"
+horizontal_alignment = 1
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelSelect" type="VBoxContainer" parent="Menu"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 320.0
+offset_right = 559.0
+offset_bottom = 693.0
+
+[node name="Label" type="Label" parent="Menu/LevelSelect"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.82, 0.904, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 24
+text = "Select a level"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/LevelSelect"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Menu/LevelSelect/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonLoadLevel1" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 1
+"
+level = ExtResource("4_uhagc")
+level_name = "The B-egg-inning"
+internal_level_name = &"1"
+preview = ExtResource("5_y2j7i")
+
+[node name="ButtonLoadLevel2" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 2
+"
+level = ExtResource("5_877pj")
+level_name = "The Cavern"
+internal_level_name = &"2"
+preview = ExtResource("7_y1h5l")
+
+[node name="ButtonLoadLevel3" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 3
+"
+level = ExtResource("6_ayp64")
+level_name = "Red City"
+internal_level_name = &"3"
+preview = ExtResource("9_5dct7")
+
+[node name="ButtonLoadLevel4" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 4
+"
+level = ExtResource("7_y2j7i")
+level_name = "Mining Town"
+internal_level_name = &"4"
+preview = ExtResource("11_5dct7")
+
+[node name="ButtonLoadLevel5" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 5
+"
+level = ExtResource("8_y1h5l")
+level_name = "Pachinko Machine"
+internal_level_name = &"5"
+preview = ExtResource("13_qilvv")
+
+[node name="ButtonLoadLevel6" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 6
+"
+level = ExtResource("9_pw24t")
+level_name = "Up"
+internal_level_name = &"6"
+preview = ExtResource("15_jbte4")
+
+[node name="ButtonLoadLevel7" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 7
+"
+level = ExtResource("10_5dct7")
+level_name = "The Spiral"
+internal_level_name = &"7"
+preview = ExtResource("17_e0hcc")
+
+[node name="ButtonLoadLevel8" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 8
+"
+level = ExtResource("11_qilvv")
+level_name = "Stone Towers"
+internal_level_name = &"8"
+preview = ExtResource("19_qch7b")
+
+[node name="ButtonLoadLevel9" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 9
+"
+level = ExtResource("12_jbte4")
+level_name = "Encased"
+internal_level_name = &"9"
+preview = ExtResource("21_4ovp2")
+
+[node name="ButtonLoadLevel10" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 10
+"
+level = ExtResource("15_ayp64")
+level_name = "The Pit"
+internal_level_name = &"10"
+preview = ExtResource("23_1mexh")
+
+[node name="ButtonLoadLevel11" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 11
+"
+level = ExtResource("14_qch7b")
+level_name = "Tunneling from Above"
+internal_level_name = &"11"
+preview = ExtResource("25_6ud2m")
+
+[node name="ButtonLoadLevel12" parent="Menu/LevelSelect/MarginContainer/HFlowContainer" instance=ExtResource("3_m1kxf")]
+layout_mode = 2
+text = "Level 12"
+level = ExtResource("13_e0hcc")
+level_name = "The level that freezes the game"
+internal_level_name = &"12"
+preview = ExtResource("27_qqxfm")
+
+[node name="LevelInfoPanel" parent="Menu" instance=ExtResource("28_45qkm")]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 358.0
+offset_right = 858.0
+offset_bottom = 654.0
+
+[node name="ResetProgressButton" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(296, 96)
+layout_mode = 0
+offset_left = 969.0
+offset_top = 358.0
+offset_right = 1265.0
+offset_bottom = 454.0
+rotation = -4.7124
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_m1kxf")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_x2yvf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_uhagc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_btxxm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wb0q5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1g8jr")
+text = "Reset Progress
+"
+autowrap_mode = 2
+
+[node name="ResetConfirm" type="ColorRect" parent="Menu"]
+visible = false
+z_index = 200
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.878431)
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu/ResetConfirm"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Menu/ResetConfirm/CenterContainer"]
+custom_minimum_size = Vector2(512, 200)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/ResetConfirm/CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/ResetConfirm/CenterContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Warning" type="Label" parent="Menu/ResetConfirm/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Warning!"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Menu/ResetConfirm/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+size_flags_vertical = 1
+text = "Just to confirm, you really want to reset your progress?
+You can't undo this."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/ResetConfirm/CenterContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/ResetConfirm/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="NoButton" type="Button" parent="Menu/ResetConfirm/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_45qkm")
+text = "No! Spare my save!"
+icon = ExtResource("29_ef12m")
+expand_icon = true
+
+[node name="YesButton" type="Button" parent="Menu/ResetConfirm/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+text = "Bombs away!"
+icon = ExtResource("29_shj5x")
+expand_icon = true
+script = ExtResource("31_e64ma")
+
+[node name="Footer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1280.0
+offset_top = -136.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Footer"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -129.0
+offset_top = -113.0
+offset_right = -1.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_1g8jr")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Footer"]
+modulate = Color(0.999999, 0.438782, 0.329696, 1)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = -28.0
+offset_right = 260.0
+offset_bottom = -5.0
+grow_vertical = 0
+size_flags_vertical = 8
+text = "art, level design: Ratatosk
+programming: HeXaGoN"
+
+[node name="ExplosionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("31_gya4d")
+
+[connection signal="pressed" from="Menu/ResetProgressButton" to="Menu/ResetConfirm" method="set_visible" binds= [true]]
+[connection signal="pressed" from="Menu/ResetConfirm/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/NoButton" to="Menu/ResetConfirm" method="set_visible" binds= [false]]
+[connection signal="pressed" from="Menu/ResetConfirm/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/YesButton" to="ExplosionSound" method="play"]
+[connection signal="pressed" from="Menu/ResetConfirm/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer/YesButton" to="Menu/ResetConfirm" method="set_visible" binds= [false]]

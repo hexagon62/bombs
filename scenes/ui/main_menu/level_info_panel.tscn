@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn61j2wml7lfs"]
+
+[ext_resource type="Script" uid="uid://d16ex0vetn8mg" path="res://scripts/ui/main_menu/level_info_panel.gd" id="1_dr0d8"]
+[ext_resource type="Texture2D" uid="uid://cei7usfrl37tf" path="res://graphics/previews/1.png" id="2_f5crf"]
+[ext_resource type="Texture2D" uid="uid://bqeg3vn0tlcbn" path="res://graphics/icons/misc/star.png" id="3_5kryn"]
+[ext_resource type="Texture2D" uid="uid://clodgcjgq8lh3" path="res://graphics/icons/misc/empty star.png" id="3_bx1vx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ayp64"]
+bg_color = Color(0.16, 0.16, 0.16, 0.878431)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0.752667, 0.47, 1)
+border_blend = true
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="LevelInfoPanel" type="Panel" groups=["level_info_panel"]]
+offset_right = 275.0
+offset_bottom = 296.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ayp64")
+script = ExtResource("1_dr0d8")
+star_empty_texture = ExtResource("3_bx1vx")
+star_full_texture = ExtResource("3_5kryn")
+
+[node name="Contents" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Contents"]
+layout_mode = 2
+alignment = 1
+
+[node name="NameLabel" type="Label" parent="Contents/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "LEVEL NAME GOES HERE"
+horizontal_alignment = 1
+
+[node name="Preview" type="TextureRect" parent="Contents/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(187, 106)
+layout_mode = 2
+texture = ExtResource("2_f5crf")
+expand_mode = 5
+
+[node name="BestScoreLabel" type="Label" parent="Contents/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "BEST: N/A"
+horizontal_alignment = 1
+
+[node name="StarDisplay" type="TextureRect" parent="Contents/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_bx1vx")
+expand_mode = 2
+stretch_mode = 5

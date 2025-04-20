@@ -1,10 +1,12 @@
-[gd_scene load_steps=29 format=3 uid="uid://btxvd4c7j5eww"]
+[gd_scene load_steps=31 format=3 uid="uid://btxvd4c7j5eww"]
 
 [ext_resource type="Script" uid="uid://depn51mpxrcgy" path="res://scripts/ui/bomb_builder/bomb_builder.gd" id="1_jvxxx"]
 [ext_resource type="PackedScene" uid="uid://ba7f5kca3i40" path="res://scenes/ui/character/ui_character_doctor.tscn" id="2_jvxxx"]
 [ext_resource type="Texture2D" uid="uid://cdn7bl0oynoo8" path="res://graphics/icons/misc/reset.png" id="3_piyda"]
 [ext_resource type="Texture2D" uid="uid://6xq087200rk2" path="res://graphics/icons/misc/quit.png" id="3_tvgme"]
 [ext_resource type="Texture2D" uid="uid://cvc8vn6e2ask3" path="res://graphics/icons/misc/play.png" id="4_tvgme"]
+[ext_resource type="Texture2D" uid="uid://bfg8padfassd1" path="res://graphics/icons/misc/x.png" id="6_puat2"]
+[ext_resource type="Texture2D" uid="uid://mcyyxumov1tl" path="res://graphics/icons/misc/check square.png" id="7_406e8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_clchr"]
 
@@ -51,6 +53,10 @@
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s28pc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvxxx"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
 bg_color = Color(0.6, 0.132, 0.132, 1)
 
 [node name="BombBuilder" type="Control"]
@@ -208,6 +214,22 @@ size_flags_vertical = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = -4
 autowrap_mode = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3/Rect/VFlowContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="NeedsNextStepLabel" type="Label" parent="Panel/HBoxContainer/LeftHalf/HBoxContainer/MarginContainer3/Rect/VFlowContainer/MarginContainer5"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.729412, 0, 0, 1)
+text = "(This bomb requires another bomb after it!)"
+uppercase = true
 
 [node name="RightHalf" type="VBoxContainer" parent="Panel/HBoxContainer"]
 layout_mode = 2
@@ -388,12 +410,16 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_jvxxx")
 text = "No! Spare my computer!"
+icon = ExtResource("6_puat2")
+expand_icon = true
 
 [node name="YesButton" type="Button" parent="TooManyBombsPopup/CenterContainer/Panel/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.0
+size_flags_stretch_ratio = 0.6
 text = "I love explosions!"
+icon = ExtResource("7_406e8")
+expand_icon = true
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="focus_entered" from="Panel/HBoxContainer/LeftHalf/Panel/MarginContainer/ScrollContainer/BombPalette" to="." method="hide_info"]

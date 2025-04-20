@@ -1,14 +1,80 @@
-[gd_scene load_steps=21 format=3 uid="uid://c5ytpuvt5xn68"]
+[gd_scene load_steps=25 format=3 uid="uid://c5ytpuvt5xn68"]
 
 [ext_resource type="Script" uid="uid://dkftxsnu86p44" path="res://scripts/level_wrapper.gd" id="1_asw2c"]
 [ext_resource type="Texture2D" uid="uid://6xq087200rk2" path="res://graphics/icons/misc/quit.png" id="2_2s3ot"]
-[ext_resource type="PackedScene" uid="uid://d04vf67jvbuq5" path="res://scenes/ui/progress_bar_with_threshold.tscn" id="2_j0bl7"]
+[ext_resource type="PackedScene" uid="uid://d04vf67jvbuq5" path="res://scenes/ui/misc/progress_bar_with_threshold.tscn" id="2_j0bl7"]
 [ext_resource type="Texture2D" uid="uid://cvc8vn6e2ask3" path="res://graphics/icons/misc/play.png" id="2_vyhw2"]
 [ext_resource type="Script" uid="uid://ccrm27ibyllj5" path="res://scripts/debug/debug_bomb_raycast_visualizer.gd" id="3_asw2c"]
 [ext_resource type="Texture2D" uid="uid://cdn7bl0oynoo8" path="res://graphics/icons/misc/reset.png" id="3_ib2jl"]
 [ext_resource type="PackedScene" uid="uid://btxvd4c7j5eww" path="res://scenes/ui/bomb_builder/ui_bomb_builder.tscn" id="3_vyhw2"]
 [ext_resource type="Texture2D" uid="uid://bs1w0js41qq5f" path="res://graphics/icons/misc/pause.png" id="4_2s3ot"]
-[ext_resource type="Script" path="res://scenes/ui/pause_button.gd" id="5_ib2jl"]
+[ext_resource type="Script" uid="uid://cqfdgbppd3u38" path="res://scripts/ui/misc/pause_button.gd" id="5_ib2jl"]
+
+[sub_resource type="Animation" id="Animation_f3vsg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%VictoryLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%LossLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_yptke"]
+resource_name = "loss_animation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%LossLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.752941), Color(1, 1, 1, 0.752941), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7hobm"]
+resource_name = "victory_animation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%VictoryLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.752941), Color(1, 1, 1, 0.752941), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kuy23"]
+_data = {
+&"RESET": SubResource("Animation_f3vsg"),
+&"loss_animation": SubResource("Animation_yptke"),
+&"victory_animation": SubResource("Animation_7hobm")
+}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7lufb"]
 
@@ -44,7 +110,6 @@ mouse_filter = 2
 script = ExtResource("1_asw2c")
 
 [node name="ShowWhenUnpaused" type="Control" parent="."]
-visible = false
 z_index = 149
 layout_mode = 1
 anchors_preset = 15
@@ -53,6 +118,47 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="GameEndAnimation" type="AnimationPlayer" parent="ShowWhenUnpaused"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_kuy23")
+}
+
+[node name="VictoryLabel" type="Label" parent="ShowWhenUnpaused"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -222.5
+offset_top = 16.0
+offset_right = 222.5
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "SUCCESS! You met the demolition quota.
+Quit to the main menu and pick another level,
+or restart and mess around some more!"
+horizontal_alignment = 1
+
+[node name="LossLabel" type="Label" parent="ShowWhenUnpaused"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -222.5
+offset_top = 16.0
+offset_right = 222.5
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "TRY AGAIN!
+You did not meet the demolition quota."
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="ShowWhenUnpaused"]
 layout_mode = 0

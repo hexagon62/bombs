@@ -62,6 +62,7 @@ normal = Vector2(-1, 0)
 [node name="Level" type="Node2D" groups=["level"]]
 script = ExtResource("1_vmg1d")
 bombs_available = Array[ExtResource("2_1nwmf")]([ExtResource("3_5f5xw"), ExtResource("5_kdsi4"), ExtResource("6_kva3v"), ExtResource("7_jql0x"), ExtResource("8_do6pa"), ExtResource("9_n8qcm"), ExtResource("10_aey3y"), ExtResource("12_o5em7"), ExtResource("16_gtyp3")])
+win_ratio = 0.97
 level_name = &"3"
 
 [node name="Background" type="Sprite2D" parent="."]

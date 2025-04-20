@@ -11,7 +11,7 @@ name = "Fire Bomb"
 short_name = "Fire Bomb"
 flavor_name = "Breggfast Ruined"
 description = "Other bombs can light buildings on fire, but this one is guaranteed to."
-flavor_description = "I asked my assistant to cook me breakfast. Never egg-ain!
+flavor_description = "I asked my other assistant to cook me breakfast. Never egg-ain!
 
 ...however, because it so potently burnt the lab down, that means this'll burn the whole city down, muahahaha!"
 doctor_expression = &"evil"

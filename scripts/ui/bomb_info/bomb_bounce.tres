@@ -13,12 +13,12 @@ flavor_name = "John McBounce"
 description = "Bounces off of surfaces easily."
 flavor_description = "No, I did not just shove a bomb in a deformed tennis ball! This is an egg!
 
-I wanted to call it the \"Eggstra Low Friction Egg\", but my assistant won a game of Rock Paper Scissors against me."
+I wanted to call it the \"Eggstra Low Friction Egg\", but my other assistant won a game of Rock Paper Scissors against me."
 doctor_expression = &"angry"
 scene = ExtResource("2_j6rvl")
 requires_next_step = false
 children_spawned = 1
 min_fuse_time = 0.0
 max_fuse_time = 5.0
-default_fuse_time = 1.0
+default_fuse_time = 5.0
 metadata/_custom_type_script = "uid://cjoklwjj6rv06"

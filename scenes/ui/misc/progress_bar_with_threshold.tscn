@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d04vf67jvbuq5"]
 
-[ext_resource type="Script" uid="uid://cehtk0i1at3y4" path="res://scripts/ui/progress_bar_with_threshold.gd" id="1_tlbrf"]
+[ext_resource type="Script" uid="uid://cehtk0i1at3y4" path="res://scripts/ui/misc/progress_bar_with_threshold.gd" id="1_tlbrf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlbrf"]
 bg_color = Color(0, 0, 0, 0.752941)
@@ -14,7 +14,7 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0bl7"]
 bg_color = Color(1, 1, 1, 0)
-border_width_right = 8
+border_width_right = 4
 border_color = Color(1, 1, 1, 1)
 border_blend = true
 
@@ -44,7 +44,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_clu2m")
 
 [node name="ThresholdBar" type="Panel" parent="."]
-modulate = Color(1, 1, 1, 0.752941)
+modulate = Color(1, 1, 1, 0.878431)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

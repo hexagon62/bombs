@@ -24,7 +24,7 @@ var explosion_damage := 100.0
 @export var penetrates := true
 ## Ratio of damage dealt to the building needed to light it on fire
 @export_range(0.0, 1.0, 0.001)
-var ignite_damage_ratio := 0.8
+var ignite_damage_ratio := 0.7
 ## What scene to spawn for the explosion
 @export var explosion_scene: PackedScene
 ## What scenes to spawn in next (meant to be changeable by player)
@@ -44,6 +44,7 @@ func _ready() -> void:
 	raycaster.top_level = true
 	raycaster.enabled = false
 	add_child(raycaster)
+	add_to_group(&"bomb")
 
 
 func _physics_process(delta: float) -> void:

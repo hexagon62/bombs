@@ -26,6 +26,7 @@ var _bomb_warning := false
 @onready var doctor_sprite: CharacterSprite = %DoctorSprite
 @onready var go_button: Button = %GoButton
 @onready var too_many_bombs_popup: ColorRect = %TooManyBombsPopup
+@onready var needs_next_step_label: Label = %NeedsNextStepLabel
 
 
 func _ready() -> void:
@@ -128,6 +129,7 @@ func show_info(bomb_info: BombInfo) -> void:
 	name_label.text = "TYPE: %s" % bomb_info.name
 	description_label.text = bomb_info.description
 	flavor_description_label.text = bomb_info.flavor_description
+	needs_next_step_label.visible = bomb_info.requires_next_step
 	doctor_sprite.current_expression = bomb_info.doctor_expression
 	doctor_sprite.talking = true
 
@@ -138,6 +140,7 @@ func hide_info() -> void:
 	name_label.text = ""
 	description_label.text = ""
 	flavor_description_label.text = ""
+	needs_next_step_label.visible = false
 	doctor_sprite.reset_expression()
 	doctor_sprite.talking = false
 
@@ -157,7 +160,9 @@ func get_bombs_spawned() -> int:
 
 
 func _update_step_numbers() -> void:
+	# Count steps, display their numbers, and get the last step
 	var counter := 0
+	var last_step: BombStepPanel
 	for child in bomb_steps.get_children():
 		var panel := child as BombStepPanel
 		if panel and not panel.is_queued_for_deletion():
@@ -165,6 +170,16 @@ func _update_step_numbers() -> void:
 			panel.number = counter
 			panel.up_button.disabled = counter == 1
 			panel.down_button.disabled = counter == bomb_steps.get_child_count()
+			panel.self_modulate = Color.WHITE
+			last_step = panel
+	
+	# Check if the last step needs a next step
+	var incomplete := last_step and last_step.bomb_info and last_step.bomb_info.requires_next_step
+	go_button.disabled = incomplete
+	if incomplete:
+		last_step.self_modulate = Color.RED
+	
+	# Get bomb spawn count and display it
 	var bomb_count := get_bombs_spawned()
 	bomb_count_label.text = "Number of bombs that will spawn: %d" % bomb_count
 	var level_wrapper := get_tree().get_first_node_in_group(&"level_wrapper") as LevelWrapper
@@ -180,8 +195,11 @@ func _update_step_numbers() -> void:
 	else:
 		bomb_count_label.modulate = Color.WHITE
 		_bomb_warning = false
-		
-	if bomb_count == 0:
+	
+	# Modify go button as needed
+	if incomplete:
+		go_button.text = "ERROR"
+	elif bomb_count == 0:
 		go_button.text = "PREVIEW"
 	elif bomb_count <= SAFE_BOMB_LIMIT:
 		go_button.text = "GO"
